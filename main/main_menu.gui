@@ -11,8 +11,8 @@ background_color {
 }
 nodes {
   position {
-    x: 190.0
-    y: 539.0
+    x: 149.0
+    y: 204.0
     z: 0.0
     w: 1.0
   }
@@ -23,8 +23,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 1.211
+    y: 1.641
     z: 1.0
     w: 1.0
   }
@@ -50,8 +50,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 153.592
+    y: 185.252
     z: 0.0
     w: 1.0
   }
@@ -62,8 +62,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 0.818
+    y: 0.752
     z: 1.0
     w: 1.0
   }
@@ -100,6 +100,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 3
   overridden_fields: 9
   template_node_child: true
@@ -107,8 +108,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 12.0
+    y: 2.0
     z: 0.0
     w: 1.0
   }
@@ -132,8 +133,8 @@ nodes {
   }
   color {
     x: 1.0
-    y: 1.0
-    z: 1.0
+    y: 0.0
+    z: 0.0
     w: 1.0
   }
   type: TYPE_TEXT
@@ -147,8 +148,8 @@ nodes {
   pivot: PIVOT_CENTER
   outline {
     x: 1.0
-    y: 1.0
-    z: 1.0
+    y: 0.0
+    z: 0.0
     w: 1.0
   }
   shadow {
@@ -165,8 +166,11 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 5
   overridden_fields: 8
   overridden_fields: 10
+  overridden_fields: 15
   overridden_fields: 17
   template_node_child: true
   text_leading: 1.0
@@ -236,7 +240,7 @@ nodes {
 }
 nodes {
   position {
-    x: -1.0
+    x: 39.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -275,8 +279,8 @@ nodes {
 }
 nodes {
   position {
-    x: 380.0
-    y: 539.0
+    x: 299.0
+    y: 384.0
     z: 0.0
     w: 1.0
   }
@@ -287,8 +291,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -333,8 +337,8 @@ nodes {
 }
 nodes {
   position {
-    x: -9.0
-    y: 5.0
+    x: 2.0
+    y: 2.0
     z: 0.0
     w: 1.0
   }
@@ -359,7 +363,7 @@ nodes {
   color {
     x: 1.0
     y: 1.0
-    z: 1.0
+    z: 0.0
     w: 1.0
   }
   type: TYPE_TEXT
@@ -374,7 +378,7 @@ nodes {
   outline {
     x: 1.0
     y: 1.0
-    z: 1.0
+    z: 0.0
     w: 1.0
   }
   shadow {
@@ -392,16 +396,18 @@ nodes {
   outline_alpha: 1.0
   shadow_alpha: 1.0
   overridden_fields: 1
+  overridden_fields: 5
   overridden_fields: 8
   overridden_fields: 10
+  overridden_fields: 15
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
 nodes {
   position {
-    x: 424.0
-    y: 72.0
+    x: 176.0
+    y: 53.0
     z: 0.0
     w: 1.0
   }
@@ -495,8 +501,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 4.0
+    y: -1.0
     z: 0.0
     w: 1.0
   }
@@ -553,6 +559,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 8
   overridden_fields: 10
   template_node_child: true
@@ -561,8 +568,8 @@ nodes {
 }
 nodes {
   position {
-    x: 69.0
-    y: 1094.0
+    x: 99.0
+    y: 1030.0
     z: 0.0
     w: 1.0
   }
@@ -623,7 +630,7 @@ nodes {
 }
 nodes {
   position {
-    x: 1003.0
+    x: 1043.0
     y: 339.0
     z: 0.0
     w: 1.0
@@ -662,8 +669,8 @@ nodes {
 }
 nodes {
   position {
-    x: -621.0
-    y: 140.0
+    x: -707.0
+    y: -173.0
     z: 0.0
     w: 1.0
   }
@@ -674,8 +681,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -720,8 +727,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 2.886
+    x: 7.0
+    y: 4.886
     z: 0.0
     w: 1.0
   }
@@ -745,7 +752,7 @@ nodes {
   }
   color {
     x: 1.0
-    y: 1.0
+    y: 0.0
     z: 1.0
     w: 1.0
   }
@@ -781,6 +788,7 @@ nodes {
   overridden_fields: 1
   overridden_fields: 3
   overridden_fields: 4
+  overridden_fields: 5
   overridden_fields: 8
   overridden_fields: 10
   template_node_child: true
@@ -789,8 +797,8 @@ nodes {
 }
 nodes {
   position {
-    x: 76.0
-    y: 1001.0
+    x: 98.0
+    y: 1086.0
     z: 0.0
     w: 1.0
   }
@@ -820,7 +828,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: ""
+  text: "Player"
   font: "menuFont"
   id: "username"
   xanchor: XANCHOR_NONE
@@ -851,8 +859,8 @@ nodes {
 }
 nodes {
   position {
-    x: 531.0
-    y: 1086.0
+    x: 299.0
+    y: 1084.0
     z: 0.0
     w: 1.0
   }
@@ -975,7 +983,7 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
+    x: 40.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -1014,8 +1022,8 @@ nodes {
 }
 nodes {
   position {
-    x: 192.0
-    y: 478.0
+    x: 298.0
+    y: 275.0
     z: 0.0
     w: 1.0
   }
@@ -1026,8 +1034,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -1072,8 +1080,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 4.0
+    y: 5.0
     z: 0.0
     w: 1.0
   }
@@ -1096,9 +1104,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
+    x: 0.0
     y: 1.0
-    z: 1.0
+    z: 0.0
     w: 1.0
   }
   type: TYPE_TEXT
@@ -1129,7 +1137,9 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 3
+  overridden_fields: 5
   overridden_fields: 8
   overridden_fields: 10
   template_node_child: true
@@ -1138,14 +1148,14 @@ nodes {
 }
 nodes {
   position {
-    x: 422.0
-    y: 203.0
+    x: 467.0
+    y: 54.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
-    y: 0.0
+    y: 180.0
     z: 0.0
     w: 1.0
   }
@@ -1177,15 +1187,15 @@ nodes {
 }
 nodes {
   position {
-    x: -132.0
-    y: 181.0
+    x: -110.0
+    y: 303.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
-    y: 0.0
-    z: 0.0
+    y: 180.0
+    z: -90.0
     w: 1.0
   }
   scale {
@@ -1228,13 +1238,14 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
+  overridden_fields: 2
   overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 0.0
+    x: -5.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -1242,7 +1253,7 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 90.0
     w: 1.0
   }
   scale {
@@ -1258,8 +1269,8 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
+    x: 0.0
+    y: 0.0
     z: 1.0
     w: 1.0
   }
@@ -1272,8 +1283,8 @@ nodes {
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   outline {
-    x: 1.0
-    y: 1.0
+    x: 0.0
+    y: 0.0
     z: 1.0
     w: 1.0
   }
@@ -1291,16 +1302,20 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 2
+  overridden_fields: 5
   overridden_fields: 8
   overridden_fields: 10
+  overridden_fields: 15
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
 nodes {
   position {
-    x: 324.0
-    y: 658.0
+    x: 336.0
+    y: 776.0
     z: 0.0
     w: 1.0
   }
@@ -1311,8 +1326,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.275
-    y: 5.992
+    x: 3.364
+    y: 3.784
     z: 1.0
     w: 1.0
   }
@@ -1637,8 +1652,8 @@ nodes {
 }
 nodes {
   position {
-    x: 92.0
-    y: 43.0
+    x: 297.0
+    y: 1084.0
     z: 0.0
     w: 1.0
   }
@@ -1676,8 +1691,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 402.415
+    y: -1375.668
     z: 1.0
     w: 1.0
   }
@@ -1688,8 +1703,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 1.53
+    y: 1.263
     z: 1.0
     w: 1.0
   }
@@ -1727,6 +1742,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
+  overridden_fields: 3
   overridden_fields: 9
   overridden_fields: 20
   template_node_child: true
@@ -1799,15 +1815,15 @@ nodes {
 }
 nodes {
   position {
-    x: 294.0
-    y: 417.0
+    x: 550.0
+    y: 512.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.554
     w: 1.0
   }
   scale {
@@ -1842,15 +1858,15 @@ nodes {
 }
 nodes {
   position {
-    x: 143.0
-    y: 412.0
+    x: 613.0
+    y: 515.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 25.978
+    z: 26.532
     w: 1.0
   }
   scale {
@@ -1885,15 +1901,15 @@ nodes {
 }
 nodes {
   position {
-    x: 453.0
-    y: 417.0
+    x: 544.0
+    y: 424.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: -35.308
+    z: -34.754
     w: 1.0
   }
   scale {
@@ -1928,15 +1944,15 @@ nodes {
 }
 nodes {
   position {
-    x: 357.0
-    y: 418.0
+    x: 616.0
+    y: 446.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.554
     w: 1.0
   }
   scale {
@@ -1971,15 +1987,15 @@ nodes {
 }
 nodes {
   position {
-    x: 236.0
-    y: 411.0
+    x: 541.0
+    y: 342.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.554
     w: 1.0
   }
   scale {
@@ -2014,15 +2030,15 @@ nodes {
 }
 nodes {
   position {
-    x: 405.0
-    y: 414.0
+    x: 616.0
+    y: 334.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.554
     w: 1.0
   }
   scale {
@@ -2057,8 +2073,614 @@ nodes {
 }
 nodes {
   position {
-    x: 117.0
-    y: 669.0
+    x: 528.0
+    y: 44.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.2
+    y: 0.696
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "addButton"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: -85.0
+    y: 1508.621
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "addButton/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "addButton"
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 9
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 4.313
+    y: 2.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "+"
+  font: "menuFont"
+  id: "addButton/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "addButton/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 329.0
+    y: 709.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 3.214
+    y: 2.141
+    z: 1.1
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "adduserpromptbody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "background"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 3.111
+    y: 29.893
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.428
+    y: 0.576
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Add user:"
+  font: "menuFont"
+  id: "adduserpromptdiag"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "adduserpromptbody"
+  layer: "text"
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 3.423
+    y: 0.933
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.553
+    y: 0.598
+    z: 0.98
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "playername"
+  font: "menuFont"
+  id: "adduserpromptinput"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "adduserpromptbody"
+  layer: "text"
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: -66.273
+    y: -20.551
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.215
+    y: 0.705
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "adduserpromptbuttonokay"
+  parent: "adduserpromptbody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 646.879
+    y: -21.863
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.684
+    y: 0.408
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "adduserpromptbuttonokay/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "adduserpromptbuttonokay"
+  layer: "button"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
+  overridden_fields: 9
+  overridden_fields: 20
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -4.982
+    y: 3.494
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.959
+    y: 0.773
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Okay"
+  font: "menuFont"
+  id: "adduserpromptbuttonokay/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "adduserpromptbuttonokay/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: -71.251
+    y: -35.497
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.795
+    y: 0.641
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "adduserpromptbuttoncancel"
+  parent: "adduserpromptbody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.19
+    y: 0.472
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "adduserpromptbuttoncancel/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "adduserpromptbuttoncancel"
+  layer: "button"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 9
+  overridden_fields: 20
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -2081,16 +2703,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Summary"
+  text: "Cancel"
   font: "menuFont"
-  id: "SummaryText"
+  id: "adduserpromptbuttoncancel/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -2108,12 +2730,855 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
+  parent: "adduserpromptbuttoncancel/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 329.0
+    y: 709.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 3.293
+    y: 2.491
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "removeuserpromptbody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "background"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 3.111
+    y: 29.893
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.428
+    y: 0.576
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Click name to remove"
+  font: "menuFont"
+  id: "removeuserpromptdiag"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "removeuserpromptbody"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
   template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 3.423
+    y: 0.933
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.191
+    y: 0.278
+    z: 0.98
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "playername"
+  font: "menuFont"
+  id: "removeuserpromptinput"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "removeuserpromptbody"
+  layer: "text"
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: -66.273
+    y: -20.551
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.215
+    y: 0.705
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "removeuserpromptbuttonokay"
+  parent: "removeuserpromptbody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 646.879
+    y: -21.863
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.684
+    y: 0.408
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "removeuserpromptbuttonokay/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "removeuserpromptbuttonokay"
+  layer: "button"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
+  overridden_fields: 9
+  overridden_fields: 20
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -4.982
+    y: 3.494
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.959
+    y: 0.773
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Okay"
+  font: "menuFont"
+  id: "removeuserpromptbuttonokay/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "removeuserpromptbuttonokay/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: -71.251
+    y: -35.497
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.795
+    y: 0.641
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "removeuserpromptbuttoncancel"
+  parent: "removeuserpromptbody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.19
+    y: 0.472
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "removeuserpromptbuttoncancel/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "removeuserpromptbuttoncancel"
+  layer: "button"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 9
+  overridden_fields: 20
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Cancel"
+  font: "menuFont"
+  id: "removeuserpromptbuttoncancel/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "removeuserpromptbuttoncancel/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 607.0
+    y: 44.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.2
+    y: 0.696
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "removeButton"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: -50.0
+    y: 1508.621
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.077
+    y: 1.061
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "removeButton/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "removeButton"
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
+  overridden_fields: 9
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -20.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 4.313
+    y: 2.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "-"
+  font: "menuFont"
+  id: "removeButton/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "removeButton/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "clear_button"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 77.0
+    y: 355.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -89.906
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 366.0
+    y: 110.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "clear_button/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "clear_button"
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 2
+  overridden_fields: 9
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 90.161
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "C\n"
+  "l\n"
+  "e\n"
+  "a\n"
+  "r"
+  font: "menuFont"
+  id: "clear_button/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "clear_button/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 2
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
