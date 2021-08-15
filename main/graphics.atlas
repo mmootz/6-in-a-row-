@@ -1,7 +1,7 @@
 animations {
   id: "Button_Pressed"
   images {
-    image: "/assets/redButton_Pressed.png"
+    image: "/assets/black_button_pressed.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -12,7 +12,29 @@ animations {
 animations {
   id: "Button_released"
   images {
-    image: "/assets/redButton_Unpressed.png"
+    image: "/assets/black_button_unpressed.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "Button_pressed_vert"
+  images {
+    image: "/assets/black_button_pressed_vert.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "Button_unpressed_vert"
+  images {
+    image: "/assets/black_button_unpressed_vert.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
