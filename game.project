@@ -1,5 +1,6 @@
 [project]
 title = 6 in a row
+dependencies#0 = https://github.com/Insality/druid/archive/master.zip
 
 [bootstrap]
 main_collection = /main/main.collectionc

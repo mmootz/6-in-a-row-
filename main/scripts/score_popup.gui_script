@@ -1,0 +1,60 @@
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+
+	self.score_popup_box = gui.get_node("score_popup_box")
+	self.score_popup_text = gui.get_node("score_popup_text")
+
+	gui.set_enabled(self.score_popup_box, false)
+	gui.set_enabled(self.score_popup_text, false)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+	if message_id == hash("Show") then 
+		gui.set_enabled(self.score_popup_box, true)
+		gui.set_enabled(self.score_popup_text, true)
+		msg.post(".", "acquire_input_focus")
+	elseif message_id == hash("Hide") then 
+		gui.set_enabled(self.score_popup_box, false)
+		gui.set_enabled(self.score_popup_text, false)
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+	if action.pressed and gui.pick_node(self.score_popup_box, action.x, action.y) then
+		gui.play_flipbook(self.score_popup_box, hash("Button_Pressed"))
+		
+		msg.post("main:/score_popup#score_popup", "Hide")
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
