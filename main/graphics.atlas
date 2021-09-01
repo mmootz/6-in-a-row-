@@ -1,3 +1,7 @@
+images {
+  image: "/assets/popup_background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "Button_Pressed"
   images {

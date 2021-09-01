@@ -1484,15 +1484,15 @@ nodes {
 }
 nodes {
   position {
-    x: 550.0
-    y: 512.0
+    x: -10.0
+    y: 1159.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.554
+    z: -120.0
     w: 1.0
   }
   scale {
@@ -1527,15 +1527,15 @@ nodes {
 }
 nodes {
   position {
-    x: 613.0
-    y: 515.0
+    x: 656.0
+    y: 1153.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 26.532
+    z: 120.0
     w: 1.0
   }
   scale {
@@ -1570,15 +1570,15 @@ nodes {
 }
 nodes {
   position {
-    x: 544.0
-    y: 424.0
+    x: -24.0
+    y: 591.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: -34.754
+    z: -90.0
     w: 1.0
   }
   scale {
@@ -1613,15 +1613,15 @@ nodes {
 }
 nodes {
   position {
-    x: 616.0
-    y: 446.0
+    x: 663.0
+    y: 598.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.554
+    z: 90.0
     w: 1.0
   }
   scale {
@@ -1656,15 +1656,15 @@ nodes {
 }
 nodes {
   position {
-    x: 541.0
-    y: 342.0
+    x: 31.0
+    y: -23.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.554
+    z: 343.324
     w: 1.0
   }
   scale {
@@ -1699,8 +1699,8 @@ nodes {
 }
 nodes {
   position {
-    x: 616.0
-    y: 334.0
+    x: 627.0
+    y: -33.0
     z: 0.0
     w: 1.0
   }
@@ -1742,7 +1742,7 @@ nodes {
 }
 nodes {
   position {
-    x: 528.0
+    x: 557.0
     y: 44.0
     z: 0.0
     w: 1.0
@@ -1793,8 +1793,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 0.5
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -1832,6 +1832,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
+  overridden_fields: 3
   overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
@@ -1904,7 +1905,7 @@ nodes {
 }
 nodes {
   position {
-    x: 607.0
+    x: 608.0
     y: 44.0
     z: 0.0
     w: 1.0
@@ -1955,8 +1956,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 0.5
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -1994,6 +1995,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
+  overridden_fields: 3
   overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO

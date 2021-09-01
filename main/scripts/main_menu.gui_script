@@ -1,9 +1,84 @@
 local score = 0
 
+local druid = require("druid.druid")
+
+local function add_score(score,num)	  
+	total = score + num
+	return total 
+end 
+
+
+local function button1_callback(self)
+	self.score = add_score(self.score,2)
+	gui.set_text(self.score_node, tostring(self.score))
+end
+
+local function button2_callback(self)
+	self.score = add_score(self.score,3)
+	gui.set_text(self.score_node, tostring(self.score))
+end 
+
+local function button4_callback(self)
+	self.score = add_score(self.score,4)
+	gui.set_text(self.score_node, tostring(self.score))
+end 
+
+local function button5_callback(self)
+	self.score = add_score(self.score,5)
+	gui.set_text(self.score_node, tostring(self.score))
+end 
+
+local function button12_callback(self)
+	self.score = add_score(self.score,12)
+	gui.play_particlefx(self.firework_red)
+	gui.play_particlefx(self.firework_blue)
+	gui.play_particlefx(self.firework_green) 
+	gui.play_particlefx(self.firework_yellow)
+	gui.play_particlefx(self.firework_orange)
+	gui.play_particlefx(self.firework_purple) 
+	gui.set_text(self.score_node, tostring(self.score))
+end 
+
+
+local function okay_callback(self)
+	-- need a better way to clear score 
+	self.score = 0 
+	gui.set_text(self.score_node, tostring(0))
+end 
+
+
+local function clear_callback(self)
+	self.score = 0 
+	gui.set_text(self.score_node, tostring(0))
+end 
+
+local function finish_callback(self)
+	gui.play_particlefx(self.firework_red)
+	gui.play_particlefx(self.firework_blue)
+	gui.play_particlefx(self.firework_green) 
+	gui.play_particlefx(self.firework_yellow)
+	gui.play_particlefx(self.firework_orange)
+	gui.play_particlefx(self.firework_purple)
+	msg.post("main:/winner#winner_box", "Show")
+end 
+
+local function add_callback(self)
+	msg.post("main:/add_user#add_user_prompt", "Show")
+end 
+
+local function remove_callback(self)
+	msg.post("main:/remove_user#remove_user_prompt", "Show")
+end 
+
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+
+	-- init druid 
+	self.druid = druid.new(self)
+	
 	msg.post(".", "acquire_input_focus")
    -- gui settings 
 	self.button1 = gui.get_node("Button1/buttonBody")
@@ -11,18 +86,17 @@ function init(self)
 	self.button4 = gui.get_node("Button4/buttonBody")
 	self.button5 = gui.get_node("Button5/buttonBody")
 	self.button12 = gui.get_node("Button12/buttonBody")
+	
 	self.okaybutton = gui.get_node("OkayButton/buttonBody")
 	self.Addbutton = gui.get_node("addButton/buttonBody")
 	self.Removebutton = gui.get_node("removeButton/buttonBody")
+
+	self.clear_button = gui.get_node("clear_button/buttonBody")
 	self.score_menu = gui.get_node("score_text_menu")
 	self.username = gui.get_node("username")
 	self.round_number_menu = gui.get_node("round_number")	
 	self.score_node = gui.get_node("score_text")
 	self.end_game_button = gui.get_node("end_game_button/buttonBody")
-	self.clear_button = gui.get_node("clear_button/buttonBody")
-
-	
-
 
 	-- fireworks
 	self.firework_red = gui.get_node("firework_red")
@@ -31,30 +105,16 @@ function init(self)
 	self.firework_yellow = gui.get_node("firework_yellow")
 	self.firework_orange = gui.get_node("firework_orange")
 	self.firework_purple = gui.get_node("firework_purple")
-	
-	-- add user window 
-	
-
-	-- remove user window 
-	
-	
 
 	-- score window 
 	self.score_button = gui.get_node("score_text_menu")	
-	
-	-- hide windows 
-
-	-- add user 
-
-	
-	
 	
    -- user vars 
 	self.user1 = "Dad"
 	self.user2 = "Matt"
 	self.active_user = self.user1
 	self.round_num = 1
-	self.score = 0
+	self.score = 0 
 	self.winner = ""
 	self.user1_score = 0
 	self.user2_score =0 
@@ -62,8 +122,27 @@ function init(self)
 	game = {}
 	gui.set_text(self.username, self.active_user)
 	gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
+
+
 	
-end
+	self.druid:new_button("Button1/buttonBody", button1_callback)
+	self.druid:new_button("Button2/buttonBody", button2_callback)
+	self.druid:new_button("Button4/buttonBody", button4_callback)
+	self.druid:new_button("Button5/buttonBody", button5_callback)
+	self.druid:new_button("Button12/buttonBody", button12_callback)
+
+	self.druid:new_button("OkayButton/buttonBody", okay_callback)
+	self.druid:new_button("clear_button/buttonBody", clear_callback)
+
+	self.druid:new_button("addButton/buttonBody", add_callback)
+	self.druid:new_button("removeButton/buttonBody", remove_callback)
+	self.druid:new_button("end_game_button/buttonBody", finish_callback)
+
+end 
+
+
+
+
 
 local function save_data(players)
 	local filename = sys.get_save_file("playerfilename", "players")
@@ -87,10 +166,7 @@ function remove_user(remove_player)
 	table.remove(load_players)
 	save_data(load_players)
 end	
-local function add_score(score,num)	
-	total = score + num
-	return total 
-end 
+
 
 function print_users(players)
 
@@ -110,18 +186,21 @@ function final(self)
 	-- Add finalization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+	self.druid:final()
 end
 
 function update(self, dt)
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+	self.druid:update(dt)
 end
 
 function on_message(self, message_id, message, sender)
 	-- Add message-handling code here
 	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
+	self.druid:on_message(message_id, message, sender)
 	if message_id == hash("add_score") then
 		score = "score:".. score + message.amount
 		gui.set_text(self.score_node, tostring(self.score))
@@ -131,291 +210,280 @@ end
 function on_input(self, action_id, action)
 	-- Add input-handling code here. The game object this script is attached to
 	-- must have acquired input focus:
-
-	if action.pressed and gui.pick_node(self.button1, action.x, action.y) then
-		gui.play_flipbook(self.button1, hash("Button_Pressed"))
-		self.score = add_score(self.score, 2)
-		--save_data(tostring(self.round_num)..":"..tostring(self.score)..":"..tostring(self.active_user))
-		gui.set_text(self.score_node, tostring(self.score))
-	elseif action.released and gui.pick_node(self.button1, action.x, action.y) then
-			print("unpressed")
-			gui.play_flipbook(self.button1, hash("Button_released"))
-	--    msg.post(".", "acquire_input_focus")
-	end 
-
-	if action.pressed and gui.pick_node(self.button2, action.x, action.y) then
-		gui.play_flipbook(self.button2, hash("Button_Pressed"))
-		self.score = add_score(self.score, 3)
-		
-		gui.set_text(self.score_node, tostring(self.score))
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-	elseif action.released and gui.pick_node(self.button2, action.x, action.y) then
-		gui.play_flipbook(self.button2, hash("Button_released"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-
-	if action.pressed and gui.pick_node(self.clear_button, action.x, action.y) then
-		gui.play_flipbook(self.clear_button, hash("Button_pressed_vert"))
-		gui.set_text(self.score_node, "0")
-		self.score = "0"
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-	elseif action.released and gui.pick_node(self.clear_button, action.x, action.y) then
-		gui.play_flipbook(self.clear_button, hash("Button_unpressed_vert"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-	if action.pressed and gui.pick_node(self.button4, action.x, action.y) then
-		gui.play_flipbook(self.button4, hash("Button_Pressed"))
-		self.score = add_score(self.score, 4)
-		gui.set_text(self.score_node, tostring(self.score))
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-		local test_matt = load_users()
-		print_users(test_matt)
-	elseif action.released and gui.pick_node(self.button4, action.x, action.y) then
-		gui.play_flipbook(self.button4, hash("Button_released"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-
-	if action.pressed and gui.pick_node(self.button5, action.x, action.y) then
-		gui.play_flipbook(self.button5, hash("Button_Pressed"))
-		self.score = add_score(self.score, 5)
-		gui.set_text(self.score_node, tostring(self.score))
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-	elseif action.released and gui.pick_node(self.button5, action.x, action.y) then
-		gui.play_flipbook(self.button5, hash("Button_released"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-
-	if action.pressed and gui.pick_node(self.button12, action.x, action.y) then
-		gui.play_flipbook(self.button12, hash("Button_pressed_vert"))
-		self.score = add_score(self.score, 12)
-		-- play animation here once figured out
-		gui.play_particlefx(self.firework_red)
-		gui.play_particlefx(self.firework_blue)
-		gui.play_particlefx(self.firework_green) 
-		gui.play_particlefx(self.firework_yellow)
-		gui.play_particlefx(self.firework_orange)
-		gui.play_particlefx(self.firework_purple) 
-		gui.set_text(self.score_node, tostring(self.score))
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-
-	elseif action.released and gui.pick_node(self.button12, action.x, action.y) then
-		gui.play_flipbook(self.button12, hash("Button_unpressed_vert"))
-		gui.stop_particlefx(self.firework_red)
-		gui.stop_particlefx(self.firework_blue)
-		gui.stop_particlefx(self.firework_green)
-		gui.stop_particlefx(self.firework_yellow)
-		gui.stop_particlefx(self.firework_orange)
-		gui.stop_particlefx(self.firework_purple)
-		--    msg.post(".", "acquire_input_focus")
-	end
 	
-	if action.pressed and gui.pick_node(self.okaybutton, action.x, action.y) then
-		print("okayButton")
-		gui.play_flipbook(self.okaybutton, hash("Button_Pressed"))
-		--gui.set_text(self.score_menu, "score:"..tostring(self.score))
-		--gui.set_text(self.score_node, "0")
-		-- if Dad user switch to Matt 
-		if self.active_user == self.user1 then 
-			-- switch to Matt 
-			self.active_user = self.user2
-			gui.set_text(self.username, self.active_user)
-			-- gui.set_text(self.username, )
-			-- set Dad score to current score  
-			self.user1_score = self.score + self.user1_score
-			-- set user score on menu 
-			
-			game[self.round_num] = {}
-			game[self.round_num][self.user1] = self.user1_score
-			gui.set_text(self.score_menu, "Score:" .. tostring(self.user2_score))
-			-- reset score to 0 			
-			self.score = 0
-			gui.set_text(self.score_node, "0")
-			-- update the round menu here after we set to zero 
-		--	self.round_num = self.round_num + 1 
-		--	gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
-			 
-		-- Matt User 
-		elseif self.active_user == self.user2 then
-			-- switch to Dad 
-			self.active_user = self.user1
-			-- set Matt score to current score
-			self.user2_score = self.score + self.user2_score
-			-- add user to score menu 
-			game[self.round_num] = {}
-			game[self.round_num][self.user1] = self.user1_score
-			gui.set_text(self.score_menu, "Score:" .. tostring(self.user1_score))
-			gui.set_text(self.username, self.active_user)
-			self.score = 0
-			gui.set_text(self.score_node, "0")
-			self.round_num = self.round_num + 1 
-			gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
-		end
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-	elseif action.released and gui.pick_node(self.okaybutton, action.x, action.y) then
-		print("unpressed")
-		gui.play_flipbook(self.okaybutton, hash("Button_released"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-	
-	if action.pressed and gui.pick_node(self.end_game_button, action.x, action.y) then
-		gui.play_flipbook(self.end_game_button, hash("Button_Pressed"))	
-		print(tostring(self.score_user1))
-		if self.user1_score > self.user2_score then
-			self.winner = self.user1
-			self.win_score = self.user1_score
-		elseif self.user1_score < self.user2_score then
-			self.winner = self.user2
-			self.win_score = self.user2_score
-		end 
-
-		msg.post("main:/winner#winner_box", "Show")
-		--gui.set_text(self.winner_body_text, "User: " .. self.winner .. " score:" .. tostring(self.win_score))
-		-- play animation here once figured out 
-		--msg.post("scoreboard#gui", "add_score", {amount = score})
-	elseif action.released and gui.pick_node(self.end_game_button, action.x, action.y) then
-		gui.play_flipbook(self.end_game_button, hash("Button_released"))
-		
-		--    msg.post(".", "acquire_input_focus")
-	end
-
 	
 
-	if action.pressed and gui.pick_node(self.Addbutton, action.x, action.y) then
-		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
-
-		gui.set_enabled(self.adduserpromptblock, true)
-		gui.set_enabled(self.adduserpromptdiag, true)
-		gui.set_enabled(self.adduserpromptinput, true)
-		gui.set_enabled(self.adduserpromptbtnok, true)
-		gui.set_enabled(self.adduserpromptbtncancel, true)
-		gui.show_keyboard(gui.KEYBOARD_TYPE_DEFAULT, false)
-		msg.post(".", "acquire_input_focus")
-		
-		
-		--save_data(tostring(self.round_num)..":"..tostring(self.score)..":"..tostring(self.active_user))
-		
-	elseif action.released and gui.pick_node(self.Addbutton, action.x, action.y) then
-		gui.play_flipbook(self.Addbutton, hash("Button_released"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-
-	if action.pressed and gui.pick_node(self.Removebutton, action.x, action.y) then
-		gui.play_flipbook(self.Removebutton, hash("Button_Pressed"))
-
-		gui.set_enabled(self.removeuserpromptblock, true)
-		gui.set_enabled(self.removeuserpromptdiag, true)
-		gui.set_enabled(self.removeuserpromptinput, true)
-		gui.set_enabled(self.removeuserpromptbtnok, true)
-		gui.set_enabled(self.removeuserpromptbtncancel, true)
-
-		
-		-- get all the users and put them into labels
-		-- in the for loop add each player to label
-		-- when labeled clicked remove user from table
-		   players = load_users()
-		   local y = 0
-		   local off_set_y = 10
-		   local pos = vmath.vector3(0,0,0)
-
-		   local player_label = gui.get_node("removeuserpromptinput")
-		   
-		   for index, data in ipairs(players) do
-		    print("Player:" .. index .. " " .. data)
-		    local nodes = gui.clone_tree(player_label)
-		 	pos.y = pos.y + off_set_y 
-		    --  	
-		 	gui.set_position(nodes[hash("removeuserpromptinput")], pos)
-		 	gui.set_text(nodes[hash("removeuserpromptinput")], data)
-		end
-		text = druid:new_text(node_name, "large text")
-
-	elseif action.released and gui.pick_node(self.Addbutton, action.x, action.y) then
-		gui.play_flipbook(self.Addbutton, hash("Button_released"))
-		--    msg.post(".", "acquire_input_focus")
-	end
-	
--- 	if action.pressed and gui.pick_node(self.adduserpromptbtnok, action.x, action.y) then
--- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
--- 
--- 		-- get text from add prompt input and put it into string
--- 		-- likely new_player = gui.yadda
--- 		-- then use string to add user
--- 		gui.set_enabled(self.adduserpromptblock, false)
--- 		gui.set_enabled(self.adduserpromptdiag, false)
--- 		gui.set_enabled(self.adduserpromptinput, false)
--- 		gui.set_enabled(self.adduserpromptbtnok, false)
--- 		gui.set_enabled(self.adduserpromptbtncancel, false)
--- 
--- 		new_user = gui.get_text(self.adduserpromptinput)
--- 		add_user(new_user)		
--- 
--- 	elseif action.released and gui.pick_node(self.adduserpromptbtnok, action.x, action.y) then
--- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
+-- -- 	if action.pressed and gui.pick_node(self.button1, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.button1, hash("Button_Pressed"))
+-- -- 		self.score = add_score(self.score, 2)
+-- -- 		--save_data(tostring(self.round_num)..":"..tostring(self.score)..":"..tostring(self.active_user))
+-- -- 		gui.set_text(self.score_node, tostring(self.score))
+-- -- 	elseif action.released and gui.pick_node(self.button1, action.x, action.y) then
+-- -- 			print("unpressed")
+-- -- 			gui.play_flipbook(self.button1, hash("Button_released"))
+-- -- 	--    msg.post(".", "acquire_input_focus")
+-- -- 	end 
+-- -- 
+-- 	if action.pressed and gui.pick_node(self.button2, action.x, action.y) then
+-- 		gui.play_flipbook(self.button2, hash("Button_Pressed"))
+-- 		self.score = add_score(self.score, 3)
 -- 		
+-- 		gui.set_text(self.score_node, tostring(self.score))
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
+-- 	elseif action.released and gui.pick_node(self.button2, action.x, action.y) then
+-- 		gui.play_flipbook(self.button2, hash("Button_released"))
+-- 		--    msg.post(".", "acquire_input_focus")
 -- 	end
 -- 
--- 	if action.pressed and gui.pick_node(self.removeuserpromptbtnok, action.x, action.y) then
--- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
+-- 	if action.pressed and gui.pick_node(self.clear_button, action.x, action.y) then
+-- 		gui.play_flipbook(self.clear_button, hash("Button_pressed_vert"))
+-- 		gui.set_text(self.score_node, "0")
+-- 		self.score = "0"
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
+-- 	elseif action.released and gui.pick_node(self.clear_button, action.x, action.y) then
+-- 		gui.play_flipbook(self.clear_button, hash("Button_unpressed_vert"))
+-- 		--    msg.post(".", "acquire_input_focus")
+-- 	end
+-- 	if action.pressed and gui.pick_node(self.button4, action.x, action.y) then
+-- 		gui.play_flipbook(self.button4, hash("Button_Pressed"))
+-- 		self.score = add_score(self.score, 4)
+-- 		gui.set_text(self.score_node, tostring(self.score))
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
+-- 		local test_matt = load_users()
+-- 		print_users(test_matt)
+-- 	elseif action.released and gui.pick_node(self.button4, action.x, action.y) then
+-- 		gui.play_flipbook(self.button4, hash("Button_released"))
+-- 		--    msg.post(".", "acquire_input_focus")
+-- 	end
 -- 
--- 		-- get text from add prompt input and put it into string
--- 		-- likely new_player = gui.yadda
--- 		-- then use string to add user
--- 		gui.set_enabled(self.removeuserpromptblock, false)
--- 		gui.set_enabled(self.removeuserpromptdiag, false)
--- 		gui.set_enabled(self.removeuserpromptinput, false)
--- 		gui.set_enabled(self.removeuserpromptbtnok, false)
--- 		gui.set_enabled(self.removeuserpromptbtncancel, false)
--- 		
--- 		--new_user = gui.get_text(self.adduserpromptinput)
+-- 	if action.pressed and gui.pick_node(self.button5, action.x, action.y) then
+-- 		gui.play_flipbook(self.button5, hash("Button_Pressed"))
+-- 		self.score = add_score(self.score, 5)
+-- 		gui.set_text(self.score_node, tostring(self.score))
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
+-- 	elseif action.released and gui.pick_node(self.button5, action.x, action.y) then
+-- 		gui.play_flipbook(self.button5, hash("Button_released"))
+-- 		--    msg.post(".", "acquire_input_focus")
+-- 	end
 -- 
--- 	elseif action.released and gui.pick_node(self.adduserpromptbtnok, action.x, action.y) then
--- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
+-- 	if action.pressed and gui.pick_node(self.button12, action.x, action.y) then
+-- 		gui.play_flipbook(self.button12, hash("Button_pressed_vert"))
+-- 		self.score = add_score(self.score, 12)
+-- 		-- play animation here once figured out
+-- 		gui.play_particlefx(self.firework_red)
+-- 		gui.play_particlefx(self.firework_blue)
+-- 		gui.play_particlefx(self.firework_green) 
+-- 		gui.play_particlefx(self.firework_yellow)
+-- 		gui.play_particlefx(self.firework_orange)
+-- 		gui.play_particlefx(self.firework_purple) 
+-- 		gui.set_text(self.score_node, tostring(self.score))
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
 -- 
+-- 	elseif action.released and gui.pick_node(self.button12, action.x, action.y) then
+-- 		gui.play_flipbook(self.button12, hash("Button_unpressed_vert"))
+-- 		gui.stop_particlefx(self.firework_red)
+-- 		gui.stop_particlefx(self.firework_blue)
+-- 		gui.stop_particlefx(self.firework_green)
+-- 		gui.stop_particlefx(self.firework_yellow)
+-- 		gui.stop_particlefx(self.firework_orange)
+-- 		gui.stop_particlefx(self.firework_purple)
+-- 		--    msg.post(".", "acquire_input_focus")
 -- 	end
 -- 	
--- 	if action.pressed and gui.pick_node(self.adduserpromptbtncancel, action.x, action.y) then
--- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
+-- 	if action.pressed and gui.pick_node(self.okaybutton, action.x, action.y) then
+-- 		print("okayButton")
+-- 		gui.play_flipbook(self.okaybutton, hash("Button_Pressed"))
+-- 		--gui.set_text(self.score_menu, "score:"..tostring(self.score))
+-- 		--gui.set_text(self.score_node, "0")
+-- 		-- if Dad user switch to Matt 
+-- 		if self.active_user == self.user1 then 
+-- 			-- switch to Matt 
+-- 			self.active_user = self.user2
+-- 			gui.set_text(self.username, self.active_user)
+-- 			-- gui.set_text(self.username, )
+-- 			-- set Dad score to current score  
+-- 			self.user1_score = self.score + self.user1_score
+-- 			-- set user score on menu 
+-- 			
+-- 			game[self.round_num] = {}
+-- 			game[self.round_num][self.user1] = self.user1_score
+-- 			gui.set_text(self.score_menu, "Score:" .. tostring(self.user2_score))
+-- 			-- reset score to 0 			
+-- 			self.score = 0
+-- 			gui.set_text(self.score_node, "0")
+-- 			-- update the round menu here after we set to zero 
+-- 		--	self.round_num = self.round_num + 1 
+-- 		--	gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
+-- 			 
+-- 		-- Matt User 
+-- 		elseif self.active_user == self.user2 then
+-- 			-- switch to Dad 
+-- 			self.active_user = self.user1
+-- 			-- set Matt score to current score
+-- 			self.user2_score = self.score + self.user2_score
+-- 			-- add user to score menu 
+-- 			game[self.round_num] = {}
+-- 			game[self.round_num][self.user1] = self.user1_score
+-- 			gui.set_text(self.score_menu, "Score:" .. tostring(self.user1_score))
+-- 			gui.set_text(self.username, self.active_user)
+-- 			self.score = 0
+-- 			gui.set_text(self.score_node, "0")
+-- 			self.round_num = self.round_num + 1 
+-- 			gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
+-- 		end
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
+-- 	elseif action.released and gui.pick_node(self.okaybutton, action.x, action.y) then
+-- 		print("unpressed")
+-- 		gui.play_flipbook(self.okaybutton, hash("Button_released"))
+-- 		--    msg.post(".", "acquire_input_focus")
+-- 	end
+-- 	
+-- 	if action.pressed and gui.pick_node(self.end_game_button, action.x, action.y) then
+-- 		gui.play_flipbook(self.end_game_button, hash("Button_Pressed"))	
+-- 		print(tostring(self.score_user1))
+-- 		if self.user1_score > self.user2_score then
+-- 			self.winner = self.user1
+-- 			self.win_score = self.user1_score
+-- 		elseif self.user1_score < self.user2_score then
+-- 			self.winner = self.user2
+-- 			self.win_score = self.user2_score
+-- 		end 
 -- 
--- 		gui.set_enabled(self.adduserpromptblock, false)
--- 		gui.set_enabled(self.adduserpromptdiag, false)
--- 		gui.set_enabled(self.adduserpromptinput, false)
--- 		gui.set_enabled(self.adduserpromptbtnok, false)
--- 		gui.set_enabled(self.adduserpromptbtncancel, false)
+-- 		msg.post("main:/winner#winner_box", "Show")
+-- 		--gui.set_text(self.winner_body_text, "User: " .. self.winner .. " score:" .. tostring(self.win_score))
+-- 		-- play animation here once figured out 
+-- 		--msg.post("scoreboard#gui", "add_score", {amount = score})
+-- 	elseif action.released and gui.pick_node(self.end_game_button, action.x, action.y) then
+-- 		gui.play_flipbook(self.end_game_button, hash("Button_released"))
+-- 		
+-- 		--    msg.post(".", "acquire_input_focus")
+-- 	end
 -- 
+-- 	
+-- 
+-- 	if action.pressed and gui.pick_node(self.Addbutton, action.x, action.y) then
+-- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))	
+-- 		msg.post("main:/add_user#add_user_prompt", "Show")
 -- 		--save_data(tostring(self.round_num)..":"..tostring(self.score)..":"..tostring(self.active_user))
--- 
--- 	elseif action.released and gui.pick_node(self.adduserpromptbtncancel, action.x, action.y) then
+-- 		
+-- 	elseif action.released and gui.pick_node(self.Addbutton, action.x, action.y) then
 -- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
 -- 		--    msg.post(".", "acquire_input_focus")
 -- 	end
--- 	-- input for add user 
--- 	if action_id == hash("type") then
--- 		self.message = self.message .. action.text -- <3>
--- 		gui.set_text(self.adduserpromptinput,tostring(self.message))
--- 		--label.set_text("#label", self.message) -- <4>
--- 	elseif action_id == hash("backspace") and action.repeated then
--- 		local l = string.len(self.message)
--- 		self.message = string.sub(self.message, 0, l-1) -- <5>
--- 		gui.set_text(self.adduserpromptinput,tostring(self.message))
+-- 
+-- 	if action.pressed and gui.pick_node(self.Removebutton, action.x, action.y) then
+-- 		gui.play_flipbook(self.Removebutton, hash("Button_Pressed"))
+-- 
+-- 		msg.post("main:/remove_user#remove_user_prompt", "Show")
 -- 		
+-- 		-- get all the users and put them into labels
+-- 		-- in the for loop add each player to label
+-- 		-- when labeled clicked remove user from table
+-- -- 		   players = load_users()
+-- -- 		   local y = 0
+-- -- 		   local off_set_y = 10
+-- -- 		   local pos = vmath.vector3(0,0,0)
+-- -- 
+-- -- 		   local player_label = gui.get_node("removeuserpromptinput")
+-- -- 		   
+-- -- 		   for index, data in ipairs(players) do
+-- -- 		    print("Player:" .. index .. " " .. data)
+-- -- 		    local nodes = gui.clone_tree(player_label)
+-- -- 		 	pos.y = pos.y + off_set_y 
+-- -- 		    --  	
+-- -- 		 	gui.set_position(nodes[hash("removeuserpromptinput")], pos)
+-- -- 		 	gui.set_text(nodes[hash("removeuserpromptinput")], data)
+-- -- 		end
+-- -- 		text = druid:new_text(node_name, "large text")
+-- 
+-- 	elseif action.released and gui.pick_node(self.Addbutton, action.x, action.y) then
+-- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
+-- 		--    msg.post(".", "acquire_input_focus")
 -- 	end
-
-	if action.pressed and gui.pick_node(self.score_button, action.x, action.y) then
-		print("score")
-		remove_user("playername")
-		players = load_users()
-		for index, data in ipairs(players) do
-			print("Player:" .. index .. " " .. data)
-			
-		end
-		--new_user = gui.get_text(self.adduserpromptinput)
-		--remove_user("dddd")	
-		msg.post("main:/score_popup#score_popup", "Show")
-	end
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+-- 	
+-- -- 	if action.pressed and gui.pick_node(self.adduserpromptbtnok, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
+-- -- 
+-- -- 		-- get text from add prompt input and put it into string
+-- -- 		-- likely new_player = gui.yadda
+-- -- 		-- then use string to add user
+-- -- 		gui.set_enabled(self.adduserpromptblock, false)
+-- -- 		gui.set_enabled(self.adduserpromptdiag, false)
+-- -- 		gui.set_enabled(self.adduserpromptinput, false)
+-- -- 		gui.set_enabled(self.adduserpromptbtnok, false)
+-- -- 		gui.set_enabled(self.adduserpromptbtncancel, false)
+-- -- 
+-- -- 		new_user = gui.get_text(self.adduserpromptinput)
+-- -- 		add_user(new_user)		
+-- -- 
+-- -- 	elseif action.released and gui.pick_node(self.adduserpromptbtnok, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
+-- -- 		
+-- -- 	end
+-- -- 
+-- -- 	if action.pressed and gui.pick_node(self.removeuserpromptbtnok, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
+-- -- 
+-- -- 		-- get text from add prompt input and put it into string
+-- -- 		-- likely new_player = gui.yadda
+-- -- 		-- then use string to add user
+-- -- 		gui.set_enabled(self.removeuserpromptblock, false)
+-- -- 		gui.set_enabled(self.removeuserpromptdiag, false)
+-- -- 		gui.set_enabled(self.removeuserpromptinput, false)
+-- -- 		gui.set_enabled(self.removeuserpromptbtnok, false)
+-- -- 		gui.set_enabled(self.removeuserpromptbtncancel, false)
+-- -- 		
+-- -- 		--new_user = gui.get_text(self.adduserpromptinput)
+-- -- 
+-- -- 	elseif action.released and gui.pick_node(self.adduserpromptbtnok, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
+-- -- 
+-- -- 	end
+-- -- 	
+-- -- 	if action.pressed and gui.pick_node(self.adduserpromptbtncancel, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.Addbutton, hash("Button_Pressed"))
+-- -- 
+-- -- 		gui.set_enabled(self.adduserpromptblock, false)
+-- -- 		gui.set_enabled(self.adduserpromptdiag, false)
+-- -- 		gui.set_enabled(self.adduserpromptinput, false)
+-- -- 		gui.set_enabled(self.adduserpromptbtnok, false)
+-- -- 		gui.set_enabled(self.adduserpromptbtncancel, false)
+-- -- 
+-- -- 		--save_data(tostring(self.round_num)..":"..tostring(self.score)..":"..tostring(self.active_user))
+-- -- 
+-- -- 	elseif action.released and gui.pick_node(self.adduserpromptbtncancel, action.x, action.y) then
+-- -- 		gui.play_flipbook(self.Addbutton, hash("Button_released"))
+-- -- 		--    msg.post(".", "acquire_input_focus")
+-- -- 	end
+-- -- 	-- input for add user 
+-- -- 	if action_id == hash("type") then
+-- -- 		self.message = self.message .. action.text -- <3>
+-- -- 		gui.set_text(self.adduserpromptinput,tostring(self.message))
+-- -- 		--label.set_text("#label", self.message) -- <4>
+-- -- 	elseif action_id == hash("backspace") and action.repeated then
+-- -- 		local l = string.len(self.message)
+-- -- 		self.message = string.sub(self.message, 0, l-1) -- <5>
+-- -- 		gui.set_text(self.adduserpromptinput,tostring(self.message))
+-- -- 		
+-- -- 	end
+-- 
+-- 	if action.pressed and gui.pick_node(self.score_button, action.x, action.y) then
+-- 		print("score")
+-- 		remove_user("playername")
+-- 		players = load_users()
+-- 		for index, data in ipairs(players) do
+-- 			print("Player:" .. index .. " " .. data)
+-- 			
+-- 		end
+-- 		--new_user = gui.get_text(self.adduserpromptinput)
+-- 		--remove_user("dddd")	
+-- 		msg.post("main:/score_popup#score_popup", "Show")
+-- 	end
+-- 	-- All mapped input bindings will be received. Mouse and touch input will
+-- 	-- be received regardless of where on the screen it happened.
+-- 	-- Learn more: https://defold.com/manuals/input/
+-- 	-- Remove this function if not needed
+   return self.druid:on_input(action_id, action)
 end
 
 function on_reload(self)

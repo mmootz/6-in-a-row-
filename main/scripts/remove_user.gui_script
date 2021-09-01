@@ -1,0 +1,94 @@
+local druid = require("druid.druid")
+
+
+local function okay_callback(self)
+	gui.set_enabled(self.removeuserpromptblock, false)
+	gui.set_enabled(self.removeuserpromptdiag, false)
+	gui.set_enabled(self.removeuserpromptinput, false)
+	gui.set_enabled(self.removeuserpromptbtnok, false)
+	gui.set_enabled(self.removeuserpromptbtncancel, false)
+end
+
+local function cancel_callback(self)
+	gui.set_enabled(self.removeuserpromptblock, false)
+	gui.set_enabled(self.removeuserpromptdiag, false)
+	gui.set_enabled(self.removeuserpromptinput, false)
+	gui.set_enabled(self.removeuserpromptbtnok, false)
+	gui.set_enabled(self.removeuserpromptbtncancel, false)
+end
+
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+
+	-- init druid 
+	self.druid = druid.new(self)
+	
+	self.removeuserpromptblock = gui.get_node("remove_user_prompt_body")
+	self.removeuserpromptdiag = gui.get_node("remove_user_prompt_diag")
+	self.removeuserpromptinput = gui.get_node("remove_user_prompt_input")
+	self.removeuserpromptbtnok = gui.get_node("remove_user_prompt_buttonokay/buttonBody")
+	self.removeuserpromptbtncancel = gui.get_node("remove_user_prompt_button_cancel/buttonBody")
+
+	gui.set_enabled(self.removeuserpromptblock, false)
+	gui.set_enabled(self.removeuserpromptdiag, false)
+	gui.set_enabled(self.removeuserpromptinput, false)
+	gui.set_enabled(self.removeuserpromptbtnok, false)
+	gui.set_enabled(self.removeuserpromptbtncancel, false)
+	self.druid:new_button("remove_user_prompt_buttonokay/buttonBody", okay_callback)
+	self.druid:new_button("remove_user_prompt_button_cancel/buttonBody", cancel_callback)
+	
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	self.druid:final()
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+	if message_id == hash("Show") then 
+		gui.set_enabled(self.removeuserpromptblock, true)
+		gui.set_enabled(self.removeuserpromptdiag, true)
+		gui.set_enabled(self.removeuserpromptinput, true)
+		gui.set_enabled(self.removeuserpromptbtnok, true)
+		gui.set_enabled(self.removeuserpromptbtncancel, true)
+		msg.post(".", "acquire_input_focus")
+	elseif message_id == hash("Hide") then 
+		gui.set_enabled(self.removeuserpromptblock, false)
+		gui.set_enabled(self.removeuserpromptdiag, false)
+		gui.set_enabled(self.removeuserpromptinput, false)
+		gui.set_enabled(self.removeuserpromptbtnok, false)
+		gui.set_enabled(self.removeuserpromptbtncancel, false)
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	   return self.druid:on_input(action_id, action)
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

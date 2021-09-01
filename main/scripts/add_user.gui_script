@@ -1,22 +1,44 @@
-function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-	self.adduserpromptblock = gui.get_node("add_user_prompt_body")
-	self.adduserpromptdiag = gui.get_node("add_user_prompt_diag")
-	self.adduserpromptinput = gui.get_node("add_user_prompt_input")
-	self.adduserpromptbtnok = gui.get_node("add_user_prompt_button_okay/buttonBody")
-	self.adduserpromptbtncancel = gui.get_node("add_user_prompt_button_cancel/buttonBody")
+local druid = require("druid.druid")
 
--
-    -- add user
+local function okay_callback(self)
 	gui.set_enabled(self.adduserpromptblock, false)
 	gui.set_enabled(self.adduserpromptdiag, false)
 	gui.set_enabled(self.adduserpromptinput, false)
 	gui.set_enabled(self.adduserpromptbtnok, false)
 	gui.set_enabled(self.adduserpromptbtncancel, false)
+end
 
-	--remove user 
+local function cancel_callback(self)
+	gui.set_enabled(self.adduserpromptblock, false)
+	gui.set_enabled(self.adduserpromptdiag, false)
+	gui.set_enabled(self.adduserpromptinput, false)
+	gui.set_enabled(self.adduserpromptbtnok, false)
+	gui.set_enabled(self.adduserpromptbtncancel, false)
+end
+
+
+
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	-- init druid 
+	self.druid = druid.new(self)
+	
+	self.adduserpromptblock = gui.get_node("add_user_prompt_body")
+	self.adduserpromptdiag = gui.get_node("add_user_prompt_diag")
+	self.adduserpromptinput = gui.get_node("add_user_prompt_input")
+	self.adduserpromptbtnok = gui.get_node("add_user_prompt_button_okay/buttonBody")
+	self.adduserpromptbtncancel = gui.get_node("add_user_prompt_button_cancel/buttonBody")
+	gui.set_enabled(self.adduserpromptblock, false)
+	gui.set_enabled(self.adduserpromptdiag, false)
+	gui.set_enabled(self.adduserpromptinput, false)
+	gui.set_enabled(self.adduserpromptbtnok, false)
+	gui.set_enabled(self.adduserpromptbtncancel, false)
+	self.druid:new_button("add_user_prompt_button_okay/buttonBody", okay_callback)
+	self.druid:new_button("add_user_prompt_button_cancel/buttonBody", cancel_callback)
+    -- not sure how this is suppose to work 
+	self.druid:new_input("add_user_prompt_input", "add_user_prompt_input")
 	
 end
 
@@ -24,19 +46,36 @@ function final(self)
 	-- Add finalization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+	   self.druid:final()
 end
 
 function update(self, dt)
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+	self.druid:update(dt)
 end
 
 function on_message(self, message_id, message, sender)
 	-- Add message-handling code here
 	-- Learn more: https://defold.com/manuals/message-passing/
-	
-	
+	-- Remove this function if not needed
+	-- Remove this function if not needed
+	self.druid:on_message(message_id, message, sender)
+	if message_id == hash("Show") then 
+		gui.set_enabled(self.adduserpromptblock, true)
+		gui.set_enabled(self.adduserpromptdiag, true)
+		gui.set_enabled(self.adduserpromptinput, true)
+		gui.set_enabled(self.adduserpromptbtnok, true)
+		gui.set_enabled(self.adduserpromptbtncancel, true)
+		msg.post(".", "acquire_input_focus")
+	elseif message_id == hash("Hide") then 
+		gui.set_enabled(self.adduserpromptblock, false)
+		gui.set_enabled(self.adduserpromptdiag, false)
+		gui.set_enabled(self.adduserpromptinput, false)
+		gui.set_enabled(self.adduserpromptbtnok, false)
+		gui.set_enabled(self.adduserpromptbtncancel, false)
+	end 
 end
 
 function on_input(self, action_id, action)
@@ -49,6 +88,7 @@ function on_input(self, action_id, action)
 	-- be received regardless of where on the screen it happened.
 	-- Learn more: https://defold.com/manuals/input/
 	-- Remove this function if not needed
+	return self.druid:on_input(action_id, action)
 end
 
 function on_reload(self)

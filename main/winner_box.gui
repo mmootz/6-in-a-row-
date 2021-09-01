@@ -15,8 +15,8 @@ background_color {
 }
 nodes {
   position {
-    x: 316.0
-    y: 839.0
+    x: 311.0
+    y: 837.0
     z: 0.0
     w: 1.0
   }
@@ -27,14 +27,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.327
-    y: 2.432
+    x: 2.0
+    y: 2.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 487.0
-    y: 124.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -46,7 +46,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
+  texture: "graphics/popup_background"
   id: "winner_box"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -69,20 +69,20 @@ nodes {
 }
 nodes {
   position {
-    x: 302.0
-    y: 893.0
+    x: 135.0
+    y: 932.0
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 30.987
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 1.688
+    y: 1.508
     z: 1.0
     w: 1.0
   }
@@ -131,8 +131,8 @@ nodes {
 }
 nodes {
   position {
-    x: 306.0
-    y: 836.0
+    x: 304.0
+    y: 849.0
     z: 0.0
     w: 1.0
   }
@@ -193,8 +193,8 @@ nodes {
 }
 nodes {
   position {
-    x: 527.0
-    y: 738.0
+    x: 313.0
+    y: 780.0
     z: 0.0
     w: 1.0
   }
@@ -205,8 +205,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.455
-    y: 0.822
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -233,7 +233,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: 0.0
+    y: -3.0
     z: 0.0
     w: 1.0
   }
@@ -244,8 +244,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 0.616
+    y: 0.466
     z: 1.0
     w: 1.0
   }
@@ -282,6 +282,8 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 3
   overridden_fields: 9
   overridden_fields: 20
   template_node_child: true
@@ -301,8 +303,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 1.037
+    y: 0.982
     z: 1.0
     w: 1.0
   }
@@ -346,11 +348,55 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 3
   overridden_fields: 8
   overridden_fields: 10
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 139.0
+    y: 760.0
+    z: 1.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "firework_1"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "firework"
 }
 layers {
   name: "background"
@@ -364,3 +410,7 @@ layers {
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512
+particlefxs {
+  name: "firework"
+  particlefx: "/main/firework.particlefx"
+}

@@ -1,7 +1,11 @@
-script: ""
+script: "/main/scripts/remove_user.gui_script"
 fonts {
   name: "menuFont"
   font: "/main/fonts/menuFont.font"
+}
+textures {
+  name: "graphics"
+  texture: "/main/graphics.atlas"
 }
 background_color {
   x: 0.0
@@ -42,8 +46,8 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
-  id: "removeuserpromptbody"
+  texture: "graphics/popup_background"
+  id: "remove_user_prompt_body"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -89,16 +93,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Click name to remove"
   font: "menuFont"
-  id: "removeuserpromptdiag"
+  id: "remove_user_prompt_diag"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -116,7 +120,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "removeuserpromptbody"
+  parent: "remove_user_prompt_body"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
@@ -152,16 +156,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: ""
   font: "menuFont"
-  id: "removeuserpromptinput"
+  id: "remove_user_prompt_input"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -179,7 +183,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "removeuserpromptbody"
+  parent: "remove_user_prompt_body"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
@@ -221,8 +225,8 @@ nodes {
     w: 1.0
   }
   type: TYPE_TEMPLATE
-  id: "removeuserpromptbuttonokay"
-  parent: "removeuserpromptbody"
+  id: "remove_user_prompt_buttonokay"
+  parent: "remove_user_prompt_body"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -263,12 +267,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
-  id: "removeuserpromptbuttonokay/buttonBody"
+  id: "remove_user_prompt_buttonokay/buttonBody"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "removeuserpromptbuttonokay"
+  parent: "remove_user_prompt_buttonokay"
   layer: "button"
   inherit_alpha: true
   slice9 {
@@ -323,7 +327,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Okay"
   font: "menuFont"
-  id: "removeuserpromptbuttonokay/text"
+  id: "remove_user_prompt_buttonokay/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -341,7 +345,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "removeuserpromptbuttonokay/buttonBody"
+  parent: "remove_user_prompt_buttonokay/buttonBody"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -387,8 +391,8 @@ nodes {
     w: 1.0
   }
   type: TYPE_TEMPLATE
-  id: "removeuserpromptbuttoncancel"
-  parent: "removeuserpromptbody"
+  id: "remove_user_prompt_button_cancel"
+  parent: "remove_user_prompt_body"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -429,12 +433,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
-  id: "removeuserpromptbuttoncancel/buttonBody"
+  id: "remove_user_prompt_button_cancel/buttonBody"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "removeuserpromptbuttoncancel"
+  parent: "remove_user_prompt_button_cancel"
   layer: "button"
   inherit_alpha: true
   slice9 {
@@ -455,7 +459,7 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
+    x: 3.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -488,7 +492,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Cancel"
   font: "menuFont"
-  id: "removeuserpromptbuttoncancel/text"
+  id: "remove_user_prompt_button_cancel/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -506,12 +510,13 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "removeuserpromptbuttoncancel/buttonBody"
+  parent: "remove_user_prompt_button_cancel/buttonBody"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 8
   overridden_fields: 10
   template_node_child: true
