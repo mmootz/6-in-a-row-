@@ -1,5 +1,11 @@
 local druid = require("druid.druid")
 
+require "main.scripts.player_data"
+
+local function remove_user(remove_player)
+print(remove_player)
+	
+end 
 
 local function okay_callback(self)
 	gui.set_enabled(self.removeuserpromptblock, false)
@@ -38,7 +44,7 @@ function init(self)
 	gui.set_enabled(self.removeuserpromptbtncancel, false)
 	self.druid:new_button("remove_user_prompt_buttonokay/buttonBody", okay_callback)
 	self.druid:new_button("remove_user_prompt_button_cancel/buttonBody", cancel_callback)
-	
+
 end
 
 function final(self)
@@ -66,6 +72,26 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.removeuserpromptbtnok, true)
 		gui.set_enabled(self.removeuserpromptbtncancel, true)
 		msg.post(".", "acquire_input_focus")
+		players = load_users()
+					   local y = 0
+					   local off_set_y = 15
+					   local pos = vmath.vector3(0,-45,0)
+			
+					local player_label = gui.get_node("remove_user_prompt_input")
+					   
+					   for index, data in ipairs(players) do
+					 --   print("Player:" .. index .. " " .. data)
+					    local nodes = gui.clone_tree(player_label)
+					 	pos.y = pos.y + off_set_y 
+						-- table.insert(button_data, { text = letter, fn = function() play_sound("dynamic_buttons:/sounds#" .. letter) end })
+						--table.insert(remove_players, { player = index, fn = function() remove(print(tostring(index))) end  })
+						gui.set_position(nodes[hash("remove_user_prompt_input")], pos)
+						gui.set_text(nodes[hash("remove_user_prompt_input")], data)
+						self.druid:new_button(nodes[hash("remove_user_prompt_input")], remove_user)
+						
+						--nodes[hash("remove_user_prompt_input")].on_click:subscribe(remove_user(index))
+						
+					end
 	elseif message_id == hash("Hide") then 
 		gui.set_enabled(self.removeuserpromptblock, false)
 		gui.set_enabled(self.removeuserpromptdiag, false)

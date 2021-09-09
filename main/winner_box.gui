@@ -355,49 +355,6 @@ nodes {
   text_leading: 1.0
   text_tracking: 0.0
 }
-nodes {
-  position {
-    x: 139.0
-    y: 760.0
-    z: 1.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_1"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  adjust_mode: ADJUST_MODE_FIT
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
-}
 layers {
   name: "background"
 }

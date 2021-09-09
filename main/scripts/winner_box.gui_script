@@ -1,3 +1,5 @@
+require "main.scripts.player_data"
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -7,13 +9,11 @@ function init(self)
 	self.winner_body = gui.get_node("winner_text")
 	self.winner_body_button = gui.get_node("winner_okay_button/buttonBody")
 	self.winner_body_text = gui.get_node("winner_text_user")
-	self.firework = gui.get_node("firework_1")
 	gui.set_enabled(self.winner_title, false)
 	gui.set_enabled(self.winner_body, false)
 	gui.set_enabled(self.winner_body_button, false)
 	gui.set_enabled(self.winner_body_text, false)
 
-	
 
 end
 
@@ -38,7 +38,10 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.winner_body, true)
 		gui.set_enabled(self.winner_body_button, true)
 		gui.set_enabled(self.winner_body_text, true)
-		gui.play_particlefx(self.firework)
+		print("hit")
+		winner_score, winner_player = get_winner()
+		print(winner_score)
+		gui.set_text(self.winner_body_text, winner_player .. "\n " .. winner_score)
 		msg.post(".", "acquire_input_focus")
 	elseif message_id == hash("Hide") then 
 		gui.set_enabled(self.winner_title, false)
