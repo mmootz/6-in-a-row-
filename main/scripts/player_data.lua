@@ -16,18 +16,14 @@ end
 
 function get_score(aTable,player,score)
     
-    -- print("Score:" .. score) 
-    -- print_r(aTable)
+    
     total = score 
     for key, value in pairs(aTable) do 
         if(type(value) == "table") then 
             get_score(value,player,total)
-            -- print("table:" .. tostring(value))
-            -- print(player)
         else
             if key == player then 
                 total = value + total
-                print("get_score: " .. player)
             end
         end
     end
@@ -60,21 +56,31 @@ function get_winner()
     local temp = {}
     local high_score
     local player 
-    find_winner = load_scoredb()
     high_score = 0
     player = ""
-    print_r(find_winner)
-    for index, data in ipairs(find_winner) do
-        temp[data] = get_score(find_winner,data,0)
-        print("data" .. tostring(data))
+    temp = {}
+    players = load_scoredb()
+    for index, data in pairs(players) do
+        if (type(data) == "table") then
+            for key, value in pairs(data) do
+                if temp[key] == nil then 
+                    temp[key] = 0 
+                end 
+                temp_data = 0
+                temp_num = 0
+                temp_data  = get_score(data,key,0)
+                temp_num = temp[key]
+                temp[key] = temp_data + temp_num
+            end
+        end 
     end
+
     for key,value in pairs(temp) do
         if high_score < value then 
             high_score = value 
             player = key
         end
     end
-    print("score: " .. high_score .."Player: " .. player )
     return high_score, player
 end
 

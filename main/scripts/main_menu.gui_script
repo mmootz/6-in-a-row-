@@ -93,8 +93,7 @@ function okay_callback(self)
 	end 
 	gui.set_text(self.username, players[next_player_name])
 	player_score = get_score(score_db,players[next_player_name],0)
-	--print("get score:" .. player_score)
-	print("player_score:" .. player_score)
+	--print("player_score:" .. player_score)
 	gui.set_text(self.score_node, tostring(0))
 	gui.set_text(self.score_menu, player_score)
 	player_score = 0 
@@ -117,6 +116,9 @@ local function finish_callback(self)
 	gui.play_particlefx(self.firework_orange)
 	gui.play_particlefx(self.firework_purple)
 	msg.post("main:/winner#winner_box", "Show")
+	score_db = {}
+	score_db[self.round_num] = {}
+	gui.set_text(self.score_button, 0)
 end 
 
 local function add_callback(self)

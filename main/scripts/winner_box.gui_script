@@ -38,9 +38,7 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.winner_body, true)
 		gui.set_enabled(self.winner_body_button, true)
 		gui.set_enabled(self.winner_body_text, true)
-		print("hit")
 		winner_score, winner_player = get_winner()
-		print(winner_score)
 		gui.set_text(self.winner_body_text, winner_player .. "\n " .. winner_score)
 		msg.post(".", "acquire_input_focus")
 	elseif message_id == hash("Hide") then 
@@ -54,11 +52,9 @@ end
 function on_input(self, action_id, action)
 	-- Add input-handling code here. The game object this script is attached to
 	-- must have acquired input focus:
-	print("input")
 	--    msg.post(".", "acquire_input_focus")
 	if action.pressed and gui.pick_node(self.winner_body_button, action.x, action.y) then
 		gui.play_flipbook(self.winner_body_button, hash("Button_Pressed"))
-		print("hit")
 		msg.post("main:/winner#winner_box", "Hide")
 		self.user1_score = 0 
 		self.user2_score = 0
