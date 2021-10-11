@@ -27,14 +27,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 0.753
+    y: 0.844
     z: 1.0
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
+    x: 600.0
+    y: 300.0
     z: 0.0
     w: 1.0
   }
@@ -46,7 +46,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/popup_background"
+  texture: "graphics/popup"
   id: "winner_box"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -69,8 +69,8 @@ nodes {
 }
 nodes {
   position {
-    x: 135.0
-    y: 932.0
+    x: 169.0
+    y: 914.0
     z: 0.0
     w: 1.0
   }
@@ -132,7 +132,7 @@ nodes {
 nodes {
   position {
     x: 304.0
-    y: 849.0
+    y: 858.0
     z: 0.0
     w: 1.0
   }

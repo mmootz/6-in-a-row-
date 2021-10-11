@@ -6,10 +6,10 @@
       var report_data = {
   "report_version" : "1.0.0",
   "project_name" : "6 in a row",
-  "build_timestamp" : 1629061908,
+  "build_timestamp" : 1633909829,
   "build_options" : {
     "architectures" : "armv7-android",
-    "defoldsdk" : "1f5712609c345f870b691a85d611d4825d22a718",
+    "defoldsdk" : "1f748d5b0a84e8b5c58bf747e4c48d153ef77a52",
     "bundle-output" : "/home/icarus/6 in a row/builds/armv7-android",
     "auth" : "",
     "archive" : "true",
@@ -26,23 +26,24 @@
   "project_properties" : {
     "project" : {
       "title" : "6 in a row",
-      "version" : "1.0",
-      "write_log" : "0",
+      "version" : "0.25",
+      "write_log" : "1",
       "compress_archive" : "1",
       "publisher" : "unnamed",
-      "developer" : "unnamed"
+      "developer" : "unnamed",
+      "dependencies" : "https://github.com/Insality/druid/archive/master.zip"
     },
     "display" : {
       "width" : "640",
-      "height" : "1136",
+      "height" : "1048",
       "high_dpi" : "1",
       "samples" : "0",
       "fullscreen" : "0",
       "update_frequency" : "60",
-      "vsync" : "0",
+      "vsync" : "1",
       "display_profiles" : "/builtins/render/default.display_profilesc",
       "dynamic_orientation" : "1",
-      "display_device_info" : "0"
+      "display_device_info" : "1"
     },
     "render" : {
       "clear_color_red" : "0",
@@ -156,7 +157,7 @@
     "android" : {
       "version_code" : "1",
       "minimum_sdk_version" : "16",
-      "target_sdk_version" : "29",
+      "target_sdk_version" : "30",
       "package" : "com.example.todo",
       "manifest" : "/builtins/manifests/android/AndroidManifest.xml",
       "iap_provider" : "GooglePlay",
@@ -164,7 +165,7 @@
       "immersive_mode" : "0",
       "display_cutout" : "1",
       "debuggable" : "0",
-      "app_icon_36x36" : "/assets/app_icons/icon_36.png",
+      "app_icon_36x36" : "/assets/app_icons/36_icon.png",
       "app_icon_48x48" : "/assets/app_icons/icon_48.png",
       "app_icon_72x72" : "/assets/app_icons/icon_72.png",
       "app_icon_96x96" : "/assets/app_icons/icon_96.png",
@@ -228,19 +229,19 @@
     }
   },
   "resources" : [ {
-    "file" : "/builtins/fonts/system_font.materialc",
-    "size" : 86,
-    "compressed_size" : 67,
+    "file" : "/druid/base/static_grid.luac",
+    "size" : 13311,
+    "compressed_size" : 5184,
+    "encrypted" : true
+  }, {
+    "file" : "/main/fonts/comic.fontc",
+    "size" : 28043,
+    "compressed_size" : 19074,
     "encrypted" : false
   }, {
-    "file" : "/main/main.texturec",
-    "size" : 22369791,
-    "compressed_size" : 578491,
-    "encrypted" : false
-  }, {
-    "file" : "/main/main.texturesetc",
-    "size" : 688,
-    "compressed_size" : 299,
+    "file" : "/main/fonts/zero.fontc",
+    "size" : 13759,
+    "compressed_size" : 12043,
     "encrypted" : false
   }, {
     "file" : "/builtins/graphics/builtins/graphics/__particle_blob_tilesource.texturec",
@@ -248,14 +249,39 @@
     "compressed_size" : 764,
     "encrypted" : false
   }, {
+    "file" : "/main/main.texturesetc",
+    "size" : 1124,
+    "compressed_size" : 438,
+    "encrypted" : false
+  }, {
     "file" : "/builtins/materials/particlefx.materialc",
     "size" : 139,
     "compressed_size" : 102,
     "encrypted" : false
   }, {
+    "file" : "/druid/extended/radio_group.luac",
+    "size" : 2437,
+    "compressed_size" : 1107,
+    "encrypted" : true
+  }, {
     "file" : "/builtins/materials/particlefx.fpc",
     "size" : 899,
     "compressed_size" : 457,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/system/middleclass.luac",
+    "size" : 11921,
+    "compressed_size" : 4443,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/druid.luac",
+    "size" : 4584,
+    "compressed_size" : 1673,
+    "encrypted" : true
+  }, {
+    "file" : "/main/add_user_prompt.guic",
+    "size" : 2210,
+    "compressed_size" : 737,
     "encrypted" : false
   }, {
     "file" : "/builtins/fonts/font.vpc",
@@ -263,49 +289,39 @@
     "compressed_size" : 523,
     "encrypted" : false
   }, {
+    "file" : "/druid/system/settings.luac",
+    "size" : 460,
+    "compressed_size" : 237,
+    "encrypted" : true
+  }, {
     "file" : "/builtins/materials/gui.fpc",
     "size" : 600,
     "compressed_size" : 286,
     "encrypted" : false
   }, {
-    "file" : "/builtins/render/default.render_scriptc",
-    "size" : 7354,
-    "compressed_size" : 2613,
+    "file" : "/_generated_76237cf1795d330e.spritec",
+    "size" : 81,
+    "compressed_size" : 81,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/base/button.luac",
+    "size" : 11992,
+    "compressed_size" : 3983,
     "encrypted" : true
   }, {
-    "file" : "/main/main_menu.guic",
-    "size" : 12584,
-    "compressed_size" : 2293,
-    "encrypted" : false
-  }, {
-    "file" : "/main/graphics.texturesetc",
-    "size" : 934,
-    "compressed_size" : 351,
-    "encrypted" : false
-  }, {
-    "file" : "/builtins/materials/sprite.materialc",
-    "size" : 125,
-    "compressed_size" : 100,
-    "encrypted" : false
-  }, {
-    "file" : "/_generated_9dbb6e59451bc01.goc",
-    "size" : 165,
-    "compressed_size" : 128,
-    "encrypted" : false
-  }, {
-    "file" : "/builtins/render/default.display_profilesc",
-    "size" : 41,
-    "compressed_size" : 41,
-    "encrypted" : false
-  }, {
-    "file" : "/builtins/input/default.gamepadsc",
-    "size" : 56144,
-    "compressed_size" : 4562,
-    "encrypted" : false
-  }, {
-    "file" : "/builtins/fonts/font.materialc",
+    "file" : "/_generated_14cbb31422a732b5.goc",
     "size" : 78,
     "compressed_size" : 59,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/base/drag.luac",
+    "size" : 7780,
+    "compressed_size" : 3123,
+    "encrypted" : true
+  }, {
+    "file" : "/main/remove_user_prompt.guic",
+    "size" : 3016,
+    "compressed_size" : 898,
     "encrypted" : false
   }, {
     "file" : "/builtins/render/default.renderc",
@@ -318,64 +334,84 @@
     "compressed_size" : 187,
     "encrypted" : false
   }, {
-    "file" : "/_generated_bac3e590349f4aa0.spritec",
-    "size" : 76,
-    "compressed_size" : 76,
-    "encrypted" : false
+    "file" : "/druid/styles/default/style.luac",
+    "size" : 7177,
+    "compressed_size" : 2642,
+    "encrypted" : true
   }, {
-    "file" : "/builtins/fonts/system_font.fontc",
-    "size" : 10416,
-    "compressed_size" : 8719,
-    "encrypted" : false
+    "file" : "/druid/extended/data_list.luac",
+    "size" : 10179,
+    "compressed_size" : 3883,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/helper/druid_input.luac",
+    "size" : 789,
+    "compressed_size" : 346,
+    "encrypted" : true
   }, {
     "file" : "/builtins/materials/gui.vpc",
     "size" : 769,
     "compressed_size" : 346,
     "encrypted" : false
   }, {
-    "file" : "/main/fonts/menuFont.fontc",
-    "size" : 170509,
-    "compressed_size" : 170509,
-    "encrypted" : false
-  }, {
     "file" : "/main/graphics.texturec",
-    "size" : 1398230,
-    "compressed_size" : 29105,
+    "size" : 2796358,
+    "compressed_size" : 104153,
     "encrypted" : false
   }, {
     "file" : "/main/main.collectionc",
-    "size" : 104,
-    "compressed_size" : 95,
+    "size" : 521,
+    "compressed_size" : 253,
     "encrypted" : false
+  }, {
+    "file" : "/druid/component.luac",
+    "size" : 10206,
+    "compressed_size" : 3704,
+    "encrypted" : true
+  }, {
+    "file" : "/main/scripts/remove_user.gui_scriptc",
+    "size" : 11744,
+    "compressed_size" : 4292,
+    "encrypted" : true
   }, {
     "file" : "/input/game.input_bindingc",
-    "size" : 36,
-    "compressed_size" : 36,
+    "size" : 40,
+    "compressed_size" : 40,
     "encrypted" : false
-  }, {
-    "file" : "/main/scripts/main_menu.gui_scriptc",
-    "size" : 23253,
-    "compressed_size" : 6402,
-    "encrypted" : true
   }, {
     "file" : "/builtins/materials/sprite.vpc",
     "size" : 560,
     "compressed_size" : 282,
     "encrypted" : false
   }, {
-    "file" : "/builtins/materials/particlefx.vpc",
-    "size" : 765,
-    "compressed_size" : 352,
-    "encrypted" : false
+    "file" : "/druid/extended/input.luac",
+    "size" : 11963,
+    "compressed_size" : 4392,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/extended/progress.luac",
+    "size" : 6196,
+    "compressed_size" : 2776,
+    "encrypted" : true
   }, {
     "file" : "/main/firework.particlefxc",
-    "size" : 851,
-    "compressed_size" : 345,
+    "size" : 850,
+    "compressed_size" : 343,
     "encrypted" : false
   }, {
-    "file" : "/builtins/materials/gui.materialc",
-    "size" : 83,
-    "compressed_size" : 64,
+    "file" : "/druid/system/utf8.luac",
+    "size" : 35029,
+    "compressed_size" : 12521,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/const.luac",
+    "size" : 4286,
+    "compressed_size" : 1797,
+    "encrypted" : true
+  }, {
+    "file" : "/main/winner_box.guic",
+    "size" : 1554,
+    "compressed_size" : 719,
     "encrypted" : false
   }, {
     "file" : "/builtins/materials/sprite.fpc",
@@ -386,6 +422,206 @@
     "file" : "/builtins/fonts/font.fpc",
     "size" : 2581,
     "compressed_size" : 629,
+    "encrypted" : false
+  }, {
+    "file" : "/builtins/fonts/system_font.materialc",
+    "size" : 86,
+    "compressed_size" : 67,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/base/scroll.luac",
+    "size" : 26589,
+    "compressed_size" : 8995,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/base/blocker.luac",
+    "size" : 1637,
+    "compressed_size" : 768,
+    "encrypted" : true
+  }, {
+    "file" : "/main/main.texturec",
+    "size" : 22369791,
+    "compressed_size" : 583506,
+    "encrypted" : false
+  }, {
+    "file" : "/_generated_bca850a3253f6e4e.goc",
+    "size" : 80,
+    "compressed_size" : 60,
+    "encrypted" : false
+  }, {
+    "file" : "/main/scripts/player_data.luac",
+    "size" : 6333,
+    "compressed_size" : 2614,
+    "encrypted" : true
+  }, {
+    "file" : "/main/scripts/winner_box.gui_scriptc",
+    "size" : 3561,
+    "compressed_size" : 1370,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/base/back_handler.luac",
+    "size" : 1418,
+    "compressed_size" : 692,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/event.luac",
+    "size" : 2508,
+    "compressed_size" : 1124,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/extended/lang_text.luac",
+    "size" : 2273,
+    "compressed_size" : 1071,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/helper.luac",
+    "size" : 7907,
+    "compressed_size" : 3336,
+    "encrypted" : true
+  }, {
+    "file" : "/main/main_menu.guic",
+    "size" : 7556,
+    "compressed_size" : 1648,
+    "encrypted" : false
+  }, {
+    "file" : "/builtins/render/default.render_scriptc",
+    "size" : 7354,
+    "compressed_size" : 2613,
+    "encrypted" : true
+  }, {
+    "file" : "/main/graphics.texturesetc",
+    "size" : 1371,
+    "compressed_size" : 535,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/system/druid_instance.luac",
+    "size" : 20879,
+    "compressed_size" : 6655,
+    "encrypted" : true
+  }, {
+    "file" : "/builtins/materials/sprite.materialc",
+    "size" : 125,
+    "compressed_size" : 100,
+    "encrypted" : false
+  }, {
+    "file" : "/builtins/render/default.display_profilesc",
+    "size" : 41,
+    "compressed_size" : 41,
+    "encrypted" : false
+  }, {
+    "file" : "/_generated_4dba1d9f0b2cb04e.goc",
+    "size" : 88,
+    "compressed_size" : 64,
+    "encrypted" : false
+  }, {
+    "file" : "/builtins/input/default.gamepadsc",
+    "size" : 56144,
+    "compressed_size" : 4562,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/helper/formats.luac",
+    "size" : 1381,
+    "compressed_size" : 723,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/extended/slider.luac",
+    "size" : 5230,
+    "compressed_size" : 2348,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/styles/default/anims.luac",
+    "size" : 1913,
+    "compressed_size" : 895,
+    "encrypted" : true
+  }, {
+    "file" : "/builtins/fonts/font.materialc",
+    "size" : 78,
+    "compressed_size" : 59,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/extended/checkbox.luac",
+    "size" : 2498,
+    "compressed_size" : 1151,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/base/text.luac",
+    "size" : 7538,
+    "compressed_size" : 3153,
+    "encrypted" : true
+  }, {
+    "file" : "/builtins/fonts/system_font.fontc",
+    "size" : 10416,
+    "compressed_size" : 8719,
+    "encrypted" : false
+  }, {
+    "file" : "/main/fonts/menuFont.fontc",
+    "size" : 170509,
+    "compressed_size" : 170509,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/base/swipe.luac",
+    "size" : 5321,
+    "compressed_size" : 2185,
+    "encrypted" : true
+  }, {
+    "file" : "/main/score_popup.guic",
+    "size" : 639,
+    "compressed_size" : 407,
+    "encrypted" : false
+  }, {
+    "file" : "/_generated_1e6d3564eec9b5ae.goc",
+    "size" : 165,
+    "compressed_size" : 128,
+    "encrypted" : false
+  }, {
+    "file" : "/druid/base/hover.luac",
+    "size" : 4111,
+    "compressed_size" : 1673,
+    "encrypted" : true
+  }, {
+    "file" : "/main/scripts/score_popup.gui_scriptc",
+    "size" : 2144,
+    "compressed_size" : 907,
+    "encrypted" : true
+  }, {
+    "file" : "/main/scripts/main_menu.gui_scriptc",
+    "size" : 13862,
+    "compressed_size" : 4649,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/extended/dynamic_grid.luac",
+    "size" : 15320,
+    "compressed_size" : 6041,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/extended/timer.luac",
+    "size" : 3529,
+    "compressed_size" : 1666,
+    "encrypted" : true
+  }, {
+    "file" : "/druid/extended/checkbox_group.luac",
+    "size" : 2192,
+    "compressed_size" : 1045,
+    "encrypted" : true
+  }, {
+    "file" : "/main/scripts/add_user.gui_scriptc",
+    "size" : 5163,
+    "compressed_size" : 1695,
+    "encrypted" : true
+  }, {
+    "file" : "/builtins/materials/particlefx.vpc",
+    "size" : 765,
+    "compressed_size" : 352,
+    "encrypted" : false
+  }, {
+    "file" : "/_generated_90c0bfc9d5421fe6.goc",
+    "size" : 94,
+    "compressed_size" : 67,
+    "encrypted" : false
+  }, {
+    "file" : "/builtins/materials/gui.materialc",
+    "size" : 83,
+    "compressed_size" : 64,
     "encrypted" : false
   } ]
 };

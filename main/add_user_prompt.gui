@@ -27,14 +27,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.214
-    y: 2.141
-    z: 1.1
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
+    x: 600.0
+    y: 300.0
     z: 0.0
     w: 1.0
   }
@@ -46,7 +46,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/popup_background"
+  texture: "graphics/popup"
   id: "add_user_prompt_body"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -195,8 +195,8 @@ nodes {
 }
 nodes {
   position {
-    x: -68.14
-    y: -20.551
+    x: -443.14
+    y: -91.551
     z: 0.0
     w: 1.0
   }
@@ -207,8 +207,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.215
-    y: 0.705
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -247,8 +247,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.684
-    y: 0.408
+    x: 0.5
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -361,8 +361,8 @@ nodes {
 }
 nodes {
   position {
-    x: -64.406
-    y: -32.695
+    x: -258.406
+    y: -125.695
     z: 0.0
     w: 1.0
   }
@@ -373,8 +373,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.795
-    y: 0.641
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -401,8 +401,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 83.0
+    y: 12.0
     z: 0.0
     w: 1.0
   }
@@ -413,8 +413,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.19
-    y: 0.472
+    x: 0.5
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -451,6 +451,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 3
   overridden_fields: 9
   overridden_fields: 20

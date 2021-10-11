@@ -2,17 +2,60 @@ local druid = require("druid.druid")
 
 require "main.scripts.player_data"
 
-local function remove_user(remove_player)
-print(remove_player)
+function remove_user(player_index)
 	
+	local del_user = load_users()
+	table.remove(del_user, player_index)
+	save_data(del_user)	
 end 
 
+
+function show_buttons(players) 
+	local gui_body = gui.get_node("body_" .. players )
+	gui.set_enabled(gui_body, true)
+end 
+
+
+function clear_buttons(self)
+	-- print("clear_" .. players)
+	-- local gui_body = gui.get_node("body_" .. players )
+	--   gui.delete_node(gui_body)
+	-- --gui.set_enabled(gui_body, false)
+	for player, data in pairs(players) do
+		local gui_body = gui.get_node("body_" .. data)
+		--print(gui_body)
+		gui.delete_node(gui_body)
+	end 
+	--print_r(self.buttons)
+-- 	for button = 1, #self.buttons do
+-- 		self.druid:remove(button)
+-- 	end 
+-- 	
+end
+
+
 local function okay_callback(self)
-	gui.set_enabled(self.removeuserpromptblock, false)
-	gui.set_enabled(self.removeuserpromptdiag, false)
-	gui.set_enabled(self.removeuserpromptinput, false)
-	gui.set_enabled(self.removeuserpromptbtnok, false)
-	gui.set_enabled(self.removeuserpromptbtncancel, false)
+	msg.post("main:/remove_user#remove_user_prompt", "Hide")
+
+	-- for _,removed_players in pairs(self.removed_buttons) do 
+	-- 	local player_index = get_player_index(removed_players)
+	-- 	--local removed_player_button = gui.get_node("body_" .. removed_players)
+		-- --gui.set_enabled(, false)
+		-- --removed_player_button.druid:clear(gui.get_druid("body_" .. removed_players))
+		-- body = gui.get_node("body_" .. removed_players)
+		-- --gui.delete_node(body)
+		-- --self.druid:remove(body)
+	-- 	local gui_body = gui.get_node("body_" .. removed_players )
+	-- 	--gui.delete_node(gui_body)
+	-- 	self.druid:remove(gui.get_id(gui_body))
+	-- end 
+	
+	
+	  --clear_buttons(self)
+	 --  players = load_users()
+	  -- for index, data in ipairs(players) do
+	--			clear_buttons(data)
+	--end 
 end
 
 local function cancel_callback(self)
@@ -21,22 +64,73 @@ local function cancel_callback(self)
 	gui.set_enabled(self.removeuserpromptinput, false)
 	gui.set_enabled(self.removeuserpromptbtnok, false)
 	gui.set_enabled(self.removeuserpromptbtncancel, false)
+	players = load_users()
+	
 end
 
-function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
 
-	-- init druid 
-	self.druid = druid.new(self)
+local function remove_dynamic_node(self, button, shift_policy)
+	gui.delete_node(button.node)
+
+	self.druid:remove(button)
+	local index = self.grid_dynamic_grid:get_index_by_node(button.node)
+	self.grid_dynamic_grid:remove(index, shift_policy)
+	for i = 1, #self.dynamic_node_buttons do
+		if self.dynamic_node_buttons[i] == button then
+			table.remove(self.dynamic_node_buttons, i)
+			break
+		end
+	end
+end
+
+local function add_node_dynamic(self, index, playername, is_shift_left)
+	local node = gui.clone_tree(self.prefab_dynamic)
+	gui.set_color(node[hash("remove_user_button/buttonBody")], vmath.vector4(math.random() * 0.2 + 0.8))
+	gui.set_enabled(node[hash("remove_user_button/buttonBody")], true)
+	gui.set_size(node[hash("remove_user_button/buttonBody")], vmath.vector3(450, 85, 0))
+	gui.set_text(node[hash("remove_user_button/text")], playername)
+	local player_index = get_player_index(playername)
+	self.grid_dynamic_grid:add(node[hash("remove_user_button/buttonBody")], index, is_shift_left)
+
+	local button = self.druid:new_button(node[hash("remove_user_button/buttonBody")], function(_, params, button)
+		remove_dynamic_node(self, button)
+		remove_user(player_index)
+	end)
+	button.on_long_click:subscribe(function()
+		remove_dynamic_node(self, button, const.SHIFT.LEFT)
+	end)
+	button:set_click_zone(self.grid_dynamic_scroll.view_node)
+	table.insert(self.dynamic_node_buttons, button)
+end
+
+
+local function init_dynamic_grid(self)
+	-- Vertical horizontal grid
+	players = load_users()
+	self.dynamic_node_buttons = {}
+	self.dynamic_node_hor_buttons = {}
+
+	self.prefab_dynamic = gui.get_node("remove_user_button/buttonBody")
+	gui.set_enabled(self.prefab_dynamic, false)
+
+	-- for i = 1, 5 do
+	for i, data in pairs(players) do
+		add_node_dynamic(self, i, data)
+	end
 	
+end
+
+
+function init(self) 
+	self.druid = druid.new(self)
+	self.gen = false
 	self.removeuserpromptblock = gui.get_node("remove_user_prompt_body")
 	self.removeuserpromptdiag = gui.get_node("remove_user_prompt_diag")
 	self.removeuserpromptinput = gui.get_node("remove_user_prompt_input")
 	self.removeuserpromptbtnok = gui.get_node("remove_user_prompt_buttonokay/buttonBody")
 	self.removeuserpromptbtncancel = gui.get_node("remove_user_prompt_button_cancel/buttonBody")
-
+	--self.playerbox = gui.get_node("players_box")
+	
 	gui.set_enabled(self.removeuserpromptblock, false)
 	gui.set_enabled(self.removeuserpromptdiag, false)
 	gui.set_enabled(self.removeuserpromptinput, false)
@@ -44,15 +138,47 @@ function init(self)
 	gui.set_enabled(self.removeuserpromptbtncancel, false)
 	self.druid:new_button("remove_user_prompt_buttonokay/buttonBody", okay_callback)
 	self.druid:new_button("remove_user_prompt_button_cancel/buttonBody", cancel_callback)
+	-- self.removed_buttons = {} 
+	-- self.buttons = {}
+	self.grid_dynamic_grid = self.druid:new_dynamic_grid("players_box")
+	--:set_position_function(simple_animate)
+	self.grid_dynamic_scroll = self.druid:new_scroll("players_box", "remove_user_button/buttonBody")
+	:set_horizontal_scroll(false)
+	:bind_grid(self.grid_dynamic_grid)
 
-end
+	--init_dynamic_grid(self)
+	init_dynamic_grid(self)
+	end
 
+
+	
+function add_players(self)
+	players = load_users()
+	local button_data = {}
+		local y = 0
+		local off_set_y = 30
+		local pos = vmath.vector3(350,625,0)
+		local player_label = gui.get_node("remove_user_button/buttonBody")
+		--self.buttons = {}  
+		for _, data in pairs(players) do
+			local nodes = gui.clone_tree(player_label)			 
+			pos.y = pos.y + off_set_y
+			gui.set_position(nodes[hash("remove_user_button/buttonBody")], pos)
+			gui.set_text(nodes[hash("remove_user_button/text")], data)
+			local button = self.druid:new_button(nodes[hash("remove_user_button/buttonBody")])
+			button.on_click:subscribe(function() remove_user_buttons(self,button, data ) end)
+			gui.set_id(nodes[hash("remove_user_button/buttonBody")], "body_" .. data )
+			local body = gui.get_node("body_" .. data)
+			table.insert(self.buttons, body )
+		end
+	end
 function final(self)
 	-- Add finalization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
 	self.druid:final()
 end
+
 
 function update(self, dt)
 	-- Add update code here
@@ -72,32 +198,18 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.removeuserpromptbtnok, true)
 		gui.set_enabled(self.removeuserpromptbtncancel, true)
 		msg.post(".", "acquire_input_focus")
-		players = load_users()
-					   local y = 0
-					   local off_set_y = 15
-					   local pos = vmath.vector3(0,-45,0)
-			
-					local player_label = gui.get_node("remove_user_prompt_input")
-					   
-					   for index, data in ipairs(players) do
-					 --   print("Player:" .. index .. " " .. data)
-					    local nodes = gui.clone_tree(player_label)
-					 	pos.y = pos.y + off_set_y 
-						-- table.insert(button_data, { text = letter, fn = function() play_sound("dynamic_buttons:/sounds#" .. letter) end })
-						--table.insert(remove_players, { player = index, fn = function() remove(print(tostring(index))) end  })
-						gui.set_position(nodes[hash("remove_user_prompt_input")], pos)
-						gui.set_text(nodes[hash("remove_user_prompt_input")], data)
-						self.druid:new_button(nodes[hash("remove_user_prompt_input")], remove_user)
-						
-						--nodes[hash("remove_user_prompt_input")].on_click:subscribe(remove_user(index))
-						
-					end
+		-- add dynamic button creation 
+		-- compare self.dynamic buttons length to players length 
+		-- if players is larger add the last item in players to the button. 
+	
+	
 	elseif message_id == hash("Hide") then 
 		gui.set_enabled(self.removeuserpromptblock, false)
 		gui.set_enabled(self.removeuserpromptdiag, false)
 		gui.set_enabled(self.removeuserpromptinput, false)
 		gui.set_enabled(self.removeuserpromptbtnok, false)
 		gui.set_enabled(self.removeuserpromptbtncancel, false)
+		
 	end
 end
 

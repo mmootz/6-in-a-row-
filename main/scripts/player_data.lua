@@ -13,6 +13,16 @@ function save_score(Table,player,round,save_score,new_round)
     return Table
 end 
 
+function get_player_index(name)
+    local player_index = load_users()
+    for index,value in ipairs(player_index) do
+        if name == value then 
+            found_index = index 
+        end
+    end
+    return found_index
+end 
+
 
 function get_score(aTable,player,score)
     

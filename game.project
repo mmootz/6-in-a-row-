@@ -1,5 +1,7 @@
 [project]
 title = 6 in a row
+version = 0.25
+write_log = 1
 dependencies#0 = https://github.com/Insality/druid/archive/master.zip
 
 [bootstrap]
@@ -11,11 +13,13 @@ use_accelerometer = 0
 
 [display]
 width = 640
-height = 1136
+height = 1048
 high_dpi = 1
 dynamic_orientation = 1
 update_frequency = 60
-vsync = 0
+vsync = 1
+display_device_info = 1
+display_profiles = /builtins/render/default.display_profilesc
 
 [ios]
 app_icon_120x120 = /assets/app_icons/icon_120.png
@@ -33,13 +37,14 @@ bundle_identifier = com.example.todo
 bundle_identifier = com.example.todo
 
 [android]
-app_icon_36x36 = /assets/app_icons/icon_36.png
+app_icon_36x36 = /assets/app_icons/36_icon.png
 app_icon_48x48 = /assets/app_icons/icon_48.png
 app_icon_72x72 = /assets/app_icons/icon_72.png
 app_icon_96x96 = /assets/app_icons/icon_96.png
 app_icon_144x144 = /assets/app_icons/icon_144.png
 app_icon_192x192 = /assets/app_icons/icon_192.png
 input_method = KeyEvent
+immersive_mode = 0
 
 [script]
 shared_state = 1
@@ -47,4 +52,8 @@ shared_state = 1
 [physics]
 gravity_y = -1000.0
 scale = 0.01
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
 
