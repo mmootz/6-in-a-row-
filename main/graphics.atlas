@@ -9,7 +9,7 @@ images {
 animations {
   id: "Button_Pressed"
   images {
-    image: "/assets/black_button_pressed.png"
+    image: "/assets/black_button_unpressed.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -20,7 +20,7 @@ animations {
 animations {
   id: "Button_released"
   images {
-    image: "/assets/black_button_unpressed.png"
+    image: "/assets/black_button_pressed.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD

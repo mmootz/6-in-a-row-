@@ -94,7 +94,7 @@ end
 
 local function clear_callback(self)
 	self.score = 0 
-	gui.set_text(self.score_node, tostring(0))
+	gui.set_text(self.score_node, "")
 end 
 
 local function finish_callback(self)

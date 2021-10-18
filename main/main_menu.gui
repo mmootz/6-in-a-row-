@@ -11,6 +11,10 @@ fonts {
   name: "comic"
   font: "/main/fonts/comic.font"
 }
+fonts {
+  name: "distance"
+  font: "/main/fonts/distance.font"
+}
 textures {
   name: "graphics"
   texture: "/main/graphics.atlas"
@@ -24,7 +28,7 @@ background_color {
 nodes {
   position {
     x: 132.0
-    y: 148.0
+    y: 156.0
     z: 0.0
     w: 1.0
   }
@@ -62,8 +66,8 @@ nodes {
 }
 nodes {
   position {
-    x: 190.592
-    y: 318.252
+    x: 186.592
+    y: 315.252
     z: 0.0
     w: 1.0
   }
@@ -204,9 +208,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 4.0
-    y: 4.0
-    z: 1.0
+    x: 5.0
+    y: 5.0
+    z: 5.0
     w: 1.0
   }
   size {
@@ -223,8 +227,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ADD
-  text: "0"
-  font: "menuFont"
+  text: ""
+  font: "distance"
   id: "score_text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_BOTTOM
@@ -423,7 +427,7 @@ nodes {
 nodes {
   position {
     x: 146.0
-    y: 196.0
+    y: 192.0
     z: 0.0
     w: 1.0
   }
@@ -462,7 +466,7 @@ nodes {
 nodes {
   position {
     x: 177.856
-    y: -6.594
+    y: -2.5939999
     z: 0.0
     w: 1.0
   }
@@ -591,7 +595,7 @@ nodes {
 nodes {
   position {
     x: 99.0
-    y: 895.0
+    y: 910.0
     z: 0.0
     w: 1.0
   }
@@ -622,7 +626,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Score:"
-  font: "menuFont"
+  font: "distance"
   id: "score_text_menu"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_TOP
@@ -692,7 +696,7 @@ nodes {
 nodes {
   position {
     x: -708.0
-    y: -81.0
+    y: -83.0
     z: 0.0
     w: 1.0
   }
@@ -737,7 +741,7 @@ nodes {
     z: 0.0
     w: 0.0
   }
-  clipping_mode: CLIPPING_MODE_STENCIL
+  clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
@@ -860,7 +864,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Player"
-  font: "menuFont"
+  font: "distance"
   id: "username"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_TOP
@@ -921,7 +925,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "0"
+  text: ""
   font: "menuFont"
   id: "round_number"
   xanchor: XANCHOR_NONE
@@ -1015,7 +1019,7 @@ nodes {
 nodes {
   position {
     x: 22.0
-    y: 6.0
+    y: 4.0
     z: 0.0
     w: 1.0
   }
@@ -1872,7 +1876,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: 0.0
+    y: -2.0
     z: 0.0
     w: 1.0
   }
@@ -1928,6 +1932,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 3
   overridden_fields: 8
   overridden_fields: 10
@@ -1977,7 +1982,7 @@ nodes {
 nodes {
   position {
     x: -50.0
-    y: 1508.621
+    y: 1506.621
     z: 0.0
     w: 1.0
   }
