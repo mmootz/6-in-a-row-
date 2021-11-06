@@ -1,23 +1,11 @@
 script: "/main/scripts/main_menu.gui_script"
 fonts {
-  name: "menuFont"
-  font: "/main/fonts/menuFont.font"
-}
-fonts {
-  name: "zero"
-  font: "/main/fonts/zero.font"
-}
-fonts {
-  name: "comic"
-  font: "/main/fonts/comic.font"
-}
-fonts {
   name: "distance"
   font: "/main/fonts/distance.font"
 }
 textures {
-  name: "graphics"
-  texture: "/main/graphics.atlas"
+  name: "main"
+  texture: "/main/main.atlas"
 }
 background_color {
   x: 0.0
@@ -27,8 +15,8 @@ background_color {
 }
 nodes {
   position {
-    x: 132.0
-    y: 156.0
+    x: 318.0
+    y: 902.0
     z: 0.0
     w: 1.0
   }
@@ -39,8 +27,116 @@ nodes {
     w: 1.0
   }
   scale {
+    x: 3.427
+    y: 3.455
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
     x: 1.0
     y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "start_game_box"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "background"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 318.0
+    y: 314.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.99
+    y: 0.89
+    z: 1.06
+    w: 1.0
+  }
+  size {
+    x: 650.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "recent_game_box"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "background"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_MANUAL
+}
+nodes {
+  position {
+    x: 115.0
+    y: 995.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.25
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -57,7 +153,7 @@ nodes {
     w: 1.0
   }
   type: TYPE_TEMPLATE
-  id: "Button1"
+  id: "add_player_button"
   layer: "button"
   inherit_alpha: true
   alpha: 1.0
@@ -66,8 +162,8 @@ nodes {
 }
 nodes {
   position {
-    x: 186.592
-    y: 315.252
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -78,8 +174,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.75
-    y: 0.75
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -98,12 +194,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
-  id: "Button1/buttonBody"
+  id: "add_player_button/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "Button1"
+  parent: "add_player_button"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -116,17 +212,14 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
   overridden_fields: 9
-  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -7.0
-    y: 2.0
+    x: 0.0
+    y: -1.887
     z: 0.0
     w: 1.0
   }
@@ -150,416 +243,15 @@ nodes {
   }
   color {
     x: 1.0
-    y: 0.0
-    z: 0.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "2\n"
-  ""
-  font: "menuFont"
-  id: "Button1/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "Button1/buttonBody"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 5
-  overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 15
-  overridden_fields: 17
-  overridden_fields: 20
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 331.0
-    y: 737.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 5.0
-    y: 5.0
-    z: 5.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ADD
-  text: ""
+  text: "+  Player"
   font: "distance"
-  id: "score_text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 21.0
-    y: -23.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "Button2"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 300.0
-    y: 420.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.75
-    y: 0.75
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "Button2/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "Button2"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -8.0
-    y: 2.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "3\n"
-  ""
-  font: "menuFont"
-  id: "Button2/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "Button2/buttonBody"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 5
-  overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 15
-  overridden_fields: 20
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 146.0
-    y: 192.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "OkayButton"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 177.856
-    y: -2.5939999
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.75
-    y: 0.75
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "OkayButton/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "OkayButton"
-  layer: "button"
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -6.0
-    y: -1.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.805
-    y: 0.955
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "Okay\n"
-  ""
-  font: "menuFont"
-  id: "OkayButton/text"
+  id: "add_player_button/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -577,448 +269,22 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "OkayButton/buttonBody"
-  layer: "button"
+  parent: "add_player_button/buttonBody"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 3
   overridden_fields: 8
   overridden_fields: 10
-  overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
 nodes {
   position {
-    x: 99.0
-    y: 910.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
     x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "Score:"
-  font: "distance"
-  id: "score_text_menu"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 1030.0
-    y: 339.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "Button5"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: -708.0
-    y: -83.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.75
-    y: 0.75
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "Button5/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "Button5"
-  layer: "button"
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 7
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 14
-  overridden_fields: 17
-  overridden_fields: 20
-  overridden_fields: 27
-  overridden_fields: 38
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -3.0
-    y: 4.886
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 11.0
-    w: 1.0
-  }
-  size {
-    x: 366.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "5\n"
-  ""
-  font: "menuFont"
-  id: "Button5/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "Button5/buttonBody"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 4
-  overridden_fields: 5
-  overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 13
-  overridden_fields: 20
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 98.0
-    y: 1013.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "Player"
-  font: "distance"
-  id: "username"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_N
-  outline {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  layer: "text"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 300.0
-    y: 1012.0
-    z: 1.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.969
-    y: 1.023
-    z: 2.158
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: ""
-  font: "menuFont"
-  id: "round_number"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_N
-  outline {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 293.0
-    y: 1088.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: ""
-  font: "menuFont"
-  id: "tiles"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 22.0
     y: 4.0
     z: 0.0
     w: 1.0
@@ -1030,9 +296,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.5
+    y: 0.5
+    z: 0.5
     w: 1.0
   }
   size {
@@ -1048,737 +314,17 @@ nodes {
     w: 1.0
   }
   type: TYPE_TEMPLATE
-  id: "Button4"
+  id: "select_players_button"
   layer: "button"
   inherit_alpha: true
   alpha: 1.0
   template: "/main/button_template.gui"
   template_node_child: false
-}
-nodes {
-  position {
-    x: 300.0
-    y: 322.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.75
-    y: 0.75
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "Button4/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "Button4"
-  layer: "button"
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -6.0
-    y: 5.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "4"
-  font: "menuFont"
-  id: "Button4/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "Button4/buttonBody"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 5
-  overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 20
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 444.0
-    y: 39.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 180.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "Button12"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: -115.938995
-    y: 291.681
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 180.0
-    z: -90.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_unpressed_vert"
-  id: "Button12/buttonBody"
-  xanchor: XANCHOR_RIGHT
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "Button12"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 2
-  overridden_fields: 9
-  overridden_fields: 12
-  overridden_fields: 13
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -19.0
-    y: -2.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 90.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "12"
-  font: "menuFont"
-  id: "Button12/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "Button12/buttonBody"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 2
-  overridden_fields: 5
-  overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 15
-  overridden_fields: 20
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 298.0
-    y: 1073.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.497
-    y: 0.748
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "end_game_button"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 505.031
-    y: -171.123
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.75
-    y: 0.75
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "end_game_button/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "end_game_button"
-  layer: "button"
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "Finish Game"
-  font: "menuFont"
-  id: "end_game_button/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "end_game_button/buttonBody"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 8
-  overridden_fields: 10
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 15.0
-    y: 1036.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: -120.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_red"
-  xanchor: XANCHOR_LEFT
-  yanchor: YANCHOR_TOP
-  adjust_mode: ADJUST_MODE_ZOOM
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
-}
-nodes {
-  position {
-    x: 631.0
-    y: 1043.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 120.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_blue"
-  xanchor: XANCHOR_LEFT
-  yanchor: YANCHOR_TOP
-  adjust_mode: ADJUST_MODE_FIT
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
-}
-nodes {
-  position {
-    x: -24.0
-    y: 591.0
-    z: 1.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: -90.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.0
-    y: 0.5019608
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_green"
-  xanchor: XANCHOR_LEFT
-  yanchor: YANCHOR_NONE
-  adjust_mode: ADJUST_MODE_FIT
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
 }
 nodes {
   position {
     x: 653.0
-    y: 598.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 90.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_yellow"
-  xanchor: XANCHOR_RIGHT
-  yanchor: YANCHOR_NONE
-  adjust_mode: ADJUST_MODE_FIT
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
-}
-nodes {
-  position {
-    x: 31.0
-    y: -23.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 343.324
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.9019608
-    y: 0.6
-    z: 0.3019608
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_orange"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  adjust_mode: ADJUST_MODE_FIT
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
-}
-nodes {
-  position {
-    x: 627.0
-    y: -33.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.554
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 1.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.5019608
-    y: 0.0
-    z: 0.5019608
-    w: 1.0
-  }
-  type: TYPE_PARTICLEFX
-  id: "firework_purple"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  adjust_mode: ADJUST_MODE_FIT
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_AUTO
-  particlefx: "firework"
-}
-nodes {
-  position {
-    x: 557.0
-    y: -41.0
+    y: 1985.0
     z: 0.0
     w: 1.0
   }
@@ -1789,47 +335,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.2
-    y: 0.696
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
     x: 1.0
     y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "addButton"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: -85.0
-    y: 1508.621
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.5
-    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -1848,344 +355,14 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
-  id: "addButton/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "addButton"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 0.0
-    y: -2.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 4.313
-    y: 2.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "+"
-  font: "menuFont"
-  id: "addButton/text"
+  id: "select_players_button/buttonBody"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
   adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "addButton/buttonBody"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 8
-  overridden_fields: 10
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 608.0
-    y: -39.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.2
-    y: 0.696
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "removeButton"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: -50.0
-    y: 1506.621
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.5
-    y: 0.5
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "removeButton/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "removeButton"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -20.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 4.313
-    y: 2.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "-"
-  font: "menuFont"
-  id: "removeButton/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "removeButton/buttonBody"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 8
-  overridden_fields: 10
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 31.0
-    y: -8.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.98
-    y: 0.98
-    z: 0.98
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "clear_button"
+  parent: "select_players_button"
   layer: "button"
   inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 59.946
-    y: 345.226
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: -89.906
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_unpressed_vert"
-  id: "clear_button/buttonBody"
-  xanchor: XANCHOR_LEFT
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "clear_button"
-  layer: ""
-  inherit_alpha: true
   slice9 {
     x: 0.0
     y: 0.0
@@ -2197,32 +374,27 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 2
-  overridden_fields: 7
   overridden_fields: 9
-  overridden_fields: 12
-  overridden_fields: 13
-  overridden_fields: 28
-  overridden_fields: 29
+  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -10.0
-    y: 0.0
+    x: -11.976
+    y: 6.929
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 90.161
+    z: 0.0
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 0.955
+    y: 0.907
     z: 1.0
     w: 1.0
   }
@@ -2240,13 +412,9 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "C\n"
-  "l\n"
-  "e\n"
-  "a\n"
-  "r"
-  font: "menuFont"
-  id: "clear_button/text"
+  text: "select players"
+  font: "distance"
+  id: "select_players_button/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -2264,17 +432,341 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "clear_button/buttonBody"
+  parent: "select_players_button/buttonBody"
   layer: "button"
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 2
+  overridden_fields: 3
   overridden_fields: 8
   overridden_fields: 10
   overridden_fields: 20
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 543.0
+    y: 989.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.25
+    y: 0.5
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "stats_button"
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: -3.0
+    y: 13.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 487.0
+    y: 124.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "stats_button/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "stats_button"
+  layer: "button"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 9
+  overridden_fields: 20
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Stats"
+  font: "distance"
+  id: "stats_button/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "stats_button/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 8
+  overridden_fields: 10
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 330.0
+    y: 861.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "start_game_button"
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 487.0
+    y: 124.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_Pressed"
+  id: "start_game_button/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "start_game_button"
+  layer: "button"
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 9
+  overridden_fields: 20
+  overridden_fields: 38
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "start game!"
+  font: "distance"
+  id: "start_game_button/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "start_game_button/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 8
+  overridden_fields: 10
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -2283,15 +775,11 @@ layers {
   name: "background"
 }
 layers {
-  name: "text"
+  name: "button"
 }
 layers {
-  name: "button"
+  name: "text"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512
-particlefxs {
-  name: "firework"
-  particlefx: "/main/firework.particlefx"
-}

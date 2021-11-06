@@ -1,4 +1,5 @@
 local druid = require("druid.druid")
+local sprite_style = require("druid.styles.sprites.style")
 
 require "main.scripts.player_data"
 
@@ -17,45 +18,30 @@ end
 
 
 function clear_buttons(self)
-	-- print("clear_" .. players)
-	-- local gui_body = gui.get_node("body_" .. players )
-	--   gui.delete_node(gui_body)
-	-- --gui.set_enabled(gui_body, false)
+	
 	for player, data in pairs(players) do
 		local gui_body = gui.get_node("body_" .. data)
 		--print(gui_body)
 		gui.delete_node(gui_body)
 	end 
-	--print_r(self.buttons)
--- 	for button = 1, #self.buttons do
--- 		self.druid:remove(button)
--- 	end 
--- 	
+
 end
 
 
 local function okay_callback(self)
-	msg.post("main:/remove_user#remove_user_prompt", "Hide")
-
-	-- for _,removed_players in pairs(self.removed_buttons) do 
-	-- 	local player_index = get_player_index(removed_players)
-	-- 	--local removed_player_button = gui.get_node("body_" .. removed_players)
-		-- --gui.set_enabled(, false)
-		-- --removed_player_button.druid:clear(gui.get_druid("body_" .. removed_players))
-		-- body = gui.get_node("body_" .. removed_players)
-		-- --gui.delete_node(body)
-		-- --self.druid:remove(body)
-	-- 	local gui_body = gui.get_node("body_" .. removed_players )
-	-- 	--gui.delete_node(gui_body)
-	-- 	self.druid:remove(gui.get_id(gui_body))
-	-- end 
-	
-	
-	  --clear_buttons(self)
-	 --  players = load_users()
-	  -- for index, data in ipairs(players) do
-	--			clear_buttons(data)
-	--end 
+    num_active_players = 0 
+	for k, v in pairs(self.active_players) do 
+		num_active_players = num_active_players + 1
+	end
+	if (num_active_players < 2) 
+	then
+		print("must have more than 1 player")
+		-- should throw popup here
+	else
+	    save_active_players(self.active_players)
+		msg.post("main:/remove_user#remove_user_prompt", "Hide")
+		msg.post("main:/main_menu#main_menu", "enable start button")
+	end
 end
 
 local function cancel_callback(self)
@@ -68,6 +54,11 @@ local function cancel_callback(self)
 	
 end
 
+local function select_player(self, button, player_name)
+
+	gui.play_flipbook(button.node, hash("Button_Pressed"))
+	table.insert(self.active_players, player_name)
+end 
 
 local function remove_dynamic_node(self, button, shift_policy)
 	gui.delete_node(button.node)
@@ -93,8 +84,9 @@ local function add_node_dynamic(self, index, playername, is_shift_left)
 	self.grid_dynamic_grid:add(node[hash("remove_user_button/buttonBody")], index, is_shift_left)
 
 	local button = self.druid:new_button(node[hash("remove_user_button/buttonBody")], function(_, params, button)
-		remove_dynamic_node(self, button)
-		remove_user(player_index)
+		--remove_dynamic_node(self, button)
+		--remove_user(player_index)
+		  select_player(self, button, playername)
 	end)
 	button.on_long_click:subscribe(function()
 		remove_dynamic_node(self, button, const.SHIFT.LEFT)
@@ -111,6 +103,7 @@ local function init_dynamic_grid(self)
 	self.dynamic_node_hor_buttons = {}
 
 	self.prefab_dynamic = gui.get_node("remove_user_button/buttonBody")
+--	self.prefab_dynamic = gui.get_node("button_template")
 	gui.set_enabled(self.prefab_dynamic, false)
 
 	-- for i = 1, 5 do
@@ -123,7 +116,7 @@ end
 
 function init(self) 
 	self.druid = druid.new(self)
-	self.gen = false
+	self.active_players = {} 
 	self.removeuserpromptblock = gui.get_node("remove_user_prompt_body")
 	self.removeuserpromptdiag = gui.get_node("remove_user_prompt_diag")
 	self.removeuserpromptinput = gui.get_node("remove_user_prompt_input")
@@ -148,30 +141,32 @@ function init(self)
 
 	--init_dynamic_grid(self)
 	init_dynamic_grid(self)
-	end
-
 
 	
-function add_players(self)
-	players = load_users()
-	local button_data = {}
-		local y = 0
-		local off_set_y = 30
-		local pos = vmath.vector3(350,625,0)
-		local player_label = gui.get_node("remove_user_button/buttonBody")
-		--self.buttons = {}  
-		for _, data in pairs(players) do
-			local nodes = gui.clone_tree(player_label)			 
-			pos.y = pos.y + off_set_y
-			gui.set_position(nodes[hash("remove_user_button/buttonBody")], pos)
-			gui.set_text(nodes[hash("remove_user_button/text")], data)
-			local button = self.druid:new_button(nodes[hash("remove_user_button/buttonBody")])
-			button.on_click:subscribe(function() remove_user_buttons(self,button, data ) end)
-			gui.set_id(nodes[hash("remove_user_button/buttonBody")], "body_" .. data )
-			local body = gui.get_node("body_" .. data)
-			table.insert(self.buttons, body )
-		end
 	end
+
+
+-- old add players code 
+-- function add_players(self)
+-- 	players = load_users()
+-- 	local button_data = {}
+-- 		local y = 0
+-- 		local off_set_y = 30
+-- 		local pos = vmath.vector3(350,625,0)
+-- 		local player_label = gui.get_node("remove_user_button/buttonBody")
+-- 		--self.buttons = {}  
+-- 		for _, data in pairs(players) do
+-- 			local nodes = gui.clone_tree(player_label)			 
+-- 			pos.y = pos.y + off_set_y
+-- 			gui.set_position(nodes[hash("remove_user_button/buttonBody")], pos)
+-- 			gui.set_text(nodes[hash("remove_user_button/text")], data)
+-- 			local button = self.druid:new_button(nodes[hash("remove_user_button/buttonBody")])
+-- 			button.on_click:subscribe(function() remove_user_buttons(self,button, data ) end)
+-- 			gui.set_id(nodes[hash("remove_user_button/buttonBody")], "body_" .. data )
+-- 			local body = gui.get_node("body_" .. data)
+-- 			table.insert(self.buttons, body )
+-- 		end
+-- 	end
 function final(self)
 	-- Add finalization code here
 	-- Learn more: https://defold.com/manuals/script/

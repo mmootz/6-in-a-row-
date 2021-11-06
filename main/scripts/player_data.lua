@@ -1,17 +1,15 @@
--- Put functions in this file to use them in several other scripts.
--- To get access to the functions, you need to put:
--- require "my_directory.my_file"
--- in any script using the functions.
+-- functions used by script to pass data between screens
 
-
-function save_score(Table,player,round,save_score,new_round)
+function save_score(Table,date,player,round,save_score,new_round)
     if new_round == true then 
-        Table[round] = {}
+        Table[date][round] = {}
         return Table  
     end
-    Table[round][player] = save_score
+    Table[date][round][player] = save_score
+    print_r(Table)
     return Table
 end 
+
 
 function get_player_index(name)
     local player_index = load_users()
@@ -25,8 +23,6 @@ end
 
 
 function get_score(aTable,player,score)
-    
-    
     total = score 
     for key, value in pairs(aTable) do 
         if(type(value) == "table") then 
@@ -94,16 +90,44 @@ function get_winner()
     return high_score, player
 end
 
-
-
 -- pass players (lua table) and save it.
 function save_data(players)
-	local filename = sys.get_save_file("playerfilename", "players")
-	
-	local path_to_file = sys.get_save_file("6 in a row", "dummy_test")
-	print(path_to_file)
-	sys.save(filename, players ) 
+    local filename = sys.get_save_file("playerfilename", "players")
+    local path_to_file = sys.get_save_file("6 in a row", "dummy_test")
+    sys.save(filename, players ) 
 end
+
+function save_active_players(players)
+    local filename = sys.get_save_file("activeplayers", "players")
+    sys.save(filename, players ) 
+end
+
+
+function save_stats(score_table)   
+    print("call")
+     
+    local save_time = os.date()
+    
+    local stats_table = load_stats()
+    stats_table[save_time] = {}
+    table.insert(stats_table[save_time], score_table)
+    local filename = sys.get_save_file("stats", "stats_save")
+    sys.save(filename, stats_table ) 
+end
+
+function load_stats() 
+    local filename = sys.get_save_file("stats", "stats_save")
+    local data = sys.load(filename)
+    return data 
+    
+end 
+
+function load_active_players()
+    local filename = sys.get_save_file("activeplayers", "players") -- <1>
+    local data = sys.load(filename) 
+    return data
+end
+
 
 function finish_game(end_game)
     local filename = sys.get_save_file("end_game_filename", "end_game")

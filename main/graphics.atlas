@@ -6,21 +6,29 @@ images {
   image: "/assets/popup.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/ghost-hi.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/ghost.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "Button_Pressed"
   images {
-    image: "/assets/black_button_unpressed.png"
+    image: "/assets/blue_button_pressed.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 60
+  fps: 1
   flip_horizontal: 0
   flip_vertical: 0
 }
 animations {
   id: "Button_released"
   images {
-    image: "/assets/black_button_pressed.png"
+    image: "/assets/black_button_unpressed.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD

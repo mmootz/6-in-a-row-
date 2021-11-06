@@ -1,10 +1,10 @@
 name: "main"
 scale_along_z: 0
 embedded_instances {
-  id: "bg"
+  id: "game_board"
   data: "components {\n"
-  "  id: \"main_menu\"\n"
-  "  component: \"/main/main_menu.gui\"\n"
+  "  id: \"game_board\"\n"
+  "  component: \"/main/game_board.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -21,7 +21,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"background_gray\\\"\\n"
+  "default_animation: \\\"board-game\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ADD\\n"
   "\"\n"
@@ -126,10 +126,10 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "add_user"
+  id: "main_menu"
   data: "components {\n"
-  "  id: \"add_user_prompt\"\n"
-  "  component: \"/main/add_user_prompt.gui\"\n"
+  "  id: \"main_menu\"\n"
+  "  component: \"/main/main_menu.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -165,6 +165,41 @@ embedded_instances {
   data: "components {\n"
   "  id: \"remove_user_prompt\"\n"
   "  component: \"/main/remove_user_prompt.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "add_user"
+  data: "components {\n"
+  "  id: \"add_user_prompt\"\n"
+  "  component: \"/main/add_user_prompt.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

@@ -1,7 +1,7 @@
 script: "/main/scripts/winner_box.gui_script"
 fonts {
   name: "menuFont"
-  font: "/main/fonts/menuFont.font"
+  font: "/main/fonts/distance.font"
 }
 textures {
   name: "graphics"
