@@ -1,11 +1,11 @@
 -- functions used by script to pass data between screens
 
-function save_score(Table,date,player,round,save_score,new_round)
+function save_score(Table,player,round,save_score,new_round)
     if new_round == true then 
-        Table[date][round] = {}
+        Table[round] = {}
         return Table  
     end
-    Table[date][round][player] = save_score
+    Table[round][player] = save_score
     print_r(Table)
     return Table
 end 
@@ -22,26 +22,6 @@ function get_player_index(name)
 end 
 
 
-function get_score(aTable,player,score)
-    total = score 
-    for key, value in pairs(aTable) do 
-        if(type(value) == "table") then 
-            get_score(value,player,total)
-        else
-            if key == player then 
-                total = value + total
-            end
-        end
-    end
-    
-    return total
-end
-
-local function load_scoredb()
-    local filename = sys.get_save_file("end_game_filename", "end_game") -- <1>
-    local data = sys.load(filename) 
-    return data
-end
 
 local function find_12s(aTable,max)
     total = max
@@ -58,6 +38,33 @@ local function find_12s(aTable,max)
     return total , player
 end
 
+local function load_scoredb()
+    local filename = sys.get_save_file("game_score", "current") -- <1>
+    local data = sys.load(filename) 
+    return data
+end
+
+-- used by get winner below to find high_score for user
+
+function get_score(aTable,player,score)
+    total = score 
+    for key, value in pairs(aTable) do 
+        if(type(value) == "table") then 
+            get_score(value,player,total)
+        else
+            if key == player then 
+                total = value + total
+            end
+        end
+    end
+
+    return total
+end
+
+
+
+-- looks for winner by checking user with highest score 
+-- function get score is used to find users score 
 function get_winner()
     local temp = {}
     local high_score
@@ -103,9 +110,9 @@ function save_active_players(players)
 end
 
 
-function save_stats(score_table)   
-    print("call")
-     
+
+
+function save_stats(score_table)    
     local save_time = os.date()
     
     local stats_table = load_stats()
@@ -114,6 +121,7 @@ function save_stats(score_table)
     local filename = sys.get_save_file("stats", "stats_save")
     sys.save(filename, stats_table ) 
 end
+
 
 function load_stats() 
     local filename = sys.get_save_file("stats", "stats_save")
@@ -130,9 +138,11 @@ end
 
 
 function finish_game(end_game)
-    local filename = sys.get_save_file("end_game_filename", "end_game")
+    local filename = sys.get_save_file("game_score", "current")
     sys.save(filename, end_game)
 end 
+
+
 
 
 function print_users(players)

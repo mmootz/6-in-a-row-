@@ -7,6 +7,10 @@ textures {
   name: "main"
   texture: "/main/main.atlas"
 }
+textures {
+  name: "graphics"
+  texture: "/main/graphics.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -16,7 +20,7 @@ background_color {
 nodes {
   position {
     x: 318.0
-    y: 902.0
+    y: 904.0
     z: 0.0
     w: 1.0
   }
@@ -27,14 +31,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 3.427
-    y: 3.455
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
+    x: 660.0
+    y: 300.0
     z: 0.0
     w: 1.0
   }
@@ -46,7 +50,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "graphics/popup"
   id: "start_game_box"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -65,7 +69,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   template_node_child: false
-  size_mode: SIZE_MODE_AUTO
+  size_mode: SIZE_MODE_MANUAL
 }
 nodes {
   position {

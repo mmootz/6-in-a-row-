@@ -21,7 +21,7 @@ emitters {
   particle_orientation: PARTICLE_ORIENTATION_INITIAL_DIRECTION
   inherit_velocity: 0.0
   max_particle_count: 100
-  type: EMITTER_TYPE_2DCONE
+  type: EMITTER_TYPE_BOX
   start_delay: 0.0
   properties {
     key: EMITTER_KEY_SPAWN_RATE
@@ -193,6 +193,15 @@ emitters {
     points {
       x: 0.0
       y: 0.0
+      t_x: 1.0
+      t_y: 0.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_X
+    points {
+      x: 0.0
+      y: 1.0
       t_x: 1.0
       t_y: 0.0
     }

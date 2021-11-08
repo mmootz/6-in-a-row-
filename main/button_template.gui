@@ -3,9 +3,17 @@ fonts {
   name: "system_font"
   font: "/main/fonts/distance.font"
 }
+fonts {
+  name: "distance"
+  font: "/main/fonts/distance.font"
+}
 textures {
   name: "graphics"
   texture: "/main/graphics.atlas"
+}
+textures {
+  name: "shiny"
+  texture: "/main/shiny.atlas"
 }
 background_color {
   x: 0.0
@@ -33,8 +41,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
+    x: 480.0
+    y: 480.0
     z: 0.0
     w: 1.0
   }
@@ -46,7 +54,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "shiny/1"
   id: "buttonBody"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -101,7 +109,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "<text>"
-  font: "system_font"
+  font: "distance"
   id: "text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

@@ -1,6 +1,21 @@
-* Add summary window outputs highest score by user number of 12s etc
+Gui
+* dynamic popup for messages
+
+
+Data
+* Allow backing up to google drive
+
+Score stuff 
+* Add summary window for current scores
 * Historical edits go back and change scores
-* Figure out adding and removing user
-* After adding and removing user is solved make code dynamic based on number of users
+* add stats for player
+  * track stats eg 
+  	* highest score
+	* longest streak of winning
+	* most 12s in one game. 
+        * number of games won
+        * track current score vs high score for player
+        	* animate new score when happens (over 13) so it doesn't fire for new players
+
 
 
