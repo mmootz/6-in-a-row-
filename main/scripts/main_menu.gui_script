@@ -5,23 +5,26 @@ local druid = require("druid.druid")
 
 
 local function add_player_callback(self) 
-
-	print("add_player")
 	msg.post("main:/remove_user#remove_user_prompt", "Hide")
 	msg.post("main:/add_user#add_user_prompt", "Show")
+	msg.post("main:/stats_page#stats_page", "Hide")
 end 
 
 local function select_player_callback(self) 
-	print("select_player")
 	msg.post("main:/add_user#add_user_prompt", "Hide")
 	msg.post("main:/remove_user#remove_user_prompt", "Show")
-
+	msg.post("main:/stats_page#stats_page", "Hide")
+	
 end 
 
 local function stats_callback(self) 
-print("stats")
-stats_db = load_stats()
-print_r(stats_db)
+
+	msg.post("main:/add_user#add_user_prompt", "Hide")
+	msg.post("main:/remove_user#remove_user_prompt", "Hide")
+	msg.post("main:/stats_page#stats_page", "Show")
+
+	stats_db = load_stats()
+	
 end 
 
 local function start_game_callback(self) 
@@ -53,6 +56,17 @@ function init(self)
 	self.start_game_join_button = gui.get_node("start_game_button/buttonBody")
 	gui.set_enabled(self.start_game_join_button, disabled)
 
+	local stats_test = load_stats()
+	local high = 254
+	local player = "playername"
+	local twelve_value = 4
+	local streak_value = 3 
+	
+	save_stats_top(stats_test, "highscore", high , player )
+	save_stats_top(stats_test, "twelve", twelve_value , player )
+	save_stats_top(stats_test, "streak", streak_value , player )
+
+	
 	
 end
 

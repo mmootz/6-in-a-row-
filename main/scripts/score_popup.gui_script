@@ -1,3 +1,7 @@
+require "main.scripts.player_data"
+
+local druid = require("druid.druid")
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/

@@ -1,6 +1,6 @@
 [project]
 title = 6 in a row
-version = 0.8
+version = 0.8.2
 write_log = 1
 dependencies#0 = https://github.com/Insality/druid/archive/master.zip
 

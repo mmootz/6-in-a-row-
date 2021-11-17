@@ -114,12 +114,20 @@ end
 
 function save_stats(score_table)    
     local save_time = os.date()
-    
     local stats_table = load_stats()
     stats_table[save_time] = {}
     table.insert(stats_table[save_time], score_table)
     local filename = sys.get_save_file("stats", "stats_save")
     sys.save(filename, stats_table ) 
+
+end
+
+function save_stats_top(stats_table, name, value, player)
+    local stats_table = load_stats()
+    stats_table[name] = {}
+    table.insert(stats_table[name], { value , player })
+    local filename = sys.get_save_file("stats", "stats_save")
+    sys.save(filename, stats_table) 
 end
 
 
