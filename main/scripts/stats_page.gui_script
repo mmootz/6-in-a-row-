@@ -1,0 +1,117 @@
+local druid = require("druid.druid")
+
+require "main.scripts.player_data"
+
+function okay_callback()
+
+	msg.post("main:/stats_page#stats_page", "Hide")
+end
+
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	self.druid = druid.new(self)
+
+	self.stats_highscore = gui.get_node("high_score_label")
+	self.stats_highscore_value = gui.get_node("high_score_value")
+	
+	self.stats_longest_streak = gui.get_node("Longest_streak")
+	self.stats_longest_streak_value = gui.get_node("Longest_streak_value")
+
+	self.stats_most_12s = gui.get_node("Most_12s")
+	self.stats_most_12s_value = gui.get_node("most_12s_value")
+
+	self.stats_background = gui.get_node("stats_background")
+	
+	gui.set_enabled(self.stats_highscore, false)
+	gui.set_enabled(self.stats_highscore_value, false)
+	
+	gui.set_enabled(self.stats_highscore, false)
+	gui.set_enabled(self.stats_background, false)
+
+	self.druid:new_button("stats_okay_button/buttonBody", okay_callback)
+	
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	   self.druid:final()
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	   self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+	self.druid:on_message(message_id, message, sender)
+
+	if message_id == hash("Show") then 
+		gui.set_enabled(self.stats_highscore, true)
+		gui.set_enabled(self.stats_highscore_value, true)
+		gui.set_enabled(self.stats_longest_streak, true)
+		gui.set_enabled(self.stats_longest_streak_value, true)
+		gui.set_enabled(self.stats_most_12s, true)
+		gui.set_enabled(self.stats_most_12s_value, true)
+		gui.set_enabled(self.stats_background, true)
+		local stats_load = load_stats()
+		--print(stats_load['highscore'][1][2])
+		local high_score_value = stats_load['highscore'][1][1] .. " (" .. stats_load['highscore'][1][2] .. ")"
+		local twelves = stats_load['twelve'][1][1] .. " (" .. stats_load['twelve'][1][2] .. ")"
+		local streaks = stats_load['streak'][1][1] .. " (" .. stats_load['streak'][1][2] .. ")"
+
+		local highscore_fit = self.druid:new_text(self.stats_highscore_value, high_score_value)
+		highscore_fit:set_to(high_score_value)
+
+		local twelves_fit = self.druid:new_text(self.stats_most_12s_value, twelves)
+		twelves_fit:set_to(twelves)
+
+		local streak_fit = self.druid:new_text(self.stats_longest_streak_value, streaks)
+		streak_fit:set_to(streaks)
+		
+
+		
+		msg.post(".", "acquire_input_focus")
+		-- add dynamic button creation 
+		-- compare self.dynamic buttons length to players length 
+		-- if players is larger add the last item in players to the button. 
+
+
+	elseif message_id == hash("Hide") then 
+		gui.set_enabled(self.stats_highscore, false)
+		gui.set_enabled(self.stats_highscore_value, false)
+		gui.set_enabled(self.stats_longest_streak, false)
+		gui.set_enabled(self.stats_longest_streak_value, false)
+		gui.set_enabled(self.stats_most_12s, false)
+		gui.set_enabled(self.stats_most_12s_value, false)
+		gui.set_enabled(self.stats_background, false)
+
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+	return self.druid:on_input(action_id, action)
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
