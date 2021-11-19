@@ -122,7 +122,7 @@ function save_stats(score_table)
 
 end
 
-function save_stats_top(stats_table, name, value, player)
+function save_stats_top( name, value, player)
     local stats_table = load_stats()
     stats_table[name] = {}
     table.insert(stats_table[name], { value , player })
@@ -131,12 +131,6 @@ function save_stats_top(stats_table, name, value, player)
 end
 
 
-function load_stats() 
-    local filename = sys.get_save_file("stats", "stats_save")
-    local data = sys.load(filename)
-    return data 
-    
-end 
 
 function load_active_players()
     local filename = sys.get_save_file("activeplayers", "players") -- <1>
@@ -222,6 +216,28 @@ function next_player(player_name,players)
 	return players[next_player]
 
 end 
+
+function check_stats_top(name, checked_value)
+    local stats_table = load_stats()
+    if stats_table[name][1][1] < checked_value then 
+        return true
+    else 
+        return false 
+    end
+end
+
+function load_stats() 
+   local filename = sys.get_save_file("stats", "stats_save")
+   local data = sys.load(filename)
+   -- data = {}
+   -- data['highscore'] = 202 
+   -- data['streak'] = 2
+   -- data['twelves'] = 3
+   return data 
+    
+end 
+
+
 
 
 

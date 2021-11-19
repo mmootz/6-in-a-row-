@@ -57,14 +57,14 @@ function init(self)
 	gui.set_enabled(self.start_game_join_button, disabled)
 
 	local stats_test = load_stats()
-	local high = 254
+	local high = 10
 	local player = "playername"
 	local twelve_value = 4
 	local streak_value = 3 
 	
-	save_stats_top(stats_test, "highscore", high , player )
-	save_stats_top(stats_test, "twelve", twelve_value , player )
-	save_stats_top(stats_test, "streak", streak_value , player )
+	save_stats_top("highscore", high , player )
+	save_stats_top("twelve", twelve_value , player )
+	save_stats_top("streak", streak_value , player )
 
 	
 	
