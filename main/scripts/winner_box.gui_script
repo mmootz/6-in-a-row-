@@ -38,7 +38,18 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.winner_body, true)
 		gui.set_enabled(self.winner_body_button, true)
 		gui.set_enabled(self.winner_body_text, true)
+
+		
+		--streak_check = check_stats_top('streak', 1)
+		--twelves_check = check_stats_top('twelves', 4)
+
 		winner_score, winner_player = get_winner()
+		high_score_check = check_stats_top('highscore', winner_score)
+		if high_score_check == true then 
+			save_stats_top(stats_table, 'highscore', winner_score, winner_player)
+			print('new high score added')
+		end
+		
 		gui.set_text(self.winner_body_text, winner_player .. "\n " .. winner_score)
 		msg.post(".", "acquire_input_focus")
 	elseif message_id == hash("Hide") then 
