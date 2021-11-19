@@ -46,7 +46,7 @@ function on_message(self, message_id, message, sender)
 		winner_score, winner_player = get_winner()
 		high_score_check = check_stats_top('highscore', winner_score)
 		if high_score_check == true then 
-			save_stats_top(stats_table, 'highscore', winner_score, winner_player)
+			save_stats_top( 'highscore', winner_score, winner_player)
 			print('new high score added')
 		end
 		

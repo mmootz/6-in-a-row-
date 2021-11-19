@@ -56,16 +56,16 @@ function init(self)
 	self.start_game_join_button = gui.get_node("start_game_button/buttonBody")
 	gui.set_enabled(self.start_game_join_button, disabled)
 
-	local stats_test = load_stats()
-	local high = 10
-	local player = "playername"
-	local twelve_value = 4
-	local streak_value = 3 
+	-- local stats_test = load_stats()
+	-- local high = 10
+	-- local player = "playername"
+	-- local twelve_value = 4
+	-- local streak_value = 3 
 	
-	save_stats_top("highscore", high , player )
-	save_stats_top("twelve", twelve_value , player )
-	save_stats_top("streak", streak_value , player )
-
+-- 	save_stats_top("highscore", high , player )
+-- 	save_stats_top("twelve", twelve_value , player )
+-- 	save_stats_top("streak", streak_value , player )
+-- 
 	
 	
 end

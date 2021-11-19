@@ -48,13 +48,13 @@ local function score_text_menu(self)
 end 
 
 
-function okay_callback(self)
+local function okay_callback(self)
 	-- load players
 	-- get current user from gui 
 	-- Find out who is next player
 	-- if last player end round and start again
 	-- add the score to the table 
-	print('this button does something apparently')
+
 	players = load_active_players()
 	player_size = 0 
 	player_name = gui.get_text(self.username)
@@ -100,9 +100,9 @@ end
 
 local function finish_callback(self)
 	
-	finish_game(score_db) -- add to old games  and save current scores to find winner 
+	finish_game(score_db) -- save current scores to find winner 
 	
-	save_stats(score_db) -- 
+	save_stats(score_db) -- save stats WIP 
 	gui.play_particlefx(self.firework_red)
 	gui.play_particlefx(self.firework_blue)
 	gui.play_particlefx(self.firework_green) 
@@ -114,6 +114,7 @@ local function finish_callback(self)
 	--score_db[self.date][self.round_num] = {}
 	gui.set_text(self.score_button, 0)
 end 
+
 
 local function add_callback(self)
 	msg.post("main:/add_user#add_user_prompt", "Show")
@@ -190,21 +191,18 @@ function init(self)
 	self.score_button = gui.get_node("score_text_menu")	
 	
    -- user vars 
-	self.user1 = "Dad"
-	self.user2 = "Matt"
-	self.active_user = self.user1
+	--self.user1 = "Dad"
+	--self.user2 = "Matt"
+	--self.active_user = self.user1
 	self.round_num = 1
 	self.score = 0 
 	self.winner = ""
-	self.user1_score = 0
-	self.user2_score =0 
-	self.message = ""
-	self.window_height = 9999
-	self.window_width = 8888
+	-- self.user1_score = 0
+	-- self.user2_score =0 
+	-- self.message = ""
 	score_db = {}
 	score_db[self.round_num] = {}
-	gui.set_text(self.username, self.active_user)
-	gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
+--	
 
 	-- buttons 
 	self.druid:new_button("Button1/buttonBody", button1_callback)
@@ -310,9 +308,9 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.end_game_button, true)
 		active_players = load_active_players()
 		
-		--gui.set_text(self.username, active_players[1])
 		local playername_fit = self.druid:new_text("username", active_players[1])
 		playername_fit:set_to(active_players[1])
+		gui.set_text(self.round_number_menu, "Round:" .. tostring(self.round_num))
 	end
 
 	

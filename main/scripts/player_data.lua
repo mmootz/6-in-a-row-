@@ -6,7 +6,6 @@ function save_score(Table,player,round,save_score,new_round)
         return Table  
     end
     Table[round][player] = save_score
-    print_r(Table)
     return Table
 end 
 
@@ -65,7 +64,7 @@ end
 
 -- looks for winner by checking user with highest score 
 -- function get score is used to find users score 
-function get_winner()
+function get_winner(scores_table)
     local temp = {}
     local high_score
     local player 
