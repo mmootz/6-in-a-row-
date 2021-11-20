@@ -65,17 +65,17 @@ function on_message(self, message_id, message, sender)
 		local stats_load = load_stats()
 		--print(stats_load['highscore'][1][2])
 		local high_score_value = stats_load['highscore'][1][1] .. " (" .. stats_load['highscore'][1][2] .. ")"
-		local twelves = stats_load['twelve'][1][1] .. " (" .. stats_load['twelve'][1][2] .. ")"
-		local streaks = stats_load['streak'][1][1] .. " (" .. stats_load['streak'][1][2] .. ")"
+	--	local twelves = stats_load['twelve'][1][1] .. " (" .. stats_load['twelve'][1][2] .. ")"
+	--	local streaks = stats_load['streak'][1][1] .. " (" .. stats_load['streak'][1][2] .. ")"
 
 		local highscore_fit = self.druid:new_text(self.stats_highscore_value, high_score_value)
 		highscore_fit:set_to(high_score_value)
-
-		local twelves_fit = self.druid:new_text(self.stats_most_12s_value, twelves)
-		twelves_fit:set_to(twelves)
-
-		local streak_fit = self.druid:new_text(self.stats_longest_streak_value, streaks)
-		streak_fit:set_to(streaks)
+-- 
+-- 		local twelves_fit = self.druid:new_text(self.stats_most_12s_value, twelves)
+-- 		twelves_fit:set_to(twelves)
+-- 
+-- 		local streak_fit = self.druid:new_text(self.stats_longest_streak_value, streaks)
+-- 		streak_fit:set_to(streaks)
 		
 
 		

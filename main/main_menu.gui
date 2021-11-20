@@ -53,7 +53,7 @@ nodes {
   texture: "graphics/popup"
   id: "start_game_box"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  yanchor: YANCHOR_TOP
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   layer: "background"
@@ -200,7 +200,7 @@ nodes {
   texture: "graphics/Button_released"
   id: "add_player_button/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  yanchor: YANCHOR_TOP
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "add_player_button"
@@ -217,6 +217,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 9
+  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -361,7 +362,7 @@ nodes {
   texture: "graphics/Button_released"
   id: "select_players_button/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  yanchor: YANCHOR_TOP
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "select_players_button"
@@ -379,6 +380,7 @@ nodes {
   alpha: 1.0
   overridden_fields: 1
   overridden_fields: 9
+  overridden_fields: 13
   overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
@@ -526,7 +528,7 @@ nodes {
   texture: "graphics/Button_released"
   id: "stats_button/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  yanchor: YANCHOR_TOP
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "stats_button"
@@ -544,6 +546,7 @@ nodes {
   alpha: 1.0
   overridden_fields: 1
   overridden_fields: 9
+  overridden_fields: 13
   overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
@@ -688,7 +691,7 @@ nodes {
   texture: "graphics/Button_Pressed"
   id: "start_game_button/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  yanchor: YANCHOR_TOP
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "start_game_button"
@@ -705,6 +708,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 9
+  overridden_fields: 13
   overridden_fields: 20
   overridden_fields: 38
   template_node_child: true

@@ -1,7 +1,9 @@
 [project]
 title = 6 in a row
-version = 0.8.2
+version = 0.8.2.9
 write_log = 1
+developer = some guy
+publisher = evil co 
 dependencies#0 = https://github.com/Insality/druid/archive/master.zip
 
 [bootstrap]

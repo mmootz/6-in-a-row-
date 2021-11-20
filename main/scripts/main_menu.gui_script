@@ -2,8 +2,7 @@
 require "main.scripts.player_data"
 
 local druid = require("druid.druid")
-
-
+-- 
 local function add_player_callback(self) 
 	msg.post("main:/remove_user#remove_user_prompt", "Hide")
 	msg.post("main:/add_user#add_user_prompt", "Show")

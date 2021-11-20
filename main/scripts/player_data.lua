@@ -130,7 +130,6 @@ function save_stats_top( name, value, player)
 end
 
 
-
 function load_active_players()
     local filename = sys.get_save_file("activeplayers", "players") -- <1>
     local data = sys.load(filename) 
@@ -218,7 +217,7 @@ end
 
 function check_stats_top(name, checked_value)
     local stats_table = load_stats()
-    if stats_table[name][1][1] < checked_value then 
+    if stats_table[name][1] < checked_value then 
         return true
     else 
         return false 
@@ -228,6 +227,11 @@ end
 function load_stats() 
    local filename = sys.get_save_file("stats", "stats_save")
    local data = sys.load(filename)
+   --data = {} 
+   if not next(data) then 
+    data['highscore'] = {}
+    data['highscore'] = {0, 'Null'}
+   end  
    -- data = {}
    -- data['highscore'] = 202 
    -- data['streak'] = 2

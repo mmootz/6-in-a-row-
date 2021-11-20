@@ -153,6 +153,7 @@ function init(self)
 	self.username = gui.get_node("username")
 	self.round_number_menu = gui.get_node("round_number")	
 	self.score_node = gui.get_node("score_text")
+	self.stats_button = gui.get_node("stats_label")
 	self.end_game_button = gui.get_node("end_game_label")
 
 	--hide on start 
@@ -167,7 +168,7 @@ function init(self)
 	gui.set_enabled(self.okaybutton, disable)
 	gui.set_enabled(self.Addbutton, disable)
 	gui.set_enabled(self.Removebutton, disable)
-
+	gui.set_enabled(self.stats_button, disable)
 	gui.set_enabled(self.clear_button, disable)
 	gui.set_enabled(self.score_menu, disable)
 	gui.set_enabled(self.username, disable)
@@ -299,7 +300,7 @@ function on_message(self, message_id, message, sender)
 		-- disabled for now 
 		gui.set_enabled(self.Addbutton, false)
 		gui.set_enabled(self.Removebutton, false)
-
+		gui.set_enabled(self.stats_button, true)
 		gui.set_enabled(self.clear_button, true)
 		gui.set_enabled(self.score_menu, true)
 		gui.set_enabled(self.username, true)
@@ -320,9 +321,9 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.button4, disable)
 		gui.set_enabled(self.button5, disable)
 		gui.set_enabled(self.button12, disable)
-
+		
 		gui.set_enabled(self.gray_background_box, disable)
-
+		gui.set_enabled(self.stats_button, disable)
 		gui.set_enabled(self.okaybutton, disable)
 		gui.set_enabled(self.Addbutton, disable)
 		gui.set_enabled(self.Removebutton, disable)
