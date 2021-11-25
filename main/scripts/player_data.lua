@@ -227,10 +227,14 @@ end
 function load_stats() 
    local filename = sys.get_save_file("stats", "stats_save")
    local data = sys.load(filename)
-   --data = {} 
+   data = {} 
    if not next(data) then 
-    data['highscore'] = {}
+    --data['highscore'] = {}
     data['highscore'] = {0, 'Null'}
+    data['streaks'] = {}
+    data['streaks'] = {0, 'Null'}
+    data['twelves'] = {} 
+    data['twelves'] = {0 , 'Null'}
    end  
    -- data = {}
    -- data['highscore'] = 202 
