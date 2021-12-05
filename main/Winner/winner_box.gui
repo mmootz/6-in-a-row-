@@ -194,7 +194,7 @@ nodes {
 nodes {
   position {
     x: 313.0
-    y: 780.0
+    y: 769.0
     z: 0.0
     w: 1.0
   }
@@ -205,8 +205,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.75
-    y: 0.75
+    x: 0.5
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -318,7 +318,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "<text>"
+  text: "Okay"
   font: "distance"
   id: "winner_okay_button/text"
   xanchor: XANCHOR_NONE
@@ -344,9 +344,182 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 534.0
+    y: 720.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 27.064
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 0.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "Bottom_Right"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "firework"
+}
+nodes {
+  position {
+    x: 532.0
+    y: 955.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -16.226
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "Top_Right"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "firework"
+}
+nodes {
+  position {
+    x: 91.0
+    y: 966.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -9.861
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "Top_Left"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "firework"
+}
+nodes {
+  position {
+    x: 88.0
+    y: 715.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -33.142
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "Bottom_Left"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  adjust_mode: ADJUST_MODE_FIT
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "firework"
 }
 layers {
   name: "background"

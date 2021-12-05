@@ -107,11 +107,10 @@ end
 local function finish_callback(self)
 	message = {}
 	message['text'] = "End game?" 
-	print("monekys")
-	monarch.show("End_Game" , nil , message )
+	
 
 	
-	-- finish_game(score_db) -- save current scores to find winner 
+	   finish_game(score_db) -- save current scores to find winner 
 	
 	-- save_stats(score_db) -- save stats WIP 
 	-- gui.play_particlefx(self.firework_red)
@@ -121,6 +120,7 @@ local function finish_callback(self)
 	-- gui.play_particlefx(self.firework_orange)
 	-- gui.play_particlefx(self.firework_purple)
 	-- msg.post("main:/winner#winner_box", "Show")
+	   monarch.show("End_Game" , nil , message )
 	-- score_db = {}
 	-- --score_db[self.date][self.round_num] = {}
 	-- gui.set_text(self.score_button, 0)
@@ -166,15 +166,15 @@ function init(self)
 	self.score_node = gui.get_node("score_text")
 	self.stats_button = gui.get_node("stats_label")
 	self.end_game_button = gui.get_node("end_game_label")
-
-	local check_popup =  monarch.data("Game_Board")
-	if not next(check_popup) then
-		print("nil")
-	else 
-		if check_popup['answer'] == "Yes" then
-			print("end game")
-		end
-	end 
+-- 
+-- 	local check_popup =  monarch.data("Game_Board")
+-- 	if not next(check_popup) then
+-- 		print("nil")
+-- 	else 
+-- 		if check_popup['answer'] == "Yes" then
+-- 			monarch.show("Winner")
+-- 		end
+-- 	end 
 
 		
 	-- fireworks
@@ -221,7 +221,7 @@ function init(self)
 	self.druid:new_button("end_game_label", finish_callback)
 	self.druid:new_button("stats_label", stats_button)
 	
-	--msg.post("main:/bg#main_menu", "get res")
+	msg.post("#", "show")
 	
 end 
 

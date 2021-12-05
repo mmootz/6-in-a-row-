@@ -1,5 +1,7 @@
 require "main.scripts.player_data"
 
+local monarch = require "monarch.monarch"
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -10,7 +12,12 @@ function init(self)
 	self.winner_body_button = gui.get_node("winner_okay_button/buttonBody")
 	self.winner_body_text = gui.get_node("winner_text_user")
 
+	self.firework_bottom_right = gui.get_node("Bottom_Right")
+	self.firework_bottom_left = gui.get_node("Bottom_Left")
+	self.firework_top_right = gui.get_node("Top_Right")
+	self.firework_top_left = gui.get_node("Top_Left")
 
+	msg.post("#", "Show")
 end
 
 function final(self)
@@ -39,18 +46,24 @@ function on_message(self, message_id, message, sender)
 		--streak_check = check_stats_top('streak', 1)
 		--twelves_check = check_stats_top('twelves', 4)
 
+		
+
 		winner_score, winner_player = get_winner()
 		high_score_check = check_stats_top('highscore', winner_score)
 		if high_score_check == true then 
 			save_stats_top( 'highscore', winner_score, winner_player)
 			print('new high score added')
 		end
-
-
+		gui.set_text(self.winner_body_text, winner_player .. "\n " .. winner_score)
+		gui.play_particlefx(self.firework_bottom_right)
+		gui.play_particlefx(self.firework_bottom_left)
+		gui.play_particlefx(self.firework_top_right) 
+		gui.play_particlefx(self.firework_top_left)
+		msg.post(".", "acquire_input_focus")
+		--monarch.debug()
 
 		
-		gui.set_text(self.winner_body_text, winner_player .. "\n " .. winner_score)
-		msg.post(".", "acquire_input_focus")
+		
 	elseif message_id == hash("Hide") then 
 		gui.set_enabled(self.winner_title, false)
 		gui.set_enabled(self.winner_body, false)
@@ -65,12 +78,10 @@ function on_input(self, action_id, action)
 	--    msg.post(".", "acquire_input_focus")
 	if action.pressed and gui.pick_node(self.winner_body_button, action.x, action.y) then
 		gui.play_flipbook(self.winner_body_button, hash("Button_Pressed"))
-		msg.post("main:/winner#winner_box", "Hide")
-		self.user1_score = 0 
-		self.user2_score = 0
-		self.score = 0
-		self.round_num = 1
-
+--		msg.post("main:/winner#winner_box", "Hide")
+		monarch.clear()
+		msg.post("main_menu:/Main_menu#monarch", "show")
+		print("Message")
 		-- play animation here once figured out 
 		--msg.post("scoreboard#gui", "add_score", {amount = score})
 	elseif action.released and gui.pick_node(self.winner_body_button, action.x, action.y) then

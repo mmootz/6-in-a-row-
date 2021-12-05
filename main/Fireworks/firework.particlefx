@@ -67,7 +67,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_LIFE_TIME
     points {
       x: 0.0
-      y: 1.5
+      y: 2.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -77,11 +77,11 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 100.0
+      y: 150.0
       t_x: 1.0
       t_y: 0.0
     }
-    spread: 0.0
+    spread: 100.0
   }
   properties {
     key: EMITTER_KEY_PARTICLE_SIZE
@@ -183,9 +183,9 @@ emitters {
     key: PARTICLE_KEY_ALPHA
     points {
       x: 0.0
-      y: 0.0
-      t_x: 0.07194582
-      t_y: 0.99740857
+      y: 2.0
+      t_x: 1.0
+      t_y: 0.0
     }
   }
   particle_properties {
@@ -243,7 +243,7 @@ emitters {
   }
   size_mode: SIZE_MODE_AUTO
   start_delay_spread: 0.0
-  duration_spread: 0.0
+  duration_spread: 2.0
   stretch_with_velocity: false
   start_offset: 0.0
 }

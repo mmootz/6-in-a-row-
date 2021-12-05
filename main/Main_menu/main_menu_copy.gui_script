@@ -105,6 +105,7 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.select_players_button, true)
 		gui.set_enabled(self.stats_button, true)
 		gui.set_enabled(self.start_game_button, true)
+		gui.set_enabled(self.start_game_box, true)
 		--gui.set_enabled(node, true)
 		
 	end 
@@ -114,7 +115,7 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.select_players_button, false)
 		gui.set_enabled(self.stats_button, false)
 		gui.set_enabled(self.start_game_button, false)
-		gui.set_enabled(self.start_game_box, false)
+	    gui.set_enabled(self.start_game_box, false)
 		gui.set_enabled(self.recent_game_box, false)
 	end 
 	

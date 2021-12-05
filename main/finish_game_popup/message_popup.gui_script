@@ -4,9 +4,11 @@ local druid = require("druid.druid")
 
 
 local function Yes_callback(self)
-    response = {}
-    response['answer'] = "Yes"
-    monarch.show("Game_Board",nil,response)
+   response = {}
+   response['answer'] = "Yes"
+  -- monarch.show("Game_Board",nil,response)
+   monarch.show("Winner")
+  --msg.post("main", message_id)
 end 
 
 local function No_callback(self)
