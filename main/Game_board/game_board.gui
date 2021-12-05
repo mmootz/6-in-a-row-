@@ -1,4 +1,4 @@
-script: "/main/scripts/game_board.gui_script"
+script: "/main/Game_board/game_board.gui_script"
 fonts {
   name: "menuFont"
   font: "/main/fonts/distance.font"
@@ -9,7 +9,7 @@ fonts {
 }
 textures {
   name: "graphics"
-  texture: "/main/graphics.atlas"
+  texture: "/main/Atlas/graphics.atlas"
 }
 background_color {
   x: 0.0
@@ -19,8 +19,8 @@ background_color {
 }
 nodes {
   position {
-    x: 132.0
-    y: 156.0
+    x: 133.0
+    y: 143.0
     z: 0.0
     w: 1.0
   }
@@ -31,7 +31,7 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
+    x: 0.75
     y: 1.0
     z: 1.0
     w: 1.0
@@ -58,8 +58,8 @@ nodes {
 }
 nodes {
   position {
-    x: 186.592
-    y: 315.252
+    x: 235.333
+    y: 309.0
     z: 0.0
     w: 1.0
   }
@@ -70,8 +70,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.75
-    y: 0.75
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -92,7 +92,7 @@ nodes {
   texture: "graphics/Button_released"
   id: "Button1/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "Button1"
@@ -109,16 +109,13 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -7.0
-    y: 2.0
+    x: 0.0
+    y: -2.0
     z: 0.0
     w: 1.0
   }
@@ -142,14 +139,13 @@ nodes {
   }
   color {
     x: 1.0
-    y: 0.0
-    z: 0.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "2\n"
-  ""
+  text: "2"
   font: "distance"
   id: "Button1/text"
   xanchor: XANCHOR_NONE
@@ -157,8 +153,8 @@ nodes {
   pivot: PIVOT_CENTER
   outline {
     x: 1.0
-    y: 0.0
-    z: 0.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   shadow {
@@ -170,17 +166,13 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "Button1/buttonBody"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 5
   overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 15
-  overridden_fields: 17
   overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
@@ -250,8 +242,8 @@ nodes {
 }
 nodes {
   position {
-    x: 21.0
-    y: -23.0
+    x: 308.0
+    y: 335.0
     z: 0.0
     w: 1.0
   }
@@ -262,7 +254,7 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
+    x: 0.75
     y: 1.0
     z: 1.0
     w: 1.0
@@ -289,8 +281,8 @@ nodes {
 }
 nodes {
   position {
-    x: 300.0
-    y: 420.0
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -301,8 +293,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.75
-    y: 0.75
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -323,7 +315,7 @@ nodes {
   texture: "graphics/Button_released"
   id: "Button2/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "Button2"
@@ -339,17 +331,13 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -8.0
-    y: 2.0
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -374,13 +362,12 @@ nodes {
   color {
     x: 1.0
     y: 1.0
-    z: 0.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "3\n"
-  ""
+  text: "3"
   font: "distance"
   id: "Button2/text"
   xanchor: XANCHOR_NONE
@@ -389,7 +376,7 @@ nodes {
   outline {
     x: 1.0
     y: 1.0
-    z: 0.0
+    z: 1.0
     w: 1.0
   }
   shadow {
@@ -401,25 +388,20 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "Button2/buttonBody"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 5
   overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 15
-  overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
 nodes {
   position {
-    x: 146.0
-    y: 192.0
+    x: 1190.0
+    y: 304.0
     z: 0.0
     w: 1.0
   }
@@ -457,8 +439,8 @@ nodes {
 }
 nodes {
   position {
-    x: 177.856
-    y: -2.5939999
+    x: -887.0
+    y: -288.0
     z: 0.0
     w: 1.0
   }
@@ -469,8 +451,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.75
-    y: 0.75
+    x: 1.283
+    y: 0.832
     z: 1.0
     w: 1.0
   }
@@ -491,11 +473,11 @@ nodes {
   texture: "graphics/Button_released"
   id: "OkayButton/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "OkayButton"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -509,16 +491,13 @@ nodes {
   alpha: 1.0
   overridden_fields: 1
   overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -6.0
-    y: -1.0
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -529,8 +508,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.805
-    y: 0.955
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -548,8 +527,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Okay\n"
-  ""
+  text: "Okay"
   font: "distance"
   id: "OkayButton/text"
   xanchor: XANCHOR_NONE
@@ -570,16 +548,12 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "OkayButton/buttonBody"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
   overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -648,8 +622,102 @@ nodes {
 }
 nodes {
   position {
-    x: 1030.0
-    y: 339.0
+    x: 307.0
+    y: 127.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.75
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "Button5"
+  layer: "button"
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 487.0
+    y: 124.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_released"
+  id: "Button5/buttonBody"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "Button5"
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -677,118 +745,13 @@ nodes {
     z: 1.0
     w: 1.0
   }
-  type: TYPE_TEMPLATE
-  id: "Button5"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: -708.0
-    y: -83.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.75
-    y: 0.75
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "Button5/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "Button5"
-  layer: "button"
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 7
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 14
-  overridden_fields: 17
-  overridden_fields: 20
-  overridden_fields: 27
-  overridden_fields: 38
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -3.0
-    y: 4.886
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 11.0
-    w: 1.0
-  }
-  size {
-    x: 366.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "5\n"
-  ""
+  text: "5"
   font: "distance"
   id: "Button5/text"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   outline {
     x: 1.0
@@ -805,19 +768,12 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "Button5/buttonBody"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 4
-  overridden_fields: 5
   overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 13
-  overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -1010,8 +966,8 @@ nodes {
 }
 nodes {
   position {
-    x: 22.0
-    y: 4.0
+    x: -534.0
+    y: 436.0
     z: 0.0
     w: 1.0
   }
@@ -1049,8 +1005,8 @@ nodes {
 }
 nodes {
   position {
-    x: 300.0
-    y: 322.0
+    x: 841.0
+    y: -207.0
     z: 0.0
     w: 1.0
   }
@@ -1062,7 +1018,7 @@ nodes {
   }
   scale {
     x: 0.75
-    y: 0.75
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -1083,11 +1039,11 @@ nodes {
   texture: "graphics/Button_released"
   id: "Button4/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "Button4"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -1101,16 +1057,13 @@ nodes {
   alpha: 1.0
   overridden_fields: 1
   overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -6.0
-    y: 5.0
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -1133,9 +1086,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
+    x: 1.0
     y: 1.0
-    z: 0.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
@@ -1161,194 +1114,20 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "Button4/buttonBody"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 5
-  overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 20
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 444.0
-    y: 39.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 180.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "Button12"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: -115.938995
-    y: 291.681
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 180.0
-    z: -90.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_unpressed_vert"
-  id: "Button12/buttonBody"
-  xanchor: XANCHOR_RIGHT
-  yanchor: YANCHOR_BOTTOM
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "Button12"
   layer: ""
   inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 2
-  overridden_fields: 9
-  overridden_fields: 12
-  overridden_fields: 13
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -19.0
-    y: -2.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 90.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "12"
-  font: "distance"
-  id: "Button12/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "Button12/buttonBody"
-  layer: "button"
-  inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 2
-  overridden_fields: 5
   overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 15
-  overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
 nodes {
   position {
-    x: 732.0
-    y: 1038.0
+    x: 998.0
+    y: 1042.0
     z: 0.0
     w: 1.0
   }
@@ -1386,8 +1165,8 @@ nodes {
 }
 nodes {
   position {
-    x: 505.031
-    y: -171.123
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -1398,8 +1177,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.75
-    y: 0.75
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -1420,11 +1199,11 @@ nodes {
   texture: "graphics/Button_released"
   id: "end_game_button/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "end_game_button"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -1436,11 +1215,6 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -1458,9 +1232,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 1.3
+    y: 1.3
+    z: 1.3
     w: 1.0
   }
   size {
@@ -1477,7 +1251,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Finish Game"
+  text: "<text>"
   font: "distance"
   id: "end_game_button/text"
   xanchor: XANCHOR_NONE
@@ -1503,8 +1277,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 8
-  overridden_fields: 10
+  overridden_fields: 3
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -1808,8 +1581,8 @@ nodes {
 }
 nodes {
   position {
-    x: 1750.0
-    y: 1515.805
+    x: 2730.0
+    y: 192.529
     z: 0.0
     w: 1.0
   }
@@ -1820,8 +1593,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -1842,11 +1615,11 @@ nodes {
   texture: "graphics/Button_released"
   id: "addButton/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "addButton"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -1859,17 +1632,13 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
-  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
     x: 0.0
-    y: -2.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -1880,8 +1649,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 4.313
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -1899,7 +1668,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "+"
+  text: "<text>"
   font: "distance"
   id: "addButton/text"
   xanchor: XANCHOR_NONE
@@ -1925,10 +1694,6 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 8
-  overridden_fields: 10
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -1974,8 +1739,8 @@ nodes {
 }
 nodes {
   position {
-    x: 2005.0
-    y: 1498.0
+    x: 2445.0
+    y: 33.046
     z: 0.0
     w: 1.0
   }
@@ -1986,8 +1751,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -2008,7 +1773,7 @@ nodes {
   texture: "graphics/Button_released"
   id: "removeButton/buttonBody"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "removeButton"
@@ -2025,15 +1790,12 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -20.0
+    x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -2045,8 +1807,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 4.313
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -2064,7 +1826,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "-"
+  text: "<text>"
   font: "distance"
   id: "removeButton/text"
   xanchor: XANCHOR_NONE
@@ -2090,17 +1852,13 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 8
-  overridden_fields: 10
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
 }
 nodes {
   position {
-    x: 31.0
+    x: 43.0
     y: -8.0
     z: 0.0
     w: 1.0
@@ -2139,15 +1897,15 @@ nodes {
 }
 nodes {
   position {
-    x: 59.946
-    y: 345.226
+    x: 13.266
+    y: 293.877
     z: 0.0
     w: 1.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: -89.906
+    z: -90.012
     w: 1.0
   }
   scale {
@@ -2173,7 +1931,7 @@ nodes {
   texture: "graphics/Button_unpressed_vert"
   id: "clear_button/buttonBody"
   xanchor: XANCHOR_LEFT
-  yanchor: YANCHOR_BOTTOM
+  yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "clear_button"
@@ -2191,18 +1949,14 @@ nodes {
   alpha: 1.0
   overridden_fields: 1
   overridden_fields: 2
-  overridden_fields: 7
   overridden_fields: 9
   overridden_fields: 12
-  overridden_fields: 13
-  overridden_fields: 28
-  overridden_fields: 29
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -10.0
+    x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -2210,12 +1964,12 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 90.161
+    z: -269.93
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 0.643
+    y: 0.81
     z: 1.0
     w: 1.0
   }
@@ -2233,11 +1987,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "C\n"
-  "l\n"
-  "e\n"
-  "a\n"
-  "r"
+  text: "Clear"
   font: "distance"
   id: "clear_button/text"
   xanchor: XANCHOR_NONE
@@ -2258,16 +2008,14 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "clear_button/buttonBody"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 1
   overridden_fields: 2
+  overridden_fields: 3
   overridden_fields: 8
-  overridden_fields: 10
-  overridden_fields: 20
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -2450,6 +2198,169 @@ nodes {
   text_leading: 1.0
   text_tracking: 0.0
 }
+nodes {
+  position {
+    x: 812.0
+    y: 252.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "Button12"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  template: "/main/button_template.gui"
+  template_node_child: false
+}
+nodes {
+  position {
+    x: -242.0
+    y: 28.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -90.154
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 487.0
+    y: 124.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "graphics/Button_unpressed_vert"
+  id: "Button12/buttonBody"
+  xanchor: XANCHOR_RIGHT
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "Button12"
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 2
+  overridden_fields: 9
+  overridden_fields: 12
+  template_node_child: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 89.82
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "12"
+  font: "distance"
+  id: "Button12/text"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "Button12/buttonBody"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  overridden_fields: 2
+  overridden_fields: 8
+  template_node_child: true
+  text_leading: 1.0
+  text_tracking: 0.0
+}
 layers {
   name: "background"
 }
@@ -2464,5 +2375,5 @@ adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512
 particlefxs {
   name: "firework"
-  particlefx: "/main/firework.particlefx"
+  particlefx: "/main/Fireworks/firework.particlefx"
 }

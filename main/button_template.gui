@@ -1,4 +1,4 @@
-script: ""
+script: "/main/button_template.gui_script"
 fonts {
   name: "system_font"
   font: "/main/fonts/distance.font"
@@ -9,11 +9,11 @@ fonts {
 }
 textures {
   name: "graphics"
-  texture: "/main/graphics.atlas"
+  texture: "/main/Atlas/graphics.atlas"
 }
 textures {
   name: "shiny"
-  texture: "/main/shiny.atlas"
+  texture: "/main/Atlas/shiny.atlas"
 }
 background_color {
   x: 0.0
@@ -41,8 +41,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 480.0
-    y: 480.0
+    x: 487.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -54,7 +54,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "shiny/1"
+  texture: "graphics/Button_released"
   id: "buttonBody"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

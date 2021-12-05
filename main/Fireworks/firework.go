@@ -1,6 +1,6 @@
 components {
   id: "firework"
-  component: "/main/firework.particlefx"
+  component: "/main/Fireworks/firework.particlefx"
   position {
     x: 0.0
     y: 0.0

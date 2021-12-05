@@ -1,13 +1,14 @@
 [project]
 title = 6 in a row
-version = 0.8.2.9
+version = 0.8.9
 write_log = 1
 developer = some guy
-publisher = evil co 
+publisher = evil co
 dependencies#0 = https://github.com/Insality/druid/archive/master.zip
+dependencies#1 = https://github.com/britzl/monarch/archive/master.zip
 
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /main/Main_menu/main_menu.collectionc
 
 [input]
 game_binding = /input/game.input_bindingc

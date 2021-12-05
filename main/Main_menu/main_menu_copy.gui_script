@@ -1,36 +1,46 @@
+local monarch = require "monarch.monarch"
 
 require "main.scripts.player_data"
 
 local druid = require("druid.druid")
 -- 
 local function add_player_callback(self) 
-	msg.post("main:/remove_user#remove_user_prompt", "Hide")
-	msg.post("main:/add_user#add_user_prompt", "Show")
-	msg.post("main:/stats_page#stats_page", "Hide")
+	-- msg.post("main:/remove_user#remove_user_prompt", "Hide")
+	-- msg.post("main:/add_user#add_user_prompt", "Show")
+	-- msg.post("main:/stats_page#stats_page", "Hide")
+	monarch.show("Add_user")
 end 
 
 local function select_player_callback(self) 
-	msg.post("main:/add_user#add_user_prompt", "Hide")
-	msg.post("main:/remove_user#remove_user_prompt", "Show")
-	msg.post("main:/stats_page#stats_page", "Hide")
+	--msg.post("main:/Add_user", "Load")
+	--msg.post("main:/remove_user#", "Unload")
+	---msg.post("main:/stats_page#stats_page", "Unload")
+	monarch.show("Select_Player")
+	--msg.post("controller:/script#controller", "Select_Player")
 	
 end 
 
 local function stats_callback(self) 
 
-	msg.post("main:/add_user#add_user_prompt", "Hide")
-	msg.post("main:/remove_user#remove_user_prompt", "Hide")
-	msg.post("main:/stats_page#stats_page", "Show")
-
-	stats_db = load_stats()
+	-- msg.post("main:/add_user#add_user_prompt", "Hide")
+	-- msg.post("main:/remove_user#remove_user_prompt", "Hide")
+	-- msg.post("main:/stats_page#stats_page", "Show")
+	--monarch.show("Stats_page")
+	local message = {}
+	message['text'] = "this is a test"
+	monarch.show("Stats_page", nil, message)
+	
 	
 end 
 
 local function start_game_callback(self) 
 
-	print("start_game")
-	msg.post("main:/main_menu#main_menu", "hide")
-	msg.post("main:/game_board#game_board", "show")
+	--print("start_game")
+	--msg.post("/Main_menu#monarch", "hide")
+	-- msg.post("main:/game_board#game_board", "show")
+    dummy_table = {}
+	monarch.replace("Game_Board", nil, dummy_table )
+	msg.post("#", "hide")
 end 
 
 

@@ -1,10 +1,11 @@
 local druid = require("druid.druid")
 
 require "main.scripts.player_data"
+local monarch = require "monarch.monarch"
 
 function okay_callback()
 
-	msg.post("main:/stats_page#stats_page", "Hide")
+	monarch.back() 
 end
 
 function init(self)
@@ -24,12 +25,6 @@ function init(self)
 
 	self.stats_background = gui.get_node("stats_background")
 	
-	gui.set_enabled(self.stats_highscore, false)
-	gui.set_enabled(self.stats_highscore_value, false)
-	
-	gui.set_enabled(self.stats_highscore, false)
-	gui.set_enabled(self.stats_background, false)
-
 	self.druid:new_button("stats_okay_button/buttonBody", okay_callback)
 	
 end

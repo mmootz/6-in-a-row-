@@ -1,5 +1,6 @@
 local druid = require("druid.druid")
 local sprite_style = require("druid.styles.sprites.style")
+local monarch = require "monarch.monarch"
 
 require "main.scripts.player_data"
 
@@ -39,18 +40,18 @@ local function okay_callback(self)
 		-- should throw popup here
 	else
 	    save_active_players(self.active_players)
-		msg.post("main:/remove_user#remove_user_prompt", "Hide")
-		msg.post("main:/main_menu#main_menu", "enable start button")
+		-- msg.post("main:/remove_user#remove_user_prompt", "Hide")
+		--msg.post("main:/main_menu#main_menu", "enable start button")
+		msg.post("/Main_menu#monarch", "enable start button")
+		monarch.back()
 	end
 end
 
 local function cancel_callback(self)
-	gui.set_enabled(self.removeuserpromptblock, false)
-	gui.set_enabled(self.removeuserpromptdiag, false)
-	gui.set_enabled(self.removeuserpromptinput, false)
-	gui.set_enabled(self.removeuserpromptbtnok, false)
-	gui.set_enabled(self.removeuserpromptbtncancel, false)
-	players = load_users()
+	
+	monarch.back()
+    
+	--players = load_users()
 	
 end
 
@@ -76,7 +77,7 @@ end
 
 local function add_node_dynamic(self, index, playername, is_shift_left)
 	local node = gui.clone_tree(self.prefab_dynamic)
-	gui.set_color(node[hash("remove_user_button/buttonBody")], vmath.vector4(math.random() * 0.2 + 0.8))
+	--gui.set_color(node[hash("remove_user_button/buttonBody")], vmath.vector4(31,31,31))
 	gui.set_enabled(node[hash("remove_user_button/buttonBody")], true)
 	gui.set_size(node[hash("remove_user_button/buttonBody")], vmath.vector3(450, 85, 0))
 	gui.set_text(node[hash("remove_user_button/text")], playername)
@@ -117,18 +118,18 @@ end
 function init(self) 
 	self.druid = druid.new(self)
 	self.active_players = {} 
-	self.removeuserpromptblock = gui.get_node("remove_user_prompt_body")
-	self.removeuserpromptdiag = gui.get_node("remove_user_prompt_diag")
-	self.removeuserpromptinput = gui.get_node("remove_user_prompt_input")
+	self.removeuserpromptblock = gui.get_node("Select_Player_prompt_body")
+	self.removeuserpromptdiag = gui.get_node("Select_Player_prompt_diag")
+	self.removeuserpromptinput = gui.get_node("Select_Player_prompt_input")
 	self.removeuserpromptbtnok = gui.get_node("remove_user_prompt_buttonokay/buttonBody")
 	self.removeuserpromptbtncancel = gui.get_node("remove_user_prompt_button_cancel/buttonBody")
 	--self.playerbox = gui.get_node("players_box")
 	
-	gui.set_enabled(self.removeuserpromptblock, false)
-	gui.set_enabled(self.removeuserpromptdiag, false)
-	gui.set_enabled(self.removeuserpromptinput, false)
-	gui.set_enabled(self.removeuserpromptbtnok, false)
-	gui.set_enabled(self.removeuserpromptbtncancel, false)
+	-- gui.set_enabled(self.removeuserpromptblock, false)
+	-- gui.set_enabled(self.removeuserpromptdiag, false)
+	-- gui.set_enabled(self.removeuserpromptinput, false)
+	-- gui.set_enabled(self.removeuserpromptbtnok, false)
+	-- gui.set_enabled(self.removeuserpromptbtncancel, false)
 	self.druid:new_button("remove_user_prompt_buttonokay/buttonBody", okay_callback)
 	self.druid:new_button("remove_user_prompt_button_cancel/buttonBody", cancel_callback)
 	-- self.removed_buttons = {} 

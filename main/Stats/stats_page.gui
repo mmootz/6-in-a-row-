@@ -1,11 +1,11 @@
-script: "/main/scripts/add_user.gui_script"
+script: "/main/Stats/stats_page.gui_script"
 fonts {
   name: "distance"
   font: "/main/fonts/distance.font"
 }
 textures {
   name: "graphics"
-  texture: "/main/graphics.atlas"
+  texture: "/main/Atlas/graphics.atlas"
 }
 background_color {
   x: 0.0
@@ -15,8 +15,8 @@ background_color {
 }
 nodes {
   position {
-    x: 323.0
-    y: 709.0
+    x: 324.0
+    y: 595.0
     z: 0.0
     w: 1.0
   }
@@ -34,7 +34,7 @@ nodes {
   }
   size {
     x: 600.0
-    y: 300.0
+    y: 700.0
     z: 0.0
     w: 1.0
   }
@@ -47,12 +47,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/popup"
-  id: "add_user_prompt_body"
+  id: "stats_background"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  layer: "button"
+  layer: "background"
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -65,12 +65,12 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   template_node_child: false
-  size_mode: SIZE_MODE_AUTO
+  size_mode: SIZE_MODE_MANUAL
 }
 nodes {
   position {
-    x: 3.111
-    y: 29.893
+    x: -152.0
+    y: 280.0
     z: 0.0
     w: 1.0
   }
@@ -81,8 +81,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.428
-    y: 0.576
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -100,9 +100,9 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Add user:"
+  text: "High Score:"
   font: "distance"
-  id: "add_user_prompt_diag"
+  id: "high_score_label"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -120,8 +120,8 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "add_user_prompt_body"
-  layer: "button"
+  parent: "stats_background"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
@@ -132,8 +132,8 @@ nodes {
 }
 nodes {
   position {
-    x: 3.423
-    y: 0.933
+    x: 90.0
+    y: 279.0
     z: 0.0
     w: 1.0
   }
@@ -144,9 +144,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.553
-    y: 0.598
-    z: 0.98
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   size {
@@ -163,9 +163,135 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "playername"
+  text: "Null"
   font: "distance"
-  id: "add_user_prompt_input"
+  id: "high_score_value"
+  xanchor: XANCHOR_RIGHT
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "stats_background"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: -106.0
+    y: 232.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Longest Streak:"
+  font: "distance"
+  id: "Longest_streak"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "stats_background"
+  layer: "text"
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 175.0
+    y: 232.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Null"
+  font: "distance"
+  id: "Longest_streak_value"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -183,8 +309,8 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "add_user_prompt_body"
-  layer: "button"
+  parent: "stats_background"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
@@ -195,8 +321,8 @@ nodes {
 }
 nodes {
   position {
-    x: -443.14
-    y: -91.551
+    x: -162.0
+    y: 187.0
     z: 0.0
     w: 1.0
   }
@@ -209,6 +335,132 @@ nodes {
   scale {
     x: 1.0
     y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Most 12s: "
+  font: "distance"
+  id: "Most_12s"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "stats_background"
+  layer: "text"
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 40.0
+    y: 185.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Null"
+  font: "distance"
+  id: "most_12s_value"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "stats_background"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 3.0
+    y: -214.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
     z: 1.0
     w: 1.0
   }
@@ -225,9 +477,9 @@ nodes {
     w: 1.0
   }
   type: TYPE_TEMPLATE
-  id: "add_user_prompt_button_okay"
-  parent: "add_user_prompt_body"
-  layer: "button"
+  id: "stats_okay_button"
+  parent: "stats_background"
+  layer: ""
   inherit_alpha: true
   alpha: 1.0
   template: "/main/button_template.gui"
@@ -235,8 +487,8 @@ nodes {
 }
 nodes {
   position {
-    x: 620.83
-    y: -22.526
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -247,8 +499,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -267,13 +519,13 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
-  id: "add_user_prompt_button_okay/buttonBody"
+  id: "stats_okay_button/buttonBody"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "add_user_prompt_button_okay"
-  layer: "button"
+  parent: "stats_okay_button"
+  layer: ""
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -285,17 +537,13 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -17.676
-    y: 3.494
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -306,8 +554,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.959
-    y: 0.773
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -327,7 +575,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Okay"
   font: "distance"
-  id: "add_user_prompt_button_okay/text"
+  id: "stats_okay_button/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -345,180 +593,13 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "add_user_prompt_button_okay/buttonBody"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 8
-  overridden_fields: 10
-  template_node_child: true
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: -258.406
-    y: -125.695
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "add_user_prompt_button_cancel"
-  parent: "add_user_prompt_body"
-  layer: "button"
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/main/button_template.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 83.0
-    y: 12.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.5
-    y: 0.5
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 487.0
-    y: 124.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "graphics/Button_released"
-  id: "add_user_prompt_button_cancel/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "add_user_prompt_button_cancel"
-  layer: "button"
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 20
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "Cancel"
-  font: "distance"
-  id: "add_user_prompt_button_cancel/text"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "add_user_prompt_button_cancel/buttonBody"
+  parent: "stats_okay_button/buttonBody"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
   overridden_fields: 8
-  overridden_fields: 10
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -527,10 +608,10 @@ layers {
   name: "background"
 }
 layers {
-  name: "text"
+  name: "button"
 }
 layers {
-  name: "button"
+  name: "text"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

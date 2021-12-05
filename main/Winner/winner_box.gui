@@ -1,11 +1,11 @@
-script: "/main/scripts/winner_box.gui_script"
+script: "/main/Winner/winner_box.gui_script"
 fonts {
   name: "menuFont"
   font: "/main/fonts/distance.font"
 }
 textures {
   name: "graphics"
-  texture: "/main/graphics.atlas"
+  texture: "/main/Atlas/graphics.atlas"
 }
 background_color {
   x: 0.0
@@ -205,8 +205,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 0.75
+    y: 0.75
     z: 1.0
     w: 1.0
   }
@@ -233,7 +233,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: -3.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -244,8 +244,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.616
-    y: 0.466
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -270,7 +270,7 @@ nodes {
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "winner_okay_button"
-  layer: "button"
+  layer: ""
   inherit_alpha: true
   slice9 {
     x: 0.0
@@ -282,10 +282,6 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 9
-  overridden_fields: 20
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -303,8 +299,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.037
-    y: 0.982
+    x: 1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -322,8 +318,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Okay"
-  font: "menuFont"
+  text: "<text>"
+  font: "distance"
   id: "winner_okay_button/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -348,9 +344,6 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 3
-  overridden_fields: 8
-  overridden_fields: 10
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -369,5 +362,5 @@ adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512
 particlefxs {
   name: "firework"
-  particlefx: "/main/firework.particlefx"
+  particlefx: "/main/Fireworks/firework.particlefx"
 }

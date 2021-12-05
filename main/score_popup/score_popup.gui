@@ -5,7 +5,7 @@ fonts {
 }
 textures {
   name: "graphics"
-  texture: "/main/graphics.atlas"
+  texture: "/main/Atlas/graphics.atlas"
 }
 background_color {
   x: 0.0

@@ -1,5 +1,7 @@
 local score = 0
 
+local monarch = require "monarch.monarch"
+
 require "main.scripts.player_data"
 
 local druid = require("druid.druid")
@@ -98,21 +100,30 @@ local function clear_callback(self)
 	gui.set_text(self.score_node, "")
 end 
 
+local function stats_button(self)
+	monarch.show("Stats_Gameboard")
+end 
+
 local function finish_callback(self)
+	message = {}
+	message['text'] = "End game?" 
+	print("monekys")
+	monarch.show("End_Game" , nil , message )
+
 	
-	finish_game(score_db) -- save current scores to find winner 
+	-- finish_game(score_db) -- save current scores to find winner 
 	
-	save_stats(score_db) -- save stats WIP 
-	gui.play_particlefx(self.firework_red)
-	gui.play_particlefx(self.firework_blue)
-	gui.play_particlefx(self.firework_green) 
-	gui.play_particlefx(self.firework_yellow)
-	gui.play_particlefx(self.firework_orange)
-	gui.play_particlefx(self.firework_purple)
-	msg.post("main:/winner#winner_box", "Show")
-	score_db = {}
-	--score_db[self.date][self.round_num] = {}
-	gui.set_text(self.score_button, 0)
+	-- save_stats(score_db) -- save stats WIP 
+	-- gui.play_particlefx(self.firework_red)
+	-- gui.play_particlefx(self.firework_blue)
+	-- gui.play_particlefx(self.firework_green) 
+	-- gui.play_particlefx(self.firework_yellow)
+	-- gui.play_particlefx(self.firework_orange)
+	-- gui.play_particlefx(self.firework_purple)
+	-- msg.post("main:/winner#winner_box", "Show")
+	-- score_db = {}
+	-- --score_db[self.date][self.round_num] = {}
+	-- gui.set_text(self.score_button, 0)
 end 
 
 
@@ -129,7 +140,7 @@ function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
-
+	--monarch.hide('Main_Menu')
 	-- init druid 
 	self.druid = druid.new(self)
 	self.start_time = os.date()
@@ -156,30 +167,16 @@ function init(self)
 	self.stats_button = gui.get_node("stats_label")
 	self.end_game_button = gui.get_node("end_game_label")
 
-	--hide on start 
-	gui.set_enabled(self.button1, disable)
-	gui.set_enabled(self.button2, disable)
-	gui.set_enabled(self.button4, disable)
-	gui.set_enabled(self.button5, disable)
-	gui.set_enabled(self.button12, disable)
+	local check_popup =  monarch.data("Game_Board")
+	if not next(check_popup) then
+		print("nil")
+	else 
+		if check_popup['answer'] == "Yes" then
+			print("end game")
+		end
+	end 
 
-	gui.set_enabled(self.gray_background_box, disable)
-	
-	gui.set_enabled(self.okaybutton, disable)
-	gui.set_enabled(self.Addbutton, disable)
-	gui.set_enabled(self.Removebutton, disable)
-	gui.set_enabled(self.stats_button, disable)
-	gui.set_enabled(self.clear_button, disable)
-	gui.set_enabled(self.score_menu, disable)
-	gui.set_enabled(self.username, disable)
-	gui.set_enabled(self.round_number_menu, disable)
-	gui.set_enabled(self.score_node, disable)
-	gui.set_enabled(self.end_game_button, disable)
-
-
-
-
-	
+		
 	-- fireworks
 	self.firework_red = gui.get_node("firework_red")
 	self.firework_blue = gui.get_node("firework_blue")
@@ -222,6 +219,7 @@ function init(self)
 	--self.druid:new_button("add_user_label", add_callback)
 	--self.druid:new_button("remove_user_label", remove_callback)
 	self.druid:new_button("end_game_label", finish_callback)
+	self.druid:new_button("stats_label", stats_button)
 	
 	--msg.post("main:/bg#main_menu", "get res")
 	

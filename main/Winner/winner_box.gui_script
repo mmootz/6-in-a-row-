@@ -9,10 +9,6 @@ function init(self)
 	self.winner_body = gui.get_node("winner_text")
 	self.winner_body_button = gui.get_node("winner_okay_button/buttonBody")
 	self.winner_body_text = gui.get_node("winner_text_user")
-	gui.set_enabled(self.winner_title, false)
-	gui.set_enabled(self.winner_body, false)
-	gui.set_enabled(self.winner_body_button, false)
-	gui.set_enabled(self.winner_body_text, false)
 
 
 end
