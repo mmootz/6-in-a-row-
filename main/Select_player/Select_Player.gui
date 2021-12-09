@@ -100,7 +100,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Get your 12s on"
+  text: "Select Players"
   font: "menuFont"
   id: "Select_Player_prompt_diag"
   xanchor: XANCHOR_NONE
@@ -253,8 +253,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 487.0
-    y: 124.0
+    x: 445.0
+    y: 105.0
     z: 0.0
     w: 1.0
   }
@@ -413,8 +413,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 487.0
-    y: 124.0
+    x: 445.0
+    y: 105.0
     z: 0.0
     w: 1.0
   }
@@ -629,8 +629,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 487.0
-    y: 124.0
+    x: 445.0
+    y: 105.0
     z: 0.0
     w: 1.0
   }

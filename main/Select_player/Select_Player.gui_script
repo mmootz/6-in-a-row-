@@ -44,6 +44,7 @@ local function okay_callback(self)
 		--msg.post("main:/main_menu#main_menu", "enable start button")
 		msg.post("/Main_menu#monarch", "enable start button")
 		monarch.back()
+		print(self.active_players)
 	end
 end
 
@@ -55,10 +56,23 @@ local function cancel_callback(self)
 	
 end
 
-local function select_player(self, button, player_name)
 
+	
+
+local function select_player(self, button, player_name)
+	-- loop though players to check if we already clicked it
+	for index, value in ipairs(self.active_players) do
+		if value == player_name then
+			print("true")
+			gui.play_flipbook(button.node, hash("Button_released"))
+			table.remove(self.active_players,index)
+			return
+		end
+	end
+    -- add selected player 	
 	gui.play_flipbook(button.node, hash("Button_Pressed"))
 	table.insert(self.active_players, player_name)
+	 
 end 
 
 local function remove_dynamic_node(self, button, shift_policy)
@@ -146,28 +160,6 @@ function init(self)
 	
 	end
 
-
--- old add players code 
--- function add_players(self)
--- 	players = load_users()
--- 	local button_data = {}
--- 		local y = 0
--- 		local off_set_y = 30
--- 		local pos = vmath.vector3(350,625,0)
--- 		local player_label = gui.get_node("remove_user_button/buttonBody")
--- 		--self.buttons = {}  
--- 		for _, data in pairs(players) do
--- 			local nodes = gui.clone_tree(player_label)			 
--- 			pos.y = pos.y + off_set_y
--- 			gui.set_position(nodes[hash("remove_user_button/buttonBody")], pos)
--- 			gui.set_text(nodes[hash("remove_user_button/text")], data)
--- 			local button = self.druid:new_button(nodes[hash("remove_user_button/buttonBody")])
--- 			button.on_click:subscribe(function() remove_user_buttons(self,button, data ) end)
--- 			gui.set_id(nodes[hash("remove_user_button/buttonBody")], "body_" .. data )
--- 			local body = gui.get_node("body_" .. data)
--- 			table.insert(self.buttons, body )
--- 		end
--- 	end
 function final(self)
 	-- Add finalization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -194,10 +186,7 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.removeuserpromptbtnok, true)
 		gui.set_enabled(self.removeuserpromptbtncancel, true)
 		msg.post(".", "acquire_input_focus")
-		-- add dynamic button creation 
-		-- compare self.dynamic buttons length to players length 
-		-- if players is larger add the last item in players to the button. 
-	
+		
 	
 	elseif message_id == hash("Hide") then 
 		gui.set_enabled(self.removeuserpromptblock, false)

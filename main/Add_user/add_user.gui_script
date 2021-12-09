@@ -2,14 +2,8 @@ local druid = require("druid.druid")
 local monarch = require "monarch.monarch"
 require "main.scripts.player_data"
 local function okay_callback(self)
-	-- gui.set_enabled(self.adduserpromptblock, false)
-	-- gui.set_enabled(self.adduserpromptdiag, false)
-	-- gui.set_enabled(self.adduserpromptinput, false)
-	-- gui.set_enabled(self.adduserpromptbtnok, false)
-	-- gui.set_enabled(self.adduserpromptbtncancel, false)
---	players = {"Dad","Matt"}
+
 	new_player = gui.get_text(self.adduserpromptinput)
-	print("add user:" .. new_player)
 	load_players = load_users()
 	table.insert(load_players, new_player)
 	save_data(load_players)
@@ -30,13 +24,6 @@ function init(self)
 	self.adduserpromptinput = gui.get_node("add_user_prompt_input")
 	self.adduserpromptbtnok = gui.get_node("add_user_prompt_button_okay/buttonBody")
 	self.adduserpromptbtncancel = gui.get_node("add_user_prompt_button_cancel/buttonBody")
-	
-	-- gui.set_enabled(self.adduserpromptblock, false)
-	-- gui.set_enabled(self.adduserpromptdiag, false)
-	-- gui.set_enabled(self.adduserpromptinput, false)
-	-- gui.set_enabled(self.adduserpromptbtnok, false)
-	-- gui.set_enabled(self.adduserpromptbtncancel, false)
-
 	self.druid:new_button("add_user_prompt_button_okay/buttonBody", okay_callback)
 	self.druid:new_button("add_user_prompt_button_cancel/buttonBody", cancel_callback)
     -- not sure how this is suppose to work 
