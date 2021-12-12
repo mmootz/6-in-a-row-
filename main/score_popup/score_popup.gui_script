@@ -1,0 +1,55 @@
+local monarch = require "monarch.monarch"
+local druid = require("druid.druid")
+require "main.scripts.player_data"
+
+function okay_callback()
+    monarch.back()
+end
+
+function build_score_table(self,player, score)
+    
+    local instance = gui.clone_tree(self.prefab)   
+    gui.set_enabled(instance["prefab"], true)
+    gui.set_text(instance["prefab"],  player .. ":" .. score)
+    gui.set_size(instance["prefab"], vmath.vector3(120 + math.random(100), 80, 0))
+    self.grid_dynamic_grid:add(instance['prefab'], key)
+end 
+
+
+function init(self)
+    msg.post(".", "acquire_input_focus")
+   
+    self.druid = druid.new(self)
+    self.druid:new_button("button_okay/buttonBody", okay_callback)
+    self.prefab = gui.get_node("prefab")
+    self.grid_dynamic_grid = self.druid:new_dynamic_grid("score_prefab_box")
+    self.grid_dynamic_scroll = self.druid:new_scroll("score_prefab_box", "prefab")
+    :set_horizontal_scroll(false)
+    :bind_grid(self.grid_dynamic_grid)
+    local players = load_active_players()
+    for key, value in pairs(players) do 
+        player_scores = load_scoredb()
+        local score  = get_score(player_scores, value, 0)
+        build_score_table(self, value , score)
+    end 
+end
+
+function final(self)
+    self.druid:final()
+end
+
+function update(self, dt)
+    self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+    self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+--    monarch.back()
+    return self.druid:on_input(action_id, action)
+end
+
+function on_reload(self)
+end

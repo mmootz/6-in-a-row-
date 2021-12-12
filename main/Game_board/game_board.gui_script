@@ -44,9 +44,15 @@ local function button12_callback(self)
 end 
 
 local function score_text_menu(self) 
-	stats_db = load_stats()
-	print_r(stats_db)
-	
+	--stats_db = load_stats()
+	local players = load_active_players()
+
+	for key, value in pairs(players) do 
+        
+		local score = get_score(score_db ,value , 0)
+		print("player: " .. value .. "Score: " .. score )
+	end 
+	monarch.show("score_popup")
 end 
 
 

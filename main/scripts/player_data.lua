@@ -6,7 +6,10 @@ function save_score(Table,player,round,save_score,new_round)
         return Table  
     end
     Table[round][player] = save_score
+    local filename = sys.get_save_file("game_score", "current")
+    sys.save(filename, Table)
     return Table
+    
 end 
 
 
@@ -37,7 +40,7 @@ local function find_12s(aTable,max)
     return total , player
 end
 
-local function load_scoredb()
+function load_scoredb()
     local filename = sys.get_save_file("game_score", "current") -- <1>
     local data = sys.load(filename) 
     return data

@@ -115,7 +115,7 @@ local function init_dynamic_grid(self)
 	-- Vertical horizontal grid
 	players = load_users()
 	self.dynamic_node_buttons = {}
-	self.dynamic_node_hor_buttons = {}
+	--self.dynamic_node_hor_buttons = {}
 
 	self.prefab_dynamic = gui.get_node("remove_user_button/buttonBody")
 --	self.prefab_dynamic = gui.get_node("button_template")
