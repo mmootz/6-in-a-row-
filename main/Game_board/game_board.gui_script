@@ -114,10 +114,13 @@ local function finish_callback(self)
 	message = {}
 	message['text'] = "End game?" 
 	
-
-	
-	   finish_game(score_db) -- save current scores to find winner 
-	
+	monarch.show("End_Game" , nil , message )
+    end_question = monarch.data("End_Game")
+	if end_question == "Yes" then 
+		finish_game(score_db) -- save current scores to find winner 
+		
+	end
+	--tweles = find_12s(score_db,0)
 	-- save_stats(score_db) -- save stats WIP 
 	-- gui.play_particlefx(self.firework_red)
 	-- gui.play_particlefx(self.firework_blue)
@@ -126,7 +129,7 @@ local function finish_callback(self)
 	-- gui.play_particlefx(self.firework_orange)
 	-- gui.play_particlefx(self.firework_purple)
 	-- msg.post("main:/winner#winner_box", "Show")
-	   monarch.show("End_Game" , nil , message )
+	  
 	-- score_db = {}
 	-- --score_db[self.date][self.round_num] = {}
 	-- gui.set_text(self.score_button, 0)

@@ -96,6 +96,8 @@ function get_winner(scores_table)
             player = key
         end
     end
+    --tweleves = find_12s(players, 0)
+    --print_r(tweleves)
     return high_score, player
 end
 
@@ -220,7 +222,7 @@ end
 
 function check_stats_top(name, checked_value)
     local stats_table = load_stats()
-    if stats_table[name][1] < checked_value then 
+    if stats_table[name][1][1] < checked_value then 
         return true
     else 
         return false 
@@ -230,7 +232,7 @@ end
 function load_stats() 
    local filename = sys.get_save_file("stats", "stats_save")
    local data = sys.load(filename)
-   data = {} 
+   --data = {} 
    if not next(data) then 
     --data['highscore'] = {}
     data['highscore'] = {0, 'Null'}

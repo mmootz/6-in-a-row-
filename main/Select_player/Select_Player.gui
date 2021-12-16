@@ -3,6 +3,10 @@ fonts {
   name: "menuFont"
   font: "/main/fonts/distance.font"
 }
+fonts {
+  name: "distance"
+  font: "/main/fonts/distance.font"
+}
 textures {
   name: "graphics"
   texture: "/main/Atlas/graphics.atlas"
@@ -16,7 +20,7 @@ background_color {
 nodes {
   position {
     x: 329.0
-    y: 709.0
+    y: 708.0
     z: 0.0
     w: 1.0
   }
@@ -70,7 +74,7 @@ nodes {
 nodes {
   position {
     x: 6.111
-    y: 125.893
+    y: 118.893
     z: 0.0
     w: 1.0
   }
@@ -195,7 +199,7 @@ nodes {
 }
 nodes {
   position {
-    x: -143.273
+    x: -174.273
     y: -112.551
     z: 0.0
     w: 1.0
@@ -268,8 +272,8 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
   id: "remove_user_prompt_buttonokay/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_BOTTOM
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "remove_user_prompt_buttonokay"
@@ -286,6 +290,8 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   overridden_fields: 3
+  overridden_fields: 12
+  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -355,8 +361,8 @@ nodes {
 }
 nodes {
   position {
-    x: -198.251
-    y: -122.497
+    x: -187.251
+    y: -126.497
     z: 0.0
     w: 1.0
   }
@@ -428,8 +434,8 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   texture: "graphics/Button_released"
   id: "remove_user_prompt_button_cancel/buttonBody"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
+  xanchor: XANCHOR_RIGHT
+  yanchor: YANCHOR_BOTTOM
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   parent: "remove_user_prompt_button_cancel"
@@ -447,6 +453,8 @@ nodes {
   alpha: 1.0
   overridden_fields: 1
   overridden_fields: 3
+  overridden_fields: 12
+  overridden_fields: 13
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -518,7 +526,7 @@ nodes {
 nodes {
   position {
     x: -5.0
-    y: 96.0
+    y: 88.0
     z: 1.0
     w: 1.0
   }

@@ -15,7 +15,7 @@ function init(self)
 	self.druid = druid.new(self)
 
 	self.stats_highscore = gui.get_node("high_score_label")
-	self.stats_highscore_value = gui.get_node("high_score_value")
+	
 	
 	self.stats_longest_streak = gui.get_node("Longest_streak")
 	self.stats_longest_streak_value = gui.get_node("Longest_streak_value")
@@ -26,7 +26,7 @@ function init(self)
 	self.stats_background = gui.get_node("stats_background")
 	
 	self.druid:new_button("stats_okay_button/buttonBody", okay_callback)
-	
+	msg.post("#", "Show")
 end
 
 function final(self)
@@ -51,7 +51,7 @@ function on_message(self, message_id, message, sender)
 
 	if message_id == hash("Show") then 
 		gui.set_enabled(self.stats_highscore, true)
-		gui.set_enabled(self.stats_highscore_value, true)
+		
 		gui.set_enabled(self.stats_longest_streak, true)
 		gui.set_enabled(self.stats_longest_streak_value, true)
 		gui.set_enabled(self.stats_most_12s, true)
@@ -59,11 +59,11 @@ function on_message(self, message_id, message, sender)
 		gui.set_enabled(self.stats_background, true)
 		local stats_load = load_stats()
 		--print(stats_load['highscore'][1][2])
-		local high_score_value = stats_load['highscore'][1] .. " (" .. stats_load['highscore'][2] .. ")"
+		local high_score_value = "High Score:" .. " " .. stats_load['highscore'][1][1] .. " (" .. stats_load['highscore'][1][2] .. ")"
 		local streak_value = stats_load['streaks'][1] .. " (" .. stats_load['streaks'][2] .. ")"
 		local twelves_value = stats_load['twelves'][1] .. " (" .. stats_load['twelves'][2] .. ")"
 
-		local highscore_fit = self.druid:new_text(self.stats_highscore_value, high_score_value)
+		local highscore_fit = self.druid:new_text(self.stats_highscore, high_score_value)
 		highscore_fit:set_to(high_score_value)
 		--  		
 		local twelves_fit = self.druid:new_text(self.stats_most_12s_value, twelves_value)
