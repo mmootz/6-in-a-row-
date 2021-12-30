@@ -15,7 +15,7 @@ function init(self)
 	self.druid = druid.new(self)
 
 	self.stats_highscore = gui.get_node("high_score_label")
-	self.stats_highscore_value = gui.get_node("high_score_value")
+	-- self.stats_highscore_value = gui.get_node("high_score_value")
 	
 	self.stats_longest_streak = gui.get_node("Longest_streak")
 	self.stats_longest_streak_value = gui.get_node("Longest_streak_value")
@@ -51,7 +51,7 @@ function on_message(self, message_id, message, sender)
 
 	if message_id == hash("Show") then 
 		gui.set_enabled(self.stats_highscore, true)
-		gui.set_enabled(self.stats_highscore_value, true)
+		-- gui.set_enabled(self.stats_highscore_value, true)
 		gui.set_enabled(self.stats_longest_streak, true)
 		gui.set_enabled(self.stats_longest_streak_value, true)
 		gui.set_enabled(self.stats_most_12s, true)

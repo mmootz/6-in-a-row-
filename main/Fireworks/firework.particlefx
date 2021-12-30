@@ -2,7 +2,7 @@ emitters {
   id: "emitter"
   mode: PLAY_MODE_ONCE
   duration: 1.0
-  space: EMISSION_SPACE_WORLD
+  space: EMISSION_SPACE_EMITTER
   position {
     x: 0.0
     y: 0.0
@@ -14,7 +14,7 @@ emitters {
     z: 0.0
     w: 1.0
   }
-  tile_source: "/builtins/graphics/particle_blob.tilesource"
+  tile_source: "/main/Fireworks/firework.tilesource"
   animation: "anim"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ALPHA

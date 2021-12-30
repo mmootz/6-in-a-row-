@@ -12,7 +12,6 @@ function save_score(Table,player,round,save_score,new_round)
     
 end 
 
-
 function get_player_index(name)
     local player_index = load_users()
     for index,value in ipairs(player_index) do
@@ -22,8 +21,6 @@ function get_player_index(name)
     end
     return found_index
 end 
-
-
 
 local function find_12s(aTable,max)
     total = max
@@ -47,7 +44,6 @@ function load_scoredb()
 end
 
 -- used by get winner below to find high_score for user
-
 function get_score(aTable,player,score)
     total = score 
     for key, value in pairs(aTable) do 
@@ -62,8 +58,6 @@ function get_score(aTable,player,score)
 
     return total
 end
-
-
 
 -- looks for winner by checking user with highest score 
 -- function get score is used to find users score 
@@ -113,9 +107,6 @@ function save_active_players(players)
     sys.save(filename, players ) 
 end
 
-
-
-
 function save_stats(score_table)    
     local save_time = os.date()
     local stats_table = load_stats()
@@ -123,7 +114,6 @@ function save_stats(score_table)
     table.insert(stats_table[save_time], score_table)
     local filename = sys.get_save_file("stats", "stats_save")
     sys.save(filename, stats_table ) 
-
 end
 
 function save_stats_top( name, value, player)
@@ -134,42 +124,36 @@ function save_stats_top( name, value, player)
     sys.save(filename, stats_table) 
 end
 
-
 function load_active_players()
     local filename = sys.get_save_file("activeplayers", "players") -- <1>
     local data = sys.load(filename) 
     return data
 end
 
-
 function finish_game(end_game)
     local filename = sys.get_save_file("game_score", "current")
     sys.save(filename, end_game)
 end 
 
-
-
-
 function print_users(players)
 
-	for index, data in ipairs(players) do
-		print("Player:" .. index .. " " .. data .. " saved...")
-	end
+    for index, data in ipairs(players) do
+        print("Player:" .. index .. " " .. data .. " saved...")
+    end
 
 end
 
 function load_users()
-	local filename = sys.get_save_file("playerfilename", "players") -- <1>
-	local data = sys.load(filename) 
-	return data
+    local filename = sys.get_save_file("playerfilename", "players") -- <1>
+    local data = sys.load(filename) 
+    return data
 end
 
-
 function add_users(players,player_name)
-		print("add user:" .. new_player)
-		local load_players = load_users()
-		table.insert(load_players, new_player)
-		save_data(load_players)
+    print("add user:" .. new_player)
+    local load_players = load_users()
+    table.insert(load_players, new_player)
+    save_data(load_players)
 end
 
 -- function remove_users(player_index)
@@ -177,47 +161,45 @@ end
 -- 	print(players[player_index])
 -- end 
 
-
 function print_r(arr, indentLevel)
-	local str = ""
-	local indentStr = "#"
+    local str = ""
+    local indentStr = "#"
 
-	if(indentLevel == nil) then
-		print(print_r(arr, 0))
-		return
-	end
+    if(indentLevel == nil) then
+        print(print_r(arr, 0))
+        return
+    end
 
-	for i = 0, indentLevel do
-		indentStr = indentStr.."\t"
-	end
+    for i = 0, indentLevel do
+        indentStr = indentStr.."\t"
+    end
 
-	for index,value in pairs(arr) do
-		if type(value) == "table" then
-			str = str..indentStr..index..": \n"..print_r(value, (indentLevel + 1))
-		else 
-			str = str..indentStr..index..": "..value.."\n"
-		end
-	end
-	return str
+    for index,value in pairs(arr) do
+        if type(value) == "table" then
+            str = str..indentStr..index..": \n"..print_r(value, (indentLevel + 1))
+        else 
+            str = str..indentStr..index..": "..value.."\n"
+        end
+    end
+    return str
 end
 
 function next_player(player_name,players)	
-	player_size = 0 
-	for _ in pairs(players) do player_size = player_size + 1 end
+    player_size = 0 
+    for _ in pairs(players) do player_size = player_size + 1 end
 
-	for k, v in next, players do
-		if v == player_name then 
-			match = k     
-		end  
-	end
+    for k, v in next, players do
+        if v == player_name then 
+            match = k     
+        end  
+    end
 
-	if match == player_size then 
-		return players[1]
-	end 
+    if match == player_size then 
+        return players[1]
+    end 
 
-	next_player = next(players,match)
-	return players[next_player]
-
+    next_player = next(players,match)
+    return players[next_player]
 end 
 
 function check_stats_top(name, checked_value)
@@ -246,7 +228,6 @@ function load_stats()
    -- data['streak'] = 2
    -- data['twelves'] = 3
    return data 
-    
 end 
 
 
