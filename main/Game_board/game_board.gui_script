@@ -52,8 +52,8 @@ local function button12_callback(self)
 	local current_twelves = self.twelves[player_name]
 	local new_twelves = 1 + current_twelves 
 	self.twelves[player_name] = new_twelves
+	save_twelves(self.twelves)
 	gui.set_text(self.score_node, tostring(self.score))
-	
 end 
 
 local function score_text_menu(self) 
@@ -297,6 +297,7 @@ function on_message(self, message_id, message, sender)
 		for index, player in pairs(active_players) do 
 			self.twelves[player] = 0
 		end  
+		save_twelves(self.twelves)
 	end
 	
 	if message_id == hash("hide") then 

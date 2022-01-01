@@ -6,12 +6,12 @@ function okay_callback()
     monarch.back()
 end
 
-function build_score_table(self,player, score)
+function build_score_table(self,player, score, twelves)
     
     local instance = gui.clone_tree(self.prefab)   
     gui.set_enabled(instance["prefab"], true)
-    gui.set_text(instance["prefab"],  player .. ":" .. score)
-    gui.set_size(instance["prefab"], vmath.vector3(120 + math.random(100), 80, 0))
+    gui.set_text(instance["prefab"],  player .. ":" .. score .. ", Twelves:" .. twelves)
+    gui.set_size(instance["prefab"], vmath.vector3(120 + math.random(100), 40, 0))
     self.grid_dynamic_grid:add(instance['prefab'], key)
 end 
 
@@ -29,8 +29,10 @@ function init(self)
     local players = load_active_players()
     for key, value in pairs(players) do 
         player_scores = load_scoredb()
+        local load_twelves = load_twelves()
+        player_twelves = load_twelves[value]
         local score  = get_score(player_scores, value, 0)
-        build_score_table(self, value , score)
+        build_score_table(self, value , score, player_twelves)
     end 
 end
 

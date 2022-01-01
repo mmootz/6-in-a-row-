@@ -36,12 +36,12 @@ local function okay_callback(self)
 	end
 	if (num_active_players < 2) 
 	then
-		print("must have more than 1 player")
-		-- should throw popup here
+		gui.set_text(self.select_player_text, "2 Players are required to start.")
+	elseif (num_active_players > 4 )
+	then 
+		gui.set_text(self.select_player_text, "Only 4 people can play at a time.")
 	else
 	    save_active_players(self.active_players)
-		-- msg.post("main:/remove_user#remove_user_prompt", "Hide")
-		--msg.post("main:/main_menu#main_menu", "enable start button")
 		msg.post("/Main_menu#monarch", "enable start button")
 		monarch.back()
 		print(self.active_players)
@@ -50,15 +50,10 @@ end
 
 local function cancel_callback(self)
 	
-	monarch.back()
-    
+	monarch.back()   
 	--players = load_users()
-	
 end
-
-
 	
-
 local function select_player(self, button, player_name)
 	-- loop though players to check if we already clicked it
 	for index, value in ipairs(self.active_players) do
@@ -134,7 +129,7 @@ function init(self)
 	self.druid = druid.new(self)
 	self.active_players = {} 
 	self.removeuserpromptblock = gui.get_node("Select_Player_prompt_body")
-	self.removeuserpromptdiag = gui.get_node("Select_Player_prompt_diag")
+	self.select_player_text = gui.get_node("Select_Player_prompt_diag")
 	self.removeuserpromptinput = gui.get_node("Select_Player_prompt_input")
 	self.removeuserpromptbtnok = gui.get_node("remove_user_prompt_buttonokay/buttonBody")
 	self.removeuserpromptbtncancel = gui.get_node("remove_user_prompt_button_cancel/buttonBody")

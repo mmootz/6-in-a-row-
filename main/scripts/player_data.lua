@@ -102,6 +102,17 @@ function save_data(players)
     sys.save(filename, players ) 
 end
 
+function save_twelves(twelves_table)
+    local filename = sys.get_save_file("twelves_table", "twelves")
+    sys.save(filename, twelves_table ) 
+end
+
+function load_twelves()
+    local filename = sys.get_save_file("twelves_table", "twelves")
+    local data = sys.load(filename) 
+    return data
+end
+
 function save_active_players(players)
     local filename = sys.get_save_file("activeplayers", "players")
     sys.save(filename, players ) 
